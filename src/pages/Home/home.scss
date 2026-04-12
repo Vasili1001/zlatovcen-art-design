@@ -1,0 +1,208 @@
+.home {
+  position: relative;
+  background: #191717;
+  isolation: isolate;
+}
+
+.home > section {
+  position: relative;
+}
+
+.home .about-founder,
+.home .testimonial-showcase,
+.home .services-preview {
+  background: transparent;
+}
+
+.home .about-founder::before,
+.home .testimonial-showcase::before,
+.home .services-preview::before {
+  opacity: 0.82;
+}
+
+.home .about-founder::after,
+.home .testimonial-showcase::after,
+.home .services-preview::after {
+  opacity: 0.82;
+}
+
+.home .feature-bar {
+  background: transparent;
+}
+
+.home .feature-bar__background {
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(20, 18, 18, 0.78) 0%,
+                          rgba(20, 18, 18, 0.88) 42%,
+                          rgba(20, 18, 18, 0.94) 100%
+          );
+}
+
+.home .feature-bar__background::before {
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(255, 248, 240, 0.04) 0%,
+                          rgba(255, 248, 240, 0.014) 18%,
+                          rgba(0, 0, 0, 0) 58%
+          );
+}
+
+.home .feature-bar__background::after {
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(0, 0, 0, 0) 42%,
+                          rgba(0, 0, 0, 0.14) 100%
+          );
+}
+
+.home .studio-showcase__inner {
+  padding-bottom: 84px;
+}
+
+.home .about-founder__inner,
+.home .testimonial-showcase__inner,
+.home .services-preview__inner {
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+
+.home .blog-preview__inner {
+  padding-top: 92px;
+}
+
+.home .cta {
+  background: transparent;
+}
+
+.home .cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(25, 23, 23, 0) 0%,
+                          rgba(25, 23, 23, 0.18) 24%,
+                          rgba(17, 15, 15, 0.42) 100%
+          );
+}
+
+.home .cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home .footer {
+  margin-top: -56px;
+}
+
+.home .footer__background {
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(17, 15, 15, 0.76) 0%,
+                          rgba(17, 15, 15, 0.92) 24%,
+                          rgba(16, 14, 14, 1) 58%,
+                          rgba(16, 14, 14, 1) 100%
+          );
+}
+
+.home .footer__background::after {
+  background:
+          linear-gradient(
+                          180deg,
+                          rgba(255, 255, 255, 0.01) 0%,
+                          rgba(255, 255, 255, 0) 16%,
+                          rgba(0, 0, 0, 0.14) 100%
+          );
+}
+
+@media (max-width: 767px) {
+  .home .about-founder__inner,
+  .home .testimonial-showcase__inner,
+  .home .services-preview__inner {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .home .studio-showcase__inner {
+    padding-bottom: 72px;
+  }
+
+  .home .blog-preview__inner {
+    padding-top: 76px;
+  }
+
+  .home .footer {
+    margin-top: -36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home .about-founder__inner,
+  .home .testimonial-showcase__inner,
+  .home .services-preview__inner {
+    padding-top: 92px;
+    padding-bottom: 94px;
+  }
+
+  .home .studio-showcase__inner {
+    padding-bottom: 96px;
+  }
+
+  .home .blog-preview__inner {
+    padding-top: 98px;
+  }
+
+  .home .footer {
+    margin-top: -44px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home .about-founder__inner,
+  .home .testimonial-showcase__inner,
+  .home .services-preview__inner {
+    padding-top: 108px;
+    padding-bottom: 110px;
+  }
+
+  .home .studio-showcase__inner {
+    padding-bottom: 112px;
+  }
+
+  .home .blog-preview__inner {
+    padding-top: 112px;
+  }
+
+  .home .footer {
+    margin-top: -48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home .about-founder__inner,
+  .home .testimonial-showcase__inner,
+  .home .services-preview__inner {
+    padding-top: 120px;
+    padding-bottom: 122px;
+  }
+
+  .home .studio-showcase__inner {
+    padding-bottom: 124px;
+  }
+
+  .home .blog-preview__inner {
+    padding-top: 122px;
+  }
+
+  .home .footer {
+    margin-top: -52px;
+  }
+}

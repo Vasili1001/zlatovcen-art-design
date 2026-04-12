@@ -1,0 +1,334 @@
+.blog-detail-article {
+  position: relative;
+  background: #191717;
+  overflow: hidden;
+  isolation: isolate;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(46%, 660px);
+    height: clamp(560px, 60vw, 940px);
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  &__background-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.36) saturate(0.8) contrast(0.96);
+    transform: scale(1.02);
+  }
+
+  &__background-overlay {
+    position: absolute;
+    inset: 0;
+
+    &--base {
+      background:
+              linear-gradient(
+                              90deg,
+                              rgba(25, 23, 23, 0.06) 0%,
+                              rgba(25, 23, 23, 0.14) 28%,
+                              rgba(25, 23, 23, 0.56) 68%,
+                              rgba(25, 23, 23, 0.88) 88%,
+                              rgba(25, 23, 23, 0.98) 100%
+              );
+    }
+
+    &--vignette {
+      background:
+              radial-gradient(
+                              circle at center,
+                              rgba(0, 0, 0, 0) 40%,
+                              rgba(0, 0, 0, 0.06) 76%,
+                              rgba(0, 0, 0, 0.18) 100%
+              );
+    }
+
+    &--fade {
+      background:
+              linear-gradient(
+                              180deg,
+                              rgba(25, 23, 23, 0) 0%,
+                              rgba(25, 23, 23, 0) 78%,
+                              rgba(25, 23, 23, 0.92) 100%
+              );
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 92px 0 118px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: 18px;
+    color: rgba(203, 187, 167, 0.82);
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    color: #f3eee8;
+    font-family: var(--font-heading);
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  &__body {
+    margin-top: 42px;
+  }
+
+  &__paragraph {
+    margin: 0 0 28px;
+    color: rgba(243, 238, 232, 0.84);
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.95;
+    letter-spacing: 0.01em;
+    text-wrap: pretty;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__figure {
+    margin: 48px auto 34px;
+    max-width: 640px;
+  }
+
+  &__figure-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.62 / 1;
+    object-fit: cover;
+    background: #232020;
+  }
+
+  &__quote {
+    margin: 0 0 34px;
+    text-align: center;
+
+    p {
+      margin: 0;
+      color: #f3eee8;
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+  }
+
+  &__pager {
+    margin-top: 68px;
+  }
+
+  &__pager-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(243, 238, 232, 0.16);
+  }
+
+  &__pager-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 18px;
+  }
+
+  &__pager-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cfc2b0;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #f3eee8;
+    }
+  }
+
+  &__pager-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 10px);
+    grid-template-rows: repeat(2, 10px);
+    gap: 3px;
+    width: fit-content;
+    text-decoration: none;
+
+    span {
+      width: 10px;
+      height: 10px;
+      background: #a89780;
+      transition: background 0.3s ease;
+    }
+
+    &:hover span {
+      background: #f3eee8;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-detail-article {
+    &__background {
+      width: min(46%, 660px);
+      height: clamp(640px, 58vw, 980px);
+    }
+
+    &__inner {
+      padding: 104px 0 132px;
+    }
+
+    &__content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    &__body {
+      margin-top: 46px;
+    }
+
+    &__paragraph {
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 30px;
+    }
+
+    &__figure {
+      margin: 52px auto 38px;
+    }
+
+    &__pager {
+      margin-top: 74px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-detail-article {
+    &__background {
+      width: 100%;
+      height: 260px;
+      opacity: 0.5;
+    }
+
+    &__background-overlay {
+      &--base {
+        background:
+                linear-gradient(
+                                180deg,
+                                rgba(25, 23, 23, 0.28) 0%,
+                                rgba(25, 23, 23, 0.54) 32%,
+                                rgba(25, 23, 23, 0.86) 68%,
+                                rgba(25, 23, 23, 1) 100%
+                );
+      }
+
+      &--fade {
+        background:
+                linear-gradient(
+                                180deg,
+                                rgba(25, 23, 23, 0) 0%,
+                                rgba(25, 23, 23, 0) 56%,
+                                rgba(25, 23, 23, 0.96) 100%
+                );
+      }
+    }
+
+    &__inner {
+      padding: 68px 0 90px;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__date {
+      margin-bottom: 14px;
+      font-size: 11px;
+    }
+
+    &__title {
+      font-size: 34px;
+      line-height: 1.1;
+    }
+
+    &__body {
+      margin-top: 30px;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    &__figure {
+      margin: 36px auto 28px;
+    }
+
+    &__quote {
+      margin-bottom: 28px;
+
+      p {
+        font-size: 24px;
+        line-height: 1.18;
+      }
+    }
+
+    &__pager {
+      margin-top: 48px;
+    }
+
+    &__pager-link {
+      font-size: 18px;
+    }
+
+    &__pager-grid {
+      grid-template-columns: repeat(2, 8px);
+      grid-template-rows: repeat(2, 8px);
+
+      span {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

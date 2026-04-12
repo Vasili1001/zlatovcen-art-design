@@ -1,0 +1,228 @@
+.feature-bar {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background:
+            linear-gradient(
+                            180deg,
+                            rgba(22, 20, 20, 0.92) 0%,
+                            rgba(20, 18, 18, 0.96) 40%,
+                            rgba(18, 16, 16, 0.98) 100%
+            );
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+              linear-gradient(
+                              180deg,
+                              rgba(255, 248, 240, 0.06) 0%,
+                              rgba(255, 248, 240, 0.02) 20%,
+                              rgba(0, 0, 0, 0) 60%
+              );
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+              linear-gradient(
+                              180deg,
+                              rgba(0, 0, 0, 0) 40%,
+                              rgba(0, 0, 0, 0.22) 100%
+              );
+      pointer-events: none;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 72px;
+    padding: 0 28px;
+
+    flex: 0 0 auto;
+  }
+
+  &__text {
+    color: rgba(241, 235, 228, 0.82);
+
+    font-family: var(--font-primary); /* меняем на Inter */
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
+
+  &__divider {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1px;
+    height: 22px;
+
+    background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(203, 187, 167, 0.18) 50%,
+                    rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &__item:hover .feature-bar__text {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+@media (min-width: 768px) {
+  .feature-bar {
+    &__item {
+      min-height: 78px;
+      padding: 0 32px;
+    }
+
+    &__text {
+      font-size: 13px;
+      letter-spacing: 0.3em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .feature-bar {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      min-width: 0;
+    }
+
+    &__item {
+      padding: 0 20px;
+    }
+
+    &__divider {
+      display: none;
+    }
+
+    /* desktop separators через pseudo */
+    &__item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 24px;
+
+      background: linear-gradient(
+                      180deg,
+                      rgba(255, 255, 255, 0) 0%,
+                      rgba(203, 187, 167, 0.14) 50%,
+                      rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .feature-bar {
+    &__item {
+      min-height: 82px;
+    }
+
+    &__text {
+      font-size: 13px;
+      letter-spacing: 0.32em;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-bar {
+    &__scroll {
+      padding-inline: 16px;
+    }
+
+    &__item {
+      padding: 0 20px;
+      min-height: 68px;
+    }
+
+    &__text {
+      font-size: 11px;
+      letter-spacing: 0.26em;
+    }
+
+    /* fade edges */
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+                      90deg,
+                      rgba(20, 18, 18, 1) 0%,
+                      rgba(20, 18, 18, 0) 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+                      270deg,
+                      rgba(20, 18, 18, 1) 0%,
+                      rgba(20, 18, 18, 0) 100%
+      );
+    }
+  }
+}
