@@ -1,9 +1,9 @@
 .footer {
   position: relative;
   overflow: hidden;
-  background: transparent;
-  margin-top: -88px;
-  padding: 112px 0 60px;
+  background: #151313;
+  margin-top: 0;
+  padding: 84px 0 60px;
   isolation: isolate;
 
   &__background {
@@ -13,9 +13,9 @@
     background:
             linear-gradient(
                             180deg,
-                            rgba(17, 15, 15, 0.88) 0%,
-                            rgba(17, 15, 15, 0.96) 22%,
-                            rgba(16, 14, 14, 1) 56%,
+                            rgba(21, 19, 19, 0.78) 0%,
+                            rgba(19, 17, 17, 0.9) 18%,
+                            rgba(17, 15, 15, 0.98) 54%,
                             rgba(16, 14, 14, 1) 100%
             );
 
@@ -24,8 +24,18 @@
       position: absolute;
       inset: 0;
       background:
-              radial-gradient(circle at top center, rgba(255, 248, 240, 0.04) 0%, rgba(255, 248, 240, 0) 30%),
-              radial-gradient(circle at left center, rgba(203, 187, 167, 0.04) 0%, rgba(203, 187, 167, 0) 24%);
+              radial-gradient(
+                              circle at 50% 0%,
+                              rgba(255, 248, 240, 0.018) 0%,
+                              rgba(255, 248, 240, 0.006) 18%,
+                              rgba(255, 248, 240, 0) 42%
+              ),
+              radial-gradient(
+                              circle at 20% 40%,
+                              rgba(203, 187, 167, 0.018) 0%,
+                              rgba(203, 187, 167, 0.006) 20%,
+                              rgba(203, 187, 167, 0) 44%
+              );
       pointer-events: none;
     }
 
@@ -36,9 +46,9 @@
       background:
               linear-gradient(
                               180deg,
-                              rgba(255, 255, 255, 0.015) 0%,
-                              rgba(255, 255, 255, 0) 18%,
-                              rgba(0, 0, 0, 0.18) 100%
+                              rgba(255, 255, 255, 0.006) 0%,
+                              rgba(255, 255, 255, 0) 14%,
+                              rgba(0, 0, 0, 0.14) 100%
               );
       pointer-events: none;
     }
@@ -47,7 +57,7 @@
   &__inner {
     position: relative;
     z-index: 1;
-    padding-top: 18px;
+    padding-top: 0;
   }
 
   &__top {
@@ -91,11 +101,11 @@
   &__brand-note {
     max-width: 340px;
     margin: 0;
-    color: rgba(243, 238, 232, 0.62);
+    color: rgba(243, 238, 232, 0.56);
     font-family: var(--font-primary);
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.75;
+    line-height: 1.82;
     letter-spacing: 0.01em;
     text-wrap: balance;
   }
@@ -209,13 +219,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(203, 187, 167, 0.12);
-    border-radius: 12px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(203, 187, 167, 0.1);
+    border-radius: 2px;
     background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%);
-    color: rgba(243, 238, 232, 0.84);
+            linear-gradient(180deg, rgba(255, 255, 255, 0.014) 0%, rgba(255, 255, 255, 0.006) 100%);
+    color: rgba(243, 238, 232, 0.8);
     transition:
             color 0.3s ease,
             border-color 0.3s ease,
@@ -224,9 +234,9 @@
 
     &:hover {
       color: #ffffff;
-      border-color: rgba(203, 187, 167, 0.2);
+      border-color: rgba(203, 187, 167, 0.16);
       background:
-              linear-gradient(180deg, rgba(203, 187, 167, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+              linear-gradient(180deg, rgba(203, 187, 167, 0.03) 0%, rgba(255, 255, 255, 0.008) 100%);
       transform: translateY(-1px);
     }
   }
@@ -310,8 +320,6 @@
 
 @media (min-width: 640px) {
   .footer {
-    padding-top: 92px;
-
     &__gallery {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
@@ -326,7 +334,7 @@
 
 @media (min-width: 900px) {
   .footer {
-    padding: 108px 0 68px;
+    padding: 92px 0 68px;
 
     &__top {
       grid-template-columns: minmax(240px, 1fr) minmax(200px, 260px) minmax(280px, 1fr);
@@ -371,7 +379,7 @@
 
 @media (min-width: 1200px) {
   .footer {
-    padding-top: 116px;
+    padding-top: 98px;
 
     &__top {
       grid-template-columns: minmax(280px, 1fr) minmax(220px, 280px) minmax(380px, 1fr);

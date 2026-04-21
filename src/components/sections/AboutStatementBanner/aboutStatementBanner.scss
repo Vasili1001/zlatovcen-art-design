@@ -1,0 +1,401 @@
+.about-statement-banner {
+  position: relative;
+  background: #191717;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+            radial-gradient(circle at 18% 20%, rgba(203, 187, 167, 0.028) 0%, rgba(203, 187, 167, 0) 32%),
+            radial-gradient(circle at 84% 30%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 24%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+            linear-gradient(
+                            180deg,
+                            rgba(255, 248, 240, 0.01) 0%,
+                            rgba(255, 248, 240, 0) 18%,
+                            rgba(0, 0, 0, 0.08) 100%
+            );
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    padding: 82px 0 92px;
+  }
+
+  &__layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 156px;
+      background:
+              linear-gradient(
+                              180deg,
+                              rgba(211, 202, 191, 0.88) 0%,
+                              rgba(201, 191, 179, 0.9) 100%
+              );
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 156px;
+      z-index: 0;
+      pointer-events: none;
+      background:
+              linear-gradient(
+                              90deg,
+                              rgba(25, 23, 23, 0.8) 0%,
+                              rgba(25, 23, 23, 0.06) 16%,
+                              rgba(25, 23, 23, 0.06) 84%,
+                              rgba(25, 23, 23, 0.8) 100%
+              );
+    }
+  }
+
+  &__image-wrap,
+  &__card {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__image-wrap {
+    overflow: hidden;
+    background: #1a1818;
+    border: 1px solid rgba(203, 187, 167, 0.08);
+    box-shadow:
+            0 26px 64px rgba(0, 0, 0, 0.22),
+            inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border: 1px solid rgba(203, 187, 167, 0.05);
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.92 / 1.16;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.93) contrast(0.985) brightness(0.98);
+    transform: scale(1.01);
+    transition: transform 0.7s ease, filter 0.7s ease;
+  }
+
+  &__image-wrap:hover &__image {
+    transform: scale(1.03);
+    filter: saturate(1) contrast(1) brightness(1);
+  }
+
+  &__card {
+    width: 100%;
+  }
+
+  &__card-inner {
+    min-height: 100%;
+    background:
+            linear-gradient(180deg, rgba(106, 100, 100, 0.92) 0%, rgba(95, 89, 89, 0.95) 100%);
+    border: 1px solid rgba(243, 238, 232, 0.1);
+    padding: 34px 24px 30px;
+    box-shadow:
+            0 24px 64px rgba(0, 0, 0, 0.22),
+            inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.045);
+      pointer-events: none;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    color: #f3eee8;
+    font-family: var(--font-accent);
+    font-size: 40px;
+    line-height: 1;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  &__title {
+    max-width: 430px;
+    margin: 28px auto 0;
+    color: rgba(243, 238, 232, 0.94);
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.82;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 34px;
+    color: #f3eee8;
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      width: 100%;
+      height: 1px;
+      background: rgba(243, 238, 232, 0.42);
+      transform: translateX(-50%);
+      transition: background 0.3s ease, width 0.3s ease;
+    }
+
+    &:hover {
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    &:hover::after {
+      width: 108%;
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .about-statement-banner {
+    &__inner {
+      padding: 72px 0 78px;
+    }
+
+    &__layout {
+      gap: 18px;
+      max-width: 340px;
+
+      &::before,
+      &::after {
+        top: 50%;
+        height: 104px;
+      }
+    }
+
+    &__card-inner {
+      padding: 28px 22px 26px;
+
+      &::before {
+        inset: 10px;
+      }
+    }
+
+    &__eyebrow {
+      font-size: 34px;
+    }
+
+    &__title {
+      margin-top: 22px;
+      font-size: 16px;
+      line-height: 1.74;
+    }
+
+    &__link {
+      margin-top: 28px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about-statement-banner {
+    &__inner {
+      padding: 96px 0 106px;
+    }
+
+    &__layout {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.9fr);
+      gap: 28px;
+
+      &::before,
+      &::after {
+        top: 56%;
+        height: 170px;
+      }
+    }
+
+    &__card-inner {
+      min-height: 468px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 34px 36px;
+    }
+
+    &__eyebrow {
+      font-size: 48px;
+    }
+
+    &__title {
+      max-width: 420px;
+      margin-top: 26px;
+      font-size: 18px;
+      line-height: 1.84;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-statement-banner {
+    &__inner {
+      padding: 116px 0 128px;
+    }
+
+    &__layout {
+      grid-template-columns: 468px 496px;
+      justify-content: center;
+      gap: 54px;
+
+      &::before,
+      &::after {
+        top: 58%;
+        height: 202px;
+      }
+
+      &::before {
+        background:
+                linear-gradient(
+                                180deg,
+                                rgba(210, 200, 188, 0.82) 0%,
+                                rgba(199, 189, 176, 0.86) 100%
+                );
+      }
+    }
+
+    &__image-wrap {
+      transform: translateY(-14px);
+    }
+
+    &__card {
+      transform: translateY(38px);
+    }
+
+    &__card-inner {
+      min-height: 600px;
+      padding: 54px 46px 48px;
+    }
+
+    &__eyebrow {
+      font-size: 54px;
+    }
+
+    &__title {
+      max-width: 420px;
+      margin-top: 34px;
+      font-size: 19px;
+      line-height: 1.92;
+    }
+
+    &__link {
+      margin-top: 40px;
+    }
+
+    &__image {
+      aspect-ratio: 0.88 / 1.14;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-statement-banner {
+    &__inner {
+      padding: 126px 0 140px;
+    }
+
+    &__layout {
+      grid-template-columns: 510px 500px;
+      gap: 62px;
+
+      &::before,
+      &::after {
+        height: 214px;
+      }
+    }
+
+    &__image-wrap {
+      transform: translateY(-18px);
+    }
+
+    &__card {
+      transform: translateY(48px);
+    }
+
+    &__card-inner {
+      min-height: 620px;
+      padding: 60px 52px 52px;
+    }
+
+    &__eyebrow {
+      font-size: 58px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+  }
+}

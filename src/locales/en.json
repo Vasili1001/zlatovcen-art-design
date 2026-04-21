@@ -1,1 +1,522 @@
-{}
+{
+  "common": {
+    "changeLanguage": "Change language",
+    "languageOptions": "Language options",
+    "featureBar": {
+      "items": [
+        {
+          "desktop": "Refined Design",
+          "mobile": "Refined"
+        },
+        {
+          "desktop": "Material Depth",
+          "mobile": "Material"
+        },
+        {
+          "desktop": "Timeless Aesthetics",
+          "mobile": "Timeless"
+        },
+        {
+          "desktop": "Spatial Harmony",
+          "mobile": "Harmony"
+        },
+        {
+          "desktop": "Tailored Living",
+          "mobile": "Tailored"
+        }
+      ],
+      "accessibility": {
+        "label": "Brand values"
+      }
+    },
+    "cta": {
+      "script": "Begin",
+      "eyebrow": "Begin Your Project",
+      "title": "Let Us Help Transform Your Living Space into A Masterpiece.",
+      "text": "Thoughtful interiors, curated with timeless restraint and a premium attention to detail.",
+      "buttonText": "Start Your Journey"
+    }
+  },
+  "header": {
+    "nav": {
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "mobile": {
+      "brand": "Zlatovcen Art Design",
+      "note": "Bespoke interiors shaped through refined minimalism, material depth, and timeless elegance.",
+      "contactStudio": "Contact Studio"
+    },
+    "accessibility": {
+      "openNavigationMenu": "Open navigation menu",
+      "closeNavigationMenu": "Close navigation menu",
+      "primaryNavigationLeft": "Primary navigation left",
+      "primaryNavigationRight": "Primary navigation right",
+      "mobileNavigation": "Mobile navigation",
+      "closeMenuBackdrop": "Close menu backdrop"
+    }
+  },
+  "footer": {
+    "nav": {
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "about": "About",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "sections": {
+      "navigation": "Navigation",
+      "contact": "Contact"
+    },
+    "brand": {
+      "note": "Bespoke interior design shaped through timeless restraint, material depth, and refined composition."
+    },
+    "contact": {
+      "addressLine1": "123 Bogdan Voievod,",
+      "addressLine2": "Suite 400 Atlanta, GA 30309"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    },
+    "accessibility": {
+      "footerNavigation": "Footer navigation",
+      "socialLinks": "Social links"
+    },
+    "copy": "ZLATOVCEN ART DESIGN"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Interior Design Studio",
+      "titleLine1": "Luxury Interior Design",
+      "titleLine2": "Tailored for You.",
+      "cta": "Our Services",
+      "slides": {
+        "1": {
+          "alt": "Luxury bedroom interior with elegant neutral tones"
+        },
+        "2": {
+          "alt": "Premium living room interior with refined furniture composition"
+        },
+        "3": {
+          "alt": "Elegant residential interior with soft daylight"
+        },
+        "4": {
+          "alt": "Luxury interior design space with sculptural decor"
+        },
+        "5": {
+          "alt": "Sophisticated modern bedroom with premium styling"
+        },
+        "6": {
+          "alt": "High-end interior design composition with warm atmosphere"
+        }
+      },
+      "accessibility": {
+        "sectionLabel": "Luxury interior design hero section",
+        "slidesNavigation": "Hero slides navigation",
+        "goToSlide": "Go to hero slide {{number}}"
+      }
+    },
+    "studioShowcase": {
+      "eyebrow": "Studio Signature",
+      "index": "01",
+      "script": "Studio",
+      "title": "We design refined interiors with quiet luxury, sculptural balance, and timeless visual presence.",
+      "subtitle": "Bespoke interiors shaped through atmosphere, restraint, and a deeply considered sense of composition.",
+      "cta": "View Gallery",
+      "gallery": {
+        "left": {
+          "alt": "Elegant interior detail with refined furniture styling",
+          "label": "Material Harmony"
+        },
+        "main": {
+          "alt": "Luxury living room with warm light and premium design composition",
+          "label": "Signature Composition"
+        },
+        "right": {
+          "alt": "Premium dark interior with sophisticated seating and decor",
+          "label": "Atmospheric Depth"
+        }
+      }
+    },
+    "aboutFounder": {
+      "eyebrow": "Founder",
+      "index": "02",
+      "script": "Welcome",
+      "kicker": "Founder’s Note",
+      "name": "Viktor Zlatovchen",
+      "lead": "I believe interior design is not simply about beauty, but about creating a refined atmosphere that quietly elevates the way people live every day.",
+      "text": "As the founder of Zlatovchen Art Design, I’ve always believed that interior design is more than creating beautiful spaces — it is about crafting environments that inspire, comfort, and bring emotional clarity through proportion, materiality, and timeless composition.",
+      "ctaPrimary": "Discover Our Story",
+      "ctaSecondary": "Get in Touch",
+      "imageAlt": "Viktor Zlatovchen, founder of Zlatovchen Art Design"
+    },
+    "testimonialShowcase": {
+      "eyebrow": "Testimonial",
+      "index": "03",
+      "script": "Refined",
+      "quote": "Every detail felt intentional, refined, and beautifully resolved from beginning to end.",
+      "note": "Working with Zlatovchen Art Design was seamless throughout the entire process.",
+      "author": "Luke Collins",
+      "role": "Private Client",
+      "accessibility": {
+        "title": "Client testimonial"
+      }
+    },
+    "servicesPreview": {
+      "eyebrow": "Services",
+      "index": "04",
+      "script": "Services",
+      "title": "Interior Design Services Curated with Precision and Quiet Luxury.",
+      "description": "We craft interiors that combine visual refinement, functional clarity, and a timeless sense of atmosphere. Every space is shaped with intention, proportion, and restraint.",
+      "cta": "Explore All Services",
+      "imageAlt": "Elegant interior detail with warm natural light",
+      "accessibility": {
+        "listLabel": "Interior design services"
+      },
+      "items": [
+        {
+          "title": "Residential Design",
+          "description": "Tailored interiors shaped around lifestyle, atmosphere, and timeless comfort."
+        },
+        {
+          "title": "Commercial Interiors",
+          "description": "Refined business spaces with clarity, presence, and elevated functionality."
+        },
+        {
+          "title": "Living Room Design",
+          "description": "Balanced compositions focused on warmth, proportion, and visual calm."
+        }
+      ]
+    },
+    "blogPreview": {
+      "eyebrow": "Journal",
+      "index": "05",
+      "title": "Latest Posts",
+      "subtitle": "Perspectives on interiors, materials, atmosphere, and the subtle decisions that shape a timeless living space.",
+      "readPost": "Read Post",
+      "footerLink": "Visit the Journal",
+      "posts": [
+        {
+          "title": "The Role of Art in Luxury Interior Design.",
+          "category": "Design Insight"
+        },
+        {
+          "title": "Color Palettes for Interiors: The Guide",
+          "category": "Materials & Tone"
+        },
+        {
+          "title": "Small Touches That Make an Impact in Design.",
+          "category": "Styling Notes"
+        }
+      ]
+    }
+  },
+  "services": {
+    "editorialShowcase": {
+      "eyebrow": "Services",
+      "index": "01",
+      "script": "Curated",
+      "includesLabel": "What's Included",
+      "investmentLabel": "Investment",
+      "cta": "Enquire Now",
+      "accessibility": {
+        "title": "Interior design services"
+      },
+      "items": [
+        {
+          "title": "Luxury Residential Design",
+          "description": "We create refined living spaces tailored to your lifestyle and personal taste. Every detail — from layout to materials — is carefully curated to achieve a timeless, elegant, and comfortable home environment.",
+          "includes": [
+            "Personalized design consultation",
+            "Material and color palette development",
+            "Space planning and layout optimization"
+          ],
+          "investment": "from 10 € / m²",
+          "investmentNote": "Approximate",
+          "imageAlt": "Luxury residential interior design"
+        },
+        {
+          "title": "Modern Commercial Interior",
+          "description": "We design functional and visually compelling commercial spaces that reflect your brand identity. Our approach focuses on creating environments that enhance customer experience and support business growth.",
+          "includes": [
+            "Brand-oriented design concept",
+            "Functional zoning and space planning",
+            "Furniture and lighting selection"
+          ],
+          "investment": "from 10 € / m²",
+          "investmentNote": "Approx. on size",
+          "imageAlt": "Modern commercial interior design"
+        },
+        {
+          "title": "Living Room and Kitchen Design",
+          "description": "We transform the most important areas of your home into cohesive and inviting spaces. The design balances aesthetics and functionality, ensuring comfort for everyday living and social interaction.",
+          "includes": [
+            "Layout and space optimization",
+            "Furniture and kitchen planning",
+            "Decorative styling and finishing details"
+          ],
+          "investment": "from 10 € / m²",
+          "investmentNote": "Approx. on size",
+          "imageAlt": "Living room and kitchen design"
+        }
+      ]
+    },
+    "processTimeline": {
+      "eyebrow": "Process",
+      "index": "03",
+      "script": "Process",
+      "title": "A Refined Design Process",
+      "subtitle": "A composed, transparent journey shaped through clarity, thoughtful guidance, and a careful attention to every detail.",
+      "steps": [
+        {
+          "title": "Discovery Call",
+          "description": "We begin with a detailed consultation to understand your vision, lifestyle, and expectations. This step allows us to align on goals and define the direction of the project."
+        },
+        {
+          "title": "Contract Proposal",
+          "description": "We prepare a tailored proposal outlining the scope, timeline, and budget. Clear structure and transparency ensure confidence before moving forward."
+        },
+        {
+          "title": "Initial Concept",
+          "description": "Our team develops a refined design concept, including layout, materials, and visual direction. Every element is carefully considered to match your vision."
+        },
+        {
+          "title": "Project Implementation",
+          "description": "We manage the full execution process, coordinating contractors and ensuring every detail meets the highest standards of quality and precision."
+        },
+        {
+          "title": "Finishing Touches",
+          "description": "The final stage is about refinement. We complete styling, balance the composition, and ensure the finished space feels polished, harmonious, and truly exceptional."
+        }
+      ]
+    },
+    "pageHero": {
+      "imageAlt": "Luxury interior design services",
+      "eyebrow": "Services",
+      "title": "Design Services"
+    },
+    "fullWidthImageBand": {
+      "imageAlt": "Luxury interior with refined architectural lines and warm atmosphere"
+    }
+  },
+  "about": {
+    "pageHero": {
+      "imageAlt": "Founder of Zlatovcen Art Design",
+      "eyebrow": "Studio",
+      "title": "Our Story"
+    },
+    "founderEditorial": {
+      "eyebrow": "Founder",
+      "index": "01",
+      "title": "I have always believed",
+      "textLeft": "that interior design is more than just creating beautiful spaces — it is about crafting environments that inspire comfort, calm, and a lasting emotional connection.",
+      "textRight": "My approach to design is centered around timeless beauty, measured restraint, and modern functionality — each interior should reflect the unique identity of the person who lives within it.",
+      "images": {
+        "leftAlt": "Elegant neutral interior detail",
+        "founderAlt": "Founder Viktor Zlatovchen",
+        "rightAlt": "Luxury interior atmosphere detail"
+      }
+    },
+    "statementBanner": {
+      "imageAlt": "Luxury modern interior",
+      "eyebrow": "Meticulous",
+      "title": "With meticulous attention to detail and an unwavering commitment to quality, we design spaces that are as exceptional as you are.",
+      "cta": "View Portfolio"
+    }
+  },
+  "contact": {
+    "pageHero": {
+      "imageAlt": "Luxury contact page hero interior",
+      "eyebrow": "Contact",
+      "title": "Get in Touch"
+    },
+    "formSection": {
+      "eyebrow": "Contact",
+      "index": "01",
+      "script": "Contact",
+      "title": "We Are Ready to Help You Elevate Your Space",
+      "description": "Share a few details about your project and we will get back to you with a thoughtful, tailored response.",
+      "submit": "Start Your Journey",
+      "note": "We usually reply within 1–2 business days.",
+      "imageAlt": "Elegant studio interior with refined seating area",
+      "fields": {
+        "name": {
+          "label": "Your Name",
+          "placeholder": "Your Name"
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "Email Address"
+        },
+        "service": {
+          "label": "Service Interested In",
+          "placeholder": "Service Interested In"
+        },
+        "message": {
+          "label": "Write Your Message Here",
+          "placeholder": "Write Your Message Here"
+        }
+      },
+      "serviceOptions": [
+        "Residential Design",
+        "Commercial Interiors",
+        "Furniture & Styling",
+        "Design Consultation",
+        "Full Interior Project"
+      ]
+    },
+    "infoBar": {
+      "accessibility": {
+        "title": "Studio contact information"
+      },
+      "items": {
+        "emailPhone": {
+          "eyebrow": "Our Email & Phone"
+        },
+        "address": {
+          "eyebrow": "Studio Address",
+          "line1": "123 Peachtree Lane,",
+          "line2": "Suite 400 Atlanta, GA 30309"
+        },
+        "hours": {
+          "eyebrow": "Studio Hours",
+          "line1": "Monday – Friday",
+          "line2": "10am – 6pm"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "index": "02",
+      "script": "Answers",
+      "title": "Your Queries Answered",
+      "subtitle": "A few essential answers about our process, collaboration, and design approach.",
+      "groups": [
+        {
+          "imageAlt": "Elegant neutral interior with refined seating area",
+          "badge": "Studio Detail",
+          "items": [
+            {
+              "question": "What services do you offer?",
+              "answer": "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions. Our services also include project management and renovation design."
+            },
+            {
+              "question": "How do I start a project with your studio?",
+              "answer": "We begin with a personal consultation to understand your vision, lifestyle, and spatial needs. From there, we shape a tailored design direction, timeline, and scope for the project."
+            },
+            {
+              "question": "Do you work on full-home transformations?",
+              "answer": "Yes, we design complete residential environments as well as selected rooms. Each project is approached with the same level of detail, cohesion, and material sensitivity."
+            }
+          ]
+        },
+        {
+          "imageAlt": "Luxury living room with sculpted furniture composition",
+          "badge": "Interior Atmosphere",
+          "items": [
+            {
+              "question": "Can you work remotely on a project?",
+              "answer": "Yes, we can collaborate remotely depending on the scope and location. We structure the process carefully to maintain clarity, visual precision, and a seamless client experience."
+            },
+            {
+              "question": "Do you assist with furniture and material selection?",
+              "answer": "Absolutely. We curate furniture, finishes, lighting, and decor to ensure that every element supports the broader atmosphere and identity of the interior."
+            },
+            {
+              "question": "How long does an interior design project usually take?",
+              "answer": "The timeline depends on the scale and complexity of the project. After the initial consultation, we provide a clear process outline with estimated phases and delivery timing."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blog": {
+    "pageHero": {
+      "imageAlt": "Luxury interior blog page hero",
+      "eyebrow": "Journal",
+      "title": "Design Journal"
+    },
+    "featuredPost": {
+      "eyebrow": "Journal",
+      "index": "01",
+      "script": "Featured",
+      "badge": "Editorial Selection",
+      "imageAlt": "Featured luxury interior blog post preview",
+      "meta": {
+        "category": "Design Insight",
+        "date": "April 23, 2025"
+      },
+      "title": "The Role of Art in Luxury Interior Design",
+      "text": "A closer look at how art, material depth, and spatial restraint shape interiors that feel timeless, composed, and deeply personal.",
+      "cta": "Read Post"
+    },
+    "latestPosts": {
+      "eyebrow": "Design Journal",
+      "index": "02",
+      "script": "Journal",
+      "title": "Latest Posts",
+      "subtitle": "Curated perspectives on interiors, atmosphere, materials, and the subtle decisions that define timeless design.",
+      "cta": "Read Post",
+      "posts": [
+        {
+          "title": "The Role of Art in Luxury Interior Design.",
+          "category": "Design Insight"
+        },
+        {
+          "title": "Color-Palettes for Interiors: The Guide",
+          "category": "Materials & Tone"
+        },
+        {
+          "title": "Small Touches That Make an Impact in Design.",
+          "category": "Styling Notes"
+        },
+        {
+          "title": "The Role of Art in Luxury Interior Design.",
+          "category": "Design Insight"
+        }
+      ]
+    }
+  },
+  "portfolio": {
+    "detailHero": {
+      "defaultEyebrow": "Project"
+    },
+    "pageHero": {
+      "imageAlt": "Luxury modern bedroom interior",
+      "eyebrow": "Portfolio",
+      "title": "Selected Projects"
+    },
+    "gallery": {
+      "titleLine1": "Explore Our Gallery",
+      "titleLine2": "of Sophisticated Interiors",
+      "details": "Details",
+      "openProject": "Open {{title}} project"
+    },
+    "values": {
+      "accessibility": {
+        "title": "Portfolio values"
+      },
+      "items": [
+        {
+          "title": "Exclusive",
+          "description": "We create exclusive interiors tailored to the unique tastes and needs of our discerning clients."
+        },
+        {
+          "title": "Opulent",
+          "description": "We specialize in crafting opulent environments where luxury is felt in every corner of the space."
+        },
+        {
+          "title": "Innovative",
+          "description": "Each project combines innovative design with cutting-edge materials to push creative boundaries."
+        }
+      ]
+    }
+  }
+}

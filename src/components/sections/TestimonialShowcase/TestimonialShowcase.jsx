@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import './testimonialShowcase.scss';
 
 const TestimonialShowcase = () => {
+    const { t } = useTranslation();
+
     return (
         <section className='testimonial-showcase' aria-labelledby='testimonial-showcase-title'>
             <div className='testimonial-showcase__overlay testimonial-showcase__overlay--base' />
@@ -13,14 +16,18 @@ const TestimonialShowcase = () => {
             <Container>
                 <div className='testimonial-showcase__inner'>
                     <div className='testimonial-showcase__topline'>
-                        <span className='testimonial-showcase__eyebrow'>Testimonial</span>
+                        <span className='testimonial-showcase__eyebrow'>{t('home.testimonialShowcase.eyebrow')}</span>
                         <span className='testimonial-showcase__topline-line' aria-hidden='true' />
-                        <span className='testimonial-showcase__index'>04</span>
+                        <span className='testimonial-showcase__index'>{t('home.testimonialShowcase.index')}</span>
                     </div>
 
                     <div className='testimonial-showcase__panel'>
+                        <div className='testimonial-showcase__script-wrap' aria-hidden='true'>
+                            <span className='testimonial-showcase__script'>{t('home.testimonialShowcase.script')}</span>
+                        </div>
+
                         <h2 className='sr-only' id='testimonial-showcase-title'>
-                            Client testimonial
+                            {t('home.testimonialShowcase.accessibility.title')}
                         </h2>
 
                         <span className='testimonial-showcase__quote-mark' aria-hidden='true'>
@@ -28,16 +35,17 @@ const TestimonialShowcase = () => {
                         </span>
 
                         <blockquote className='testimonial-showcase__quote'>
-                            Every detail felt intentional, refined, and beautifully resolved from beginning to end.
+                            {t('home.testimonialShowcase.quote')}
                         </blockquote>
 
                         <p className='testimonial-showcase__note'>
-                            Working with Zlatovchen Art Design was seamless throughout the entire process.
+                            {t('home.testimonialShowcase.note')}
                         </p>
 
                         <div className='testimonial-showcase__author-block'>
-                            <span className='testimonial-showcase__author'>Luke Collins</span>
-                            <span className='testimonial-showcase__author-role'>Private Client</span>
+                            <span className='testimonial-showcase__author-line' aria-hidden='true' />
+                            <span className='testimonial-showcase__author'>{t('home.testimonialShowcase.author')}</span>
+                            <span className='testimonial-showcase__author-role'>{t('home.testimonialShowcase.role')}</span>
                         </div>
                     </div>
                 </div>

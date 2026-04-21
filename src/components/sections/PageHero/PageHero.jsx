@@ -13,7 +13,7 @@ const PageHero = ({
     const contentClassName = ['page-hero__content', `page-hero__content--${contentWidth}`].join(' ');
 
     return (
-        <section className='page-hero' aria-labelledby='page-hero-title'>
+        <section className='page-hero page-hero--animated' aria-labelledby='page-hero-title'>
             <div className='page-hero__media' aria-hidden='true'>
                 <img src={image} alt={imageAlt} className='page-hero__image' />
             </div>

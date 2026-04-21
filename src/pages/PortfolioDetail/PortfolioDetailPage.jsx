@@ -1,16 +1,17 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import ProjectOverview from '../../components/sections/ProjectOverview/ProjectOverview.jsx';
 import ProjectEditorialGallery from '../../components/sections/ProjectEditorialGallery/ProjectEditorialGallery.jsx';
 import ProjectPager from '../../components/sections/ProjectPager/ProjectPager.jsx';
 import { portfolioProjects } from '../../data/portfolioProjects.js';
+import ProjectStatementBanner from '../../components/sections/ProjectStatementBanner/ProjectStatementBanner.jsx';
 import './portfolioDetailPage.scss';
-import CTA from "../../components/sections/CTA/CTA.jsx";
-import ProjectStatementBanner from "../../components/sections/ProjectStatementBanner/ProjectStatementBanner.jsx";
 
 const PortfolioDetailPage = () => {
+    const { t } = useTranslation();
     const { id } = useParams();
 
     const currentIndex = portfolioProjects.findIndex((project) => project.id === id);
@@ -23,11 +24,17 @@ const PortfolioDetailPage = () => {
     const previousProject = currentIndex > 0 ? portfolioProjects[currentIndex - 1] : null;
     const nextProject = currentIndex < portfolioProjects.length - 1 ? portfolioProjects[currentIndex + 1] : null;
 
+    const heroEyebrow =
+        project.heroEyebrow ||
+        project.serviceType ||
+        t('portfolio.detailHero.defaultEyebrow');
+
     return (
         <div className='portfolio-detail-page'>
             <PageHero
                 image={project.heroImage}
                 imageAlt={project.heroAlt || project.title}
+                eyebrow={heroEyebrow}
                 title={project.title}
                 contentWidth='wide'
             />
@@ -55,7 +62,6 @@ const PortfolioDetailPage = () => {
                 previousProject={previousProject}
                 nextProject={nextProject}
             />
-
         </div>
     );
 };

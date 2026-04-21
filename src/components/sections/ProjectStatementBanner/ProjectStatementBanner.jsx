@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Container from '../../ui/Container/Container.jsx';
 import './projectStatementBanner.scss';
 
 const ProjectStatementBanner = ({
@@ -12,21 +11,25 @@ const ProjectStatementBanner = ({
                                 }) => {
     return (
         <section className='project-statement-banner' aria-labelledby='project-statement-banner-title'>
-            <Container size='wide'>
-                <div className='project-statement-banner__inner'>
-                    <div className='project-statement-banner__media'>
-                        <img
-                            src={image}
-                            alt={imageAlt}
-                            className='project-statement-banner__image'
-                        />
-                    </div>
+            <div className='project-statement-banner__media'>
+                <img
+                    src={image}
+                    alt={imageAlt}
+                    className='project-statement-banner__image'
+                />
 
-                    <div className='project-statement-banner__overlay' />
+                <div className='project-statement-banner__overlay project-statement-banner__overlay--base' />
+                <div className='project-statement-banner__overlay project-statement-banner__overlay--vignette' />
+                <div className='project-statement-banner__overlay project-statement-banner__overlay--glow' />
 
-                    <div className='project-statement-banner__card'>
-                        <div className='project-statement-banner__icon' aria-hidden='true'>
-                            ✧
+                <div className='project-statement-banner__panel'>
+                    <div className='project-statement-banner__panel-inner'>
+                        <div className='project-statement-banner__topline'>
+                            <span className='project-statement-banner__eyebrow'>Design Statement</span>
+                            <span className='project-statement-banner__topline-line' aria-hidden='true' />
+                            <span className='project-statement-banner__icon' aria-hidden='true'>
+                                ✦
+                            </span>
                         </div>
 
                         <h2 className='project-statement-banner__sr-only' id='project-statement-banner-title'>
@@ -35,14 +38,12 @@ const ProjectStatementBanner = ({
 
                         <p className='project-statement-banner__text'>{text}</p>
 
-                        <span className='project-statement-banner__divider' aria-hidden='true' />
-
                         <NavLink to={buttonTo} className='project-statement-banner__button'>
                             {buttonLabel}
                         </NavLink>
                     </div>
                 </div>
-            </Container>
+            </div>
         </section>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import hero1 from '../../../assets/images/hero/hero-1.jpg';
 import hero2 from '../../../assets/images/hero/hero-2.jpg';
@@ -11,43 +12,46 @@ import './hero.scss';
 
 const AUTOPLAY_DELAY = 7000;
 
-const slides = [
-    {
-        id: 1,
-        image: hero1,
-        alt: 'Luxury bedroom interior with elegant neutral tones',
-    },
-    {
-        id: 2,
-        image: hero2,
-        alt: 'Premium living room interior with refined furniture composition',
-    },
-    {
-        id: 3,
-        image: hero3,
-        alt: 'Elegant residential interior with soft daylight',
-    },
-    {
-        id: 4,
-        image: hero4,
-        alt: 'Luxury interior design space with sculptural decor',
-    },
-    {
-        id: 5,
-        image: hero5,
-        alt: 'Sophisticated modern bedroom with premium styling',
-    },
-    {
-        id: 6,
-        image: hero6,
-        alt: 'High-end interior design composition with warm atmosphere',
-    },
-];
-
 const Hero = () => {
+    const { t } = useTranslation();
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
     const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+    const slides = useMemo(
+        () => [
+            {
+                id: 1,
+                image: hero1,
+                alt: t('home.hero.slides.1.alt'),
+            },
+            {
+                id: 2,
+                image: hero2,
+                alt: t('home.hero.slides.2.alt'),
+            },
+            {
+                id: 3,
+                image: hero3,
+                alt: t('home.hero.slides.3.alt'),
+            },
+            {
+                id: 4,
+                image: hero4,
+                alt: t('home.hero.slides.4.alt'),
+            },
+            {
+                id: 5,
+                image: hero5,
+                alt: t('home.hero.slides.5.alt'),
+            },
+            {
+                id: 6,
+                image: hero6,
+                alt: t('home.hero.slides.6.alt'),
+            },
+        ],
+        [t]
+    );
 
     const totalSlides = slides.length;
 
@@ -73,18 +77,18 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-        if (isReducedMotion || isPaused || totalSlides <= 1) {
+        if (isReducedMotion || totalSlides <= 1) {
             return undefined;
         }
 
-        const intervalId = window.setInterval(() => {
+        const timeoutId = window.setTimeout(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % totalSlides);
         }, AUTOPLAY_DELAY);
 
         return () => {
-            window.clearInterval(intervalId);
+            window.clearTimeout(timeoutId);
         };
-    }, [isPaused, isReducedMotion, totalSlides]);
+    }, [activeIndex, isReducedMotion, totalSlides]);
 
     const currentSlideNumber = useMemo(() => String(activeIndex + 1).padStart(2, '0'), [activeIndex]);
     const totalSlideNumber = useMemo(() => String(totalSlides).padStart(2, '0'), [totalSlides]);
@@ -94,12 +98,7 @@ const Hero = () => {
     };
 
     return (
-        <section
-            className='hero'
-            aria-label='Luxury interior design hero section'
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-        >
+        <section className='hero hero--animated' aria-label={t('home.hero.accessibility.sectionLabel')}>
             <div className='hero__media' aria-hidden='true'>
                 {slides.map((slide, index) => (
                     <div
@@ -119,23 +118,26 @@ const Hero = () => {
             <Container size='wide'>
                 <div className='hero__inner'>
                     <div className='hero__content'>
-                        <span className='hero__eyebrow'>Interior Design Studio</span>
+                        <span className='hero__eyebrow'>{t('home.hero.eyebrow')}</span>
 
                         <h1 className='hero__title'>
-                            Luxury Interior Design
+                            {t('home.hero.titleLine1')}
                             <br />
-                            Tailored for You.
+                            {t('home.hero.titleLine2')}
                         </h1>
 
                         <div className='hero__actions'>
                             <NavLink to='/services' className='hero__button'>
-                                Our Services
+                                {t('home.hero.cta')}
                             </NavLink>
                         </div>
                     </div>
 
                     <div className='hero__bottom'>
-                        <div className='hero__pagination' aria-label='Hero slides navigation'>
+                        <div
+                            className='hero__pagination'
+                            aria-label={t('home.hero.accessibility.slidesNavigation')}
+                        >
                             <span className='hero__counter'>
                                 {currentSlideNumber}
                                 <span className='hero__counter-separator'>/</span>
@@ -148,7 +150,7 @@ const Hero = () => {
                                         key={slide.id}
                                         type='button'
                                         className={`hero__dot ${index === activeIndex ? 'hero__dot--active' : ''}`}
-                                        aria-label={`Go to hero slide ${index + 1}`}
+                                        aria-label={t('home.hero.accessibility.goToSlide', { number: index + 1 })}
                                         aria-pressed={index === activeIndex}
                                         onClick={() => handleDotClick(index)}
                                     />

@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import './portfolioValues.scss';
 
-const values = [
-    {
-        id: 'exclusive',
-        title: 'Exclusive',
-        description:
-            'We create exclusive interiors tailored to the unique tastes and needs of our discerning clients.',
-    },
-    {
-        id: 'opulent',
-        title: 'Opulent',
-        description:
-            'We specialize in crafting opulent environments where luxury is felt in every corner of the space.',
-    },
-    {
-        id: 'innovative',
-        title: 'Innovative',
-        description:
-            'Each project combines innovative design with cutting-edge materials to push creative boundaries.',
-    },
-];
-
 const PortfolioValues = () => {
+    const { t } = useTranslation();
+
+    const values = useMemo(
+        () => [
+            {
+                id: 'exclusive',
+                title: t('portfolio.values.items.0.title'),
+                description: t('portfolio.values.items.0.description'),
+            },
+            {
+                id: 'opulent',
+                title: t('portfolio.values.items.1.title'),
+                description: t('portfolio.values.items.1.description'),
+            },
+            {
+                id: 'innovative',
+                title: t('portfolio.values.items.2.title'),
+                description: t('portfolio.values.items.2.description'),
+            },
+        ],
+        [t]
+    );
+
     return (
         <section className='portfolio-values' aria-labelledby='portfolio-values-title'>
             <Container>
                 <div className='portfolio-values__inner'>
                     <h2 className='portfolio-values__sr-only' id='portfolio-values-title'>
-                        Portfolio values
+                        {t('portfolio.values.accessibility.title')}
                     </h2>
 
                     <div className='portfolio-values__grid'>

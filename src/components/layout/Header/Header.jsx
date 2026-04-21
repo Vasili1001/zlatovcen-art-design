@@ -1,28 +1,31 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import LanguageSwitcher from '../../ui/LanguageSwitcher/LanguageSwitcher.jsx';
+import Logo from '../../ui/Logo/Logo.jsx';
 import './header.scss';
 
 const Header = () => {
+    const { t } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
     const leftLinks = useMemo(
         () => [
-            { to: '/', label: 'Home' },
-            { to: '/portfolio', label: 'Portfolio' },
-            { to: '/services', label: 'Services' },
+            { to: '/', label: t('header.nav.home') },
+            { to: '/portfolio', label: t('header.nav.portfolio') },
+            { to: '/services', label: t('header.nav.services') },
         ],
-        []
+        [t]
     );
 
     const rightLinks = useMemo(
         () => [
-            { to: '/about', label: 'About' },
-            { to: '/blog', label: 'Blog' },
+            { to: '/about', label: t('header.nav.about') },
+            { to: '/blog', label: t('header.nav.blog') },
         ],
-        []
+        [t]
     );
 
     const mobileMainLinks = useMemo(() => [...leftLinks, ...rightLinks], [leftLinks, rightLinks]);
@@ -68,7 +71,11 @@ const Header = () => {
                         <button
                             type='button'
                             className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
-                            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                            aria-label={
+                                isMenuOpen
+                                    ? t('header.accessibility.closeNavigationMenu')
+                                    : t('header.accessibility.openNavigationMenu')
+                            }
                             aria-expanded={isMenuOpen}
                             aria-controls='mobile-navigation'
                             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -79,7 +86,10 @@ const Header = () => {
                         </button>
 
                         <div className='header__desktop header__desktop--left'>
-                            <nav className='header__nav header__nav--left' aria-label='Primary navigation left'>
+                            <nav
+                                className='header__nav header__nav--left'
+                                aria-label={t('header.accessibility.primaryNavigationLeft')}
+                            >
                                 {leftLinks.map((link) => (
                                     <NavLink key={link.to} to={link.to} className={getNavLinkClassName}>
                                         {link.label}
@@ -88,13 +98,13 @@ const Header = () => {
                             </nav>
                         </div>
 
-                        <NavLink to='/' className='header__logo' aria-label='ZLATOVCEN ART DESIGN home page'>
-                            <span className='header__logo-mark'>Z</span>
-                            <span className='header__logo-text'>Art Design</span>
-                        </NavLink>
+                        <Logo />
 
                         <div className='header__desktop header__desktop--right'>
-                            <nav className='header__nav header__nav--right' aria-label='Primary navigation right'>
+                            <nav
+                                className='header__nav header__nav--right'
+                                aria-label={t('header.accessibility.primaryNavigationRight')}
+                            >
                                 {rightLinks.map((link) => (
                                     <NavLink key={link.to} to={link.to} className={getNavLinkClassName}>
                                         {link.label}
@@ -105,7 +115,7 @@ const Header = () => {
                             <div className='header__utilities'>
                                 <LanguageSwitcher />
                                 <NavLink to='/contact' className={getContactLinkClassName}>
-                                    Contact
+                                    {t('header.nav.contact')}
                                 </NavLink>
                             </div>
                         </div>
@@ -120,18 +130,21 @@ const Header = () => {
                     <Container className='header__mobile-container'>
                         <div className='header__mobile-shell'>
                             <div className='header__mobile-topline'>
-                                <span className='header__mobile-caption'>Zlatovcen Art Design</span>
-                                <span className='header__mobile-divider'/>
+                                <span className='header__mobile-caption'>{t('header.mobile.brand')}</span>
+                                <span className='header__mobile-divider' />
                             </div>
 
-                            <nav className='header__mobile-nav' aria-label='Mobile navigation'>
+                            <nav
+                                className='header__mobile-nav'
+                                aria-label={t('header.accessibility.mobileNavigation')}
+                            >
                                 {mobileMainLinks.map((link, index) => (
                                     <NavLink
                                         key={link.to}
                                         to={link.to}
                                         className={getMobileNavLinkClassName}
                                         onClick={closeMenu}
-                                        style={{'--item-index': index}}
+                                        style={{ '--item-index': index }}
                                     >
                                         <span className='header__mobile-link-index'>
                                             {String(index + 1).padStart(2, '0')}
@@ -143,8 +156,7 @@ const Header = () => {
 
                             <div className='header__mobile-footer'>
                                 <div className='header__mobile-note'>
-                                    Bespoke interiors shaped through refined minimalism, material depth, and timeless
-                                    elegance.
+                                    {t('header.mobile.note')}
                                 </div>
 
                                 <div className='header__mobile-actions'>
@@ -153,10 +165,11 @@ const Header = () => {
                                         className={getMobileContactLinkClassName}
                                         onClick={closeMenu}
                                     >
-                                        Contact Studio
+                                        {t('header.mobile.contactStudio')}
                                     </NavLink>
+
                                     <div className='header__mobile-language'>
-                                        <LanguageSwitcher/>
+                                        <LanguageSwitcher />
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +181,7 @@ const Header = () => {
             <button
                 type='button'
                 className={`header__backdrop ${isMenuOpen ? 'header__backdrop--visible' : ''}`}
-                aria-label='Close menu backdrop'
+                aria-label={t('header.accessibility.closeMenuBackdrop')}
                 aria-hidden={!isMenuOpen}
                 tabIndex={isMenuOpen ? 0 : -1}
                 onClick={closeMenu}

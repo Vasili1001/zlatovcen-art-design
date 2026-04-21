@@ -1,0 +1,100 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  &__title {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+
+    background: linear-gradient(
+                    135deg,
+                    #f5e6c8 0%,
+                    #e6c98f 20%,
+                    #c3a46a 40%,
+                    #f1d9a5 55%,
+                    #b8965a 70%,
+                    #f5e6c8 100%
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    animation: logoGoldShimmer 8s linear infinite;
+  }
+
+  &__subtitle {
+    margin-top: 4px;
+    font-family: var(--font-primary);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-align: center;
+
+    background: linear-gradient(
+                    135deg,
+                    rgba(245, 230, 200, 0.85),
+                    rgba(195, 164, 106, 0.7)
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* subtle luxury shimmer */
+@keyframes logoGoldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .logo {
+    gap: 12px;
+
+    &__icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    &__title {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+    }
+
+    &__subtitle {
+      font-size: 8px;
+      letter-spacing: 0.24em;
+    }
+  }
+}

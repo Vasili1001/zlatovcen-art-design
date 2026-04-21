@@ -1,45 +1,68 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import founderImage from '../../../assets/images/founder/founder-viktor.jpg';
 import './aboutFounder.scss';
 
 const AboutFounder = () => {
+    const { t } = useTranslation();
+
     return (
         <section className='about-founder' aria-labelledby='about-founder-title'>
-            <Container>
+            <Container size='wide'>
                 <div className='about-founder__inner'>
-                    <div className='about-founder__media'>
-                        <div className='about-founder__image-wrap'>
-                            <img
-                                src={founderImage}
-                                alt='Viktor Zlatovchen, founder of Zlatovchen Art Design'
-                                className='about-founder__image'
-                            />
-                        </div>
+                    <div className='about-founder__topline'>
+                        <span className='about-founder__eyebrow'>{t('home.aboutFounder.eyebrow')}</span>
+                        <span className='about-founder__topline-line' aria-hidden='true' />
+                        <span className='about-founder__index'>{t('home.aboutFounder.index')}</span>
                     </div>
 
-                    <div className='about-founder__content'>
-                        <span className='about-founder__eyebrow'>Welcome</span>
+                    <div className='about-founder__layout'>
+                        <div className='about-founder__content'>
+                            <div className='about-founder__script-wrap' aria-hidden='true'>
+                                <span className='about-founder__script'>{t('home.aboutFounder.script')}</span>
+                            </div>
 
-                        <h2 className='about-founder__title' id='about-founder-title'>
-                            I Am Viktor Zlatovchen
-                        </h2>
+                            <span className='about-founder__kicker'>{t('home.aboutFounder.kicker')}</span>
 
-                        <p className='about-founder__text'>
-                            As the founder of Zlatovchen Art Design, I’ve always believed that interior
-                            design is more than just creating beautiful spaces — it’s about crafting
-                            environments that inspire, comfort, and elevate the everyday experience.
-                        </p>
+                            <h2 className='about-founder__title' id='about-founder-title'>
+                                {t('home.aboutFounder.name')}
+                            </h2>
 
-                        <div className='about-founder__actions'>
-                            <NavLink to='/about' className='about-founder__button about-founder__button--primary'>
-                                Our Team
-                            </NavLink>
+                            <p className='about-founder__lead'>
+                                {t('home.aboutFounder.lead')}
+                            </p>
 
-                            <NavLink to='/contact' className='about-founder__button about-founder__button--secondary'>
-                                Get in Touch
-                            </NavLink>
+                            <div className='about-founder__statement'>
+                                <span className='about-founder__statement-line' aria-hidden='true' />
+                                <p className='about-founder__text'>
+                                    {t('home.aboutFounder.text')}
+                                </p>
+                            </div>
+
+                            <div className='about-founder__actions'>
+                                <NavLink to='/about' className='about-founder__button about-founder__button--primary'>
+                                    {t('home.aboutFounder.ctaPrimary')}
+                                </NavLink>
+
+                                <NavLink to='/contact' className='about-founder__button about-founder__button--secondary'>
+                                    {t('home.aboutFounder.ctaSecondary')}
+                                </NavLink>
+                            </div>
+                        </div>
+
+                        <div className='about-founder__media'>
+                            <div className='about-founder__media-shell'>
+                                <div className='about-founder__media-plane' aria-hidden='true' />
+                                <div className='about-founder__image-wrap'>
+                                    <img
+                                        src={founderImage}
+                                        alt={t('home.aboutFounder.imageAlt')}
+                                        className='about-founder__image'
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

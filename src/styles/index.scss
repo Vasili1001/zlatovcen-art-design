@@ -15,8 +15,31 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #191717;
 
   &__main {
+    position: relative;
     flex: 1;
+    background: #191717;
+  }
+
+  &__page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  &__route-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+            linear-gradient(
+                            180deg,
+                            rgba(18, 16, 16, 0.16) 0%,
+                            rgba(18, 16, 16, 0.1) 38%,
+                            rgba(18, 16, 16, 0.14) 100%
+            );
   }
 }

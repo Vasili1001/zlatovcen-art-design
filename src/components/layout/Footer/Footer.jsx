@@ -1,33 +1,27 @@
 import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SiInstagram, SiFacebook } from 'react-icons/si';
+import { useTranslation } from 'react-i18next';
 
 import Container from '../../ui/Container/Container.jsx';
+import Logo from '../../ui/Logo/Logo.jsx';
 import './footer.scss';
 
-import footerImg1 from '../../../assets/images/footer/footer-gallery-1.webp';
-import footerImg2 from '../../../assets/images/footer/footer-gallery-2.webp';
-import footerImg3 from '../../../assets/images/footer/footer-gallery-3.webp';
-import footerImg4 from '../../../assets/images/footer/footer-gallery-4.webp';
-
-const footerLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/portfolio', label: 'Portfolio' },
-    { to: '/services', label: 'Services' },
-    { to: '/about', label: 'About' },
-    { to: '/blog', label: 'Blog' },
-    { to: '/contact', label: 'Contact' },
-];
-
-const galleryItems = [
-    { src: footerImg1, alt: 'Elegant interior detail' },
-    { src: footerImg2, alt: 'Luxury seating area' },
-    { src: footerImg3, alt: 'Refined interior passage' },
-    { src: footerImg4, alt: 'Minimal premium interior' },
-];
-
 const Footer = () => {
+    const { t } = useTranslation();
     const year = useMemo(() => new Date().getFullYear(), []);
+
+    const footerLinks = useMemo(
+        () => [
+            { to: '/', label: t('footer.nav.home') },
+            { to: '/portfolio', label: t('footer.nav.portfolio') },
+            { to: '/services', label: t('footer.nav.services') },
+            { to: '/about', label: t('footer.nav.about') },
+            { to: '/blog', label: t('footer.nav.blog') },
+            { to: '/contact', label: t('footer.nav.contact') },
+        ],
+        [t]
+    );
 
     return (
         <footer className='footer'>
@@ -37,21 +31,17 @@ const Footer = () => {
                 <div className='footer__inner'>
                     <div className='footer__top'>
                         <div className='footer__brand'>
-                            <NavLink to='/' className='footer__logo' aria-label='ZLATOVCEN ART DESIGN home page'>
-                                <span className='footer__logo-mark'>Z</span>
-                                <span className='footer__logo-text'>Art Design</span>
-                            </NavLink>
+                            <Logo />
 
                             <p className='footer__brand-note'>
-                                Bespoke interior design shaped through timeless restraint, material depth, and refined
-                                composition.
+                                {t('footer.brand.note')}
                             </p>
                         </div>
 
                         <div className='footer__nav-block'>
-                            <span className='footer__eyebrow'>Navigation</span>
+                            <span className='footer__eyebrow'>{t('footer.sections.navigation')}</span>
 
-                            <nav className='footer__nav' aria-label='Footer navigation'>
+                            <nav className='footer__nav' aria-label={t('footer.accessibility.footerNavigation')}>
                                 {footerLinks.map((link) => (
                                     <NavLink
                                         key={link.to}
@@ -68,24 +58,24 @@ const Footer = () => {
                         </div>
 
                         <div className='footer__contact'>
-                            <span className='footer__eyebrow'>Contact</span>
+                            <span className='footer__eyebrow'>{t('footer.sections.contact')}</span>
 
                             <a className='footer__email' href='mailto:info@victor.abc'>
                                 info@victor.abc
                             </a>
 
                             <address className='footer__address'>
-                                123 Bogdan Voievod,
+                                {t('footer.contact.addressLine1')}
                                 <br />
-                                Suite 400 Atlanta, GA 30309
+                                {t('footer.contact.addressLine2')}
                             </address>
 
-                            <div className='footer__socials' aria-label='Social links'>
+                            <div className='footer__socials' aria-label={t('footer.accessibility.socialLinks')}>
                                 <a
                                     href='https://instagram.com'
                                     target='_blank'
                                     rel='noreferrer'
-                                    aria-label='Instagram'
+                                    aria-label={t('footer.social.instagram')}
                                     className='footer__social-link'
                                 >
                                     <SiInstagram className='icon' />
@@ -95,14 +85,16 @@ const Footer = () => {
                                     href='https://facebook.com'
                                     target='_blank'
                                     rel='noreferrer'
-                                    aria-label='Facebook'
+                                    aria-label={t('footer.social.facebook')}
                                     className='footer__social-link'
                                 >
                                     <SiFacebook className='icon' />
                                 </a>
                             </div>
 
-                            <p className='footer__copy'>© {year} ZLATOVCEN ART DESIGN</p>
+                            <p className='footer__copy'>
+                                © {year} {t('footer.copy')}
+                            </p>
                         </div>
                     </div>
                 </div>
