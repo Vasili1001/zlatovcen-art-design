@@ -214,7 +214,7 @@
 @media (max-width: 767px) {
   .project-overview {
     &__inner {
-      padding-top: 72px;
+      padding-top: 58px;
     }
 
     &__head,
@@ -225,62 +225,69 @@
     }
 
     &__head {
-      max-width: 320px;
+      max-width: 300px;
     }
 
     &__thumb {
-      width: 44px;
-      height: 58px;
-      margin-bottom: 16px;
+      width: 40px;
+      height: 52px;
+      margin-bottom: 14px;
     }
 
     &__heading-copy {
-      gap: 8px;
+      gap: 7px;
     }
 
     &__eyebrow {
       font-size: 8px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
     }
 
     &__title {
-      max-width: 320px;
-      font-size: 32px;
-      line-height: 1.06;
+      max-width: 300px;
+      font-size: 29px;
+      line-height: 1.04;
+      letter-spacing: -0.022em;
     }
 
     &__content {
-      gap: 24px;
-      max-width: 320px;
-      margin-top: 30px;
+      gap: 20px;
+      max-width: 300px;
+      margin-top: 24px;
     }
 
-    &__description p,
-    &__value {
-      font-size: 14px;
-      line-height: 1.74;
+    &__description p {
+      font-size: 13px;
+      line-height: 1.66;
+      color: rgba(243, 238, 232, 0.76);
     }
 
     &__meta {
-      gap: 16px;
+      gap: 14px;
     }
 
     &__meta-block {
-      gap: 7px;
-      padding-left: 16px;
+      gap: 6px;
+      padding-left: 14px;
     }
 
     &__label {
-      font-size: 9px;
-      letter-spacing: 0.16em;
+      font-size: 8px;
+      letter-spacing: 0.14em;
+      color: rgba(243, 238, 232, 0.54);
+    }
+
+    &__value {
+      font-size: 13px;
+      line-height: 1.62;
+      color: rgba(243, 238, 232, 0.82);
     }
 
     &__divider {
-      margin-top: 34px;
+      margin-top: 28px;
     }
   }
 }
-
 @media (min-width: 768px) {
   .project-overview {
     &__inner {

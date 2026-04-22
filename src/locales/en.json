@@ -518,5 +518,25 @@
         }
       ]
     }
+  },
+  "notFound": {
+    "pageHero": {
+      "imageAlt": "Luxury interior background for not found page",
+      "eyebrow": "404",
+      "title": "Page Not Found",
+      "subtitle": "The page you were looking for may have been moved, removed, or no longer exists within the current structure of the site."
+    },
+    "content": {
+      "toplineLabel": "Page Missing",
+      "toplineIndex": "404",
+      "eyebrow": "Sorry",
+      "titleLine1": "The Page You Are Looking For",
+      "titleLine2": "Doesn't Exist.",
+      "subtitle": "The link may be outdated, the page may have moved, or the address may have been entered incorrectly. You can return to the homepage or continue exploring the studio.",
+      "actions": {
+        "backHome": "Back to Home",
+        "viewPortfolio": "View Portfolio"
+      }
+    }
   }
 }

@@ -7,7 +7,7 @@ import ProjectOverview from '../../components/sections/ProjectOverview/ProjectOv
 import ProjectEditorialGallery from '../../components/sections/ProjectEditorialGallery/ProjectEditorialGallery.jsx';
 import ProjectPager from '../../components/sections/ProjectPager/ProjectPager.jsx';
 import { portfolioProjects } from '../../data/portfolioProjects.js';
-import ProjectStatementBanner from '../../components/sections/ProjectStatementBanner/ProjectStatementBanner.jsx';
+// import ProjectStatementBanner from '../../components/sections/ProjectStatementBanner/ProjectStatementBanner.jsx';
 import './portfolioDetailPage.scss';
 
 const PortfolioDetailPage = () => {
@@ -51,12 +51,12 @@ const PortfolioDetailPage = () => {
 
             <ProjectEditorialGallery rows={project.galleryRows} />
 
-            {project.statementBannerImage ? (
-                <ProjectStatementBanner
-                    image={project.statementBannerImage}
-                    imageAlt={`${project.title} statement banner`}
-                />
-            ) : null}
+            {/*{project.statementBannerImage ? (*/}
+            {/*    <ProjectStatementBanner*/}
+            {/*        image={project.statementBannerImage}*/}
+            {/*        imageAlt={`${project.title} statement banner`}*/}
+            {/*    />*/}
+            {/*) : null}*/}
 
             <ProjectPager
                 previousProject={previousProject}

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import Container from '../../components/ui/Container/Container.jsx';
@@ -8,6 +9,7 @@ import notFoundThumbImage from '../../assets/images/blog-preview/post-1.jpg';
 import './notFoundPage.scss';
 
 const NotFoundPage = () => {
+    const { t } = useTranslation();
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -45,10 +47,10 @@ const NotFoundPage = () => {
         <div className='not-found-page'>
             <PageHero
                 image={notFoundHeroImage}
-                imageAlt='Luxury interior background for not found page'
-                eyebrow='404'
-                title='Page Not Found'
-                subtitle='The page you were looking for may have been moved, removed, or no longer exists within the current structure of the site.'
+                imageAlt={t('notFound.pageHero.imageAlt')}
+                eyebrow={t('notFound.pageHero.eyebrow')}
+                title={t('notFound.pageHero.title')}
+                subtitle={t('notFound.pageHero.subtitle')}
                 contentWidth='narrow'
                 height='compact'
                 align='center'
@@ -68,9 +70,13 @@ const NotFoundPage = () => {
                 <Container size='wide'>
                     <div className='not-found-page__inner'>
                         <div className='not-found-page__topline'>
-                            <span className='not-found-page__topline-label'>Page Missing</span>
+                            <span className='not-found-page__topline-label'>
+                                {t('notFound.content.toplineLabel')}
+                            </span>
                             <span className='not-found-page__topline-line' aria-hidden='true' />
-                            <span className='not-found-page__topline-index'>404</span>
+                            <span className='not-found-page__topline-index'>
+                                {t('notFound.content.toplineIndex')}
+                            </span>
                         </div>
 
                         <div className='not-found-page__intro'>
@@ -80,30 +86,31 @@ const NotFoundPage = () => {
                                 </div>
                             </div>
 
-                            <span className='not-found-page__eyebrow'>Sorry</span>
+                            <span className='not-found-page__eyebrow'>
+                                {t('notFound.content.eyebrow')}
+                            </span>
 
                             <h1 className='not-found-page__title' id='not-found-title'>
-                                The Page You Are Looking For
+                                {t('notFound.content.titleLine1')}
                                 <br />
-                                Doesn&apos;t Exist.
+                                {t('notFound.content.titleLine2')}
                             </h1>
 
                             <p className='not-found-page__subtitle'>
-                                The link may be outdated, the page may have moved, or the address may have been entered
-                                incorrectly. You can return to the homepage or continue exploring the studio.
+                                {t('notFound.content.subtitle')}
                             </p>
                         </div>
 
                         <div className='not-found-page__actions'>
                             <NavLink to='/' className='not-found-page__button not-found-page__button--primary'>
-                                Back to Home
+                                {t('notFound.content.actions.backHome')}
                             </NavLink>
 
                             <NavLink
                                 to='/portfolio'
                                 className='not-found-page__button not-found-page__button--secondary'
                             >
-                                View Portfolio
+                                {t('notFound.content.actions.viewPortfolio')}
                             </NavLink>
                         </div>
                     </div>

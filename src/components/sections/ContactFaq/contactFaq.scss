@@ -330,59 +330,61 @@
 @media (max-width: 767px) {
   .contact-faq {
     &__inner {
-      padding: 74px 0 86px;
+      padding: 62px 0 72px;
     }
 
     &__header {
-      max-width: 340px;
-      margin-bottom: 34px;
+      max-width: 320px;
+      margin-bottom: 28px;
       transform: translate3d(0, 16px, 0);
       transition-duration: 0.72s;
     }
 
     &__topline {
-      max-width: 340px;
+      max-width: 320px;
       gap: 10px;
-      margin-bottom: 14px;
+      margin: 0 auto 12px;
     }
 
     &__eyebrow,
     &__index {
       font-size: 8px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
     }
 
     &__script-wrap {
-      inset: -2px 0 auto;
+      inset: 2px 0 auto;
     }
 
     &__script {
-      font-size: 60px;
+      font-size: 52px;
+      color: rgba(243, 238, 232, 0.028);
     }
 
     &__title {
-      margin-top: 0;
-      font-size: 34px;
-      line-height: 1.06;
+      font-size: 31px;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
     }
 
     &__subtitle {
-      max-width: 300px;
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.74;
+      max-width: 280px;
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.68;
+      color: rgba(243, 238, 232, 0.6);
     }
 
     &__groups {
-      gap: 52px;
+      gap: 40px;
     }
 
     &__group {
-      gap: 24px;
+      gap: 18px;
     }
 
     &__content {
-      gap: 22px;
+      gap: 18px;
       max-width: 320px;
       margin: 0 auto;
       transform: translate3d(0, 18px, 0);
@@ -397,45 +399,46 @@
     }
 
     &__item {
-      padding-bottom: 18px;
+      padding-bottom: 14px;
     }
 
     &__item-topline {
       gap: 10px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     &__number {
-      font-size: 25px;
+      font-size: 22px;
     }
 
     &__question {
-      font-size: 13px;
-      line-height: 1.46;
-      letter-spacing: 0.06em;
+      font-size: 12px;
+      line-height: 1.42;
+      letter-spacing: 0.055em;
     }
 
     &__answer {
-      margin-top: 9px;
-      font-size: 14px;
-      line-height: 1.72;
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.68;
+      color: rgba(243, 238, 232, 0.62);
     }
 
     &__media-shell {
-      max-width: 224px;
+      max-width: 244px;
     }
 
     &__media-backdrop {
-      inset: 18px -12px -12px 18px;
+      inset: 16px -10px -10px 16px;
     }
 
     &__media-badge {
-      left: 12px;
-      bottom: 12px;
-      min-height: 28px;
-      padding-inline: 10px;
+      left: 10px;
+      bottom: 10px;
+      min-height: 26px;
+      padding-inline: 9px;
       font-size: 7px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
     }
   }
 }

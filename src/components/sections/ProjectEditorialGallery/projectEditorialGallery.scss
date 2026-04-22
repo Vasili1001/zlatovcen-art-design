@@ -2,13 +2,13 @@
   background: #191717;
 
   &__inner {
-    padding: 52px 0 64px;
+    padding: 38px 0 50px;
   }
 
   &__row {
     display: grid;
-    gap: 18px;
-    margin-bottom: 18px;
+    gap: 14px;
+    margin-bottom: 14px;
 
     &:last-child {
       margin-bottom: 0;
@@ -28,31 +28,33 @@
     margin: 0;
     overflow: hidden;
     background: #211e1e;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
 
     img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(0.9) contrast(0.98) brightness(0.97);
-      transition: transform 0.7s ease;
+      filter: saturate(0.92) contrast(0.985) brightness(0.975);
+      transition: transform 0.7s ease, filter 0.45s ease;
     }
 
     &:hover img {
-      transform: scale(1.03);
+      transform: scale(1.025);
+      filter: saturate(0.96) contrast(0.99) brightness(0.99);
     }
   }
 
   &__row--two-large &__item {
-    aspect-ratio: 0.86 / 1;
+    aspect-ratio: 1.04 / 1;
   }
 
   &__row--three-small &__item {
-    aspect-ratio: 0.78 / 1;
+    aspect-ratio: 1 / 1;
   }
 
   &__row--two-tall &__item {
-    aspect-ratio: 0.82 / 1.18;
+    aspect-ratio: 0.96 / 1.08;
   }
 }
 

@@ -390,89 +390,123 @@
 @media (max-width: 767px) {
   .featured-blog-post {
     &__inner {
-      padding: 74px 0 84px;
-      max-width: 340px;
+      padding: 60px 0 68px;
+      max-width: 320px;
     }
 
     &__topline {
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     &__eyebrow,
     &__index {
-      font-size: 9px;
-      letter-spacing: 0.24em;
+      font-size: 8px;
+      letter-spacing: 0.22em;
     }
 
     &__heading-wrap {
       justify-content: flex-start;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     &__script {
-      font-size: 50px;
+      font-size: 42px;
+      line-height: 0.9;
+      color: rgba(243, 238, 232, 0.82);
+      text-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
     }
 
     &__layout {
-      gap: 18px;
+      gap: 14px;
 
       &::before {
         top: 46%;
-        height: 112px;
+        height: 78px;
+        width: min(100vw + 40px, 420px);
+        background:
+                linear-gradient(
+                                90deg,
+                                rgba(222, 214, 206, 0) 0%,
+                                rgba(222, 214, 206, 0.12) 18%,
+                                rgba(222, 214, 206, 0.24) 50%,
+                                rgba(222, 214, 206, 0.12) 82%,
+                                rgba(222, 214, 206, 0) 100%
+                );
       }
     }
 
     &__card-inner {
-      padding: 28px 20px 24px;
+      padding: 24px 18px 20px;
+
+      &::before {
+        inset: 10px;
+      }
     }
 
     &__meta {
-      margin-bottom: 18px;
-      gap: 8px;
+      margin-bottom: 14px;
+      gap: 7px;
     }
 
     &__meta-item {
-      font-size: 8px;
-      letter-spacing: 0.18em;
+      font-size: 7px;
+      letter-spacing: 0.16em;
     }
 
     &__meta-divider {
-      width: 14px;
+      width: 12px;
     }
 
     &__title {
-      font-size: 29px;
+      font-size: 24px;
       line-height: 1.08;
+      letter-spacing: -0.024em;
     }
 
     &__text {
-      margin-top: 18px;
-      font-size: 14px;
-      line-height: 1.74;
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 1.66;
+      color: rgba(243, 238, 232, 0.78);
     }
 
     &__footer {
-      gap: 12px;
-      margin-top: 24px;
+      gap: 10px;
+      margin-top: 20px;
     }
 
     &__link {
-      font-size: 9px;
-      letter-spacing: 0.18em;
+      font-size: 8px;
+      letter-spacing: 0.16em;
+
+      &::after {
+        margin-left: 8px;
+        font-size: 11px;
+      }
     }
 
     &__media-plane {
-      inset: 16px -10px -10px 16px;
+      inset: 14px -8px -8px 14px;
+    }
+
+    &__image-wrap {
+      &::before {
+        inset: 10px;
+      }
+    }
+
+    &__image {
+      aspect-ratio: 0.92 / 1.06;
     }
 
     &__media-badge {
-      left: 12px;
-      bottom: 12px;
-      min-height: 28px;
-      padding-inline: 10px;
+      left: 10px;
+      bottom: 10px;
+      min-height: 26px;
+      padding-inline: 9px;
       font-size: 7px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
     }
   }
 }

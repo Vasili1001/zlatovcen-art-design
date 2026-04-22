@@ -3,7 +3,8 @@
   overflow: hidden;
   background: #151313;
   margin-top: 0;
-  padding: 84px 0 60px;
+  //padding: 84px 0 60px;
+  padding: 68px 0 48px;
   isolation: isolate;
 
   &__background {
@@ -450,6 +451,76 @@
 
     &__gallery-track {
       width: calc(100% - 96px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 68px 0 48px;
+
+    &__top {
+      gap: 34px;
+    }
+
+    &__brand {
+      gap: 14px;
+    }
+
+    &__brand-note {
+      max-width: 286px;
+      font-size: 11px;
+      line-height: 1.74;
+      color: rgba(243, 238, 232, 0.54);
+    }
+
+    &__eyebrow {
+      margin-bottom: 16px;
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      color: rgba(243, 238, 232, 0.64);
+    }
+
+    &__nav {
+      gap: 12px;
+    }
+
+    &__nav-link {
+      gap: 10px;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+    }
+
+    &__contact {
+      gap: 14px;
+    }
+
+    &__email {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+    }
+
+    &__address {
+      max-width: 268px;
+      font-size: 20px;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+    }
+
+    &__socials {
+      gap: 10px;
+    }
+
+    &__social-link {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__copy {
+      margin-top: 2px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: rgba(243, 238, 232, 0.38);
     }
   }
 }

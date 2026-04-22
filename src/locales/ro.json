@@ -518,5 +518,25 @@
         }
       ]
     }
+  },
+  "notFound": {
+    "pageHero": {
+      "imageAlt": "Fundal interior luxury pentru pagina 404",
+      "eyebrow": "404",
+      "title": "Pagina Nu A Fost Găsită",
+      "subtitle": "Pagina pe care o căutați poate fi mutată, eliminată sau nu mai există în structura curentă a site-ului."
+    },
+    "content": {
+      "toplineLabel": "Pagină Lipsă",
+      "toplineIndex": "404",
+      "eyebrow": "Scuze",
+      "titleLine1": "Pagina Pe Care O Căutați",
+      "titleLine2": "Nu Există.",
+      "subtitle": "Linkul poate fi învechit, pagina poate fi mutată sau adresa poate fi introdusă incorect. Vă puteți întoarce la pagina principală sau puteți continua să explorați studioul.",
+      "actions": {
+        "backHome": "Înapoi Acasă",
+        "viewPortfolio": "Vezi Portofoliul"
+      }
+    }
   }
 }

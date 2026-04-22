@@ -442,47 +442,48 @@
 @media (max-width: 767px) {
   .services-editorial-showcase {
     &__inner {
-      padding: 60px 0 76px;
+      padding: 54px 0 68px;
     }
 
     &__header {
-      width: min(286px, 100%);
-      margin-bottom: 4px;
+      width: min(320px, 100%);
+      margin-bottom: 6px;
       transform: translate3d(0, 16px, 0);
       transition-duration: 0.72s;
     }
 
     &__topline {
-      max-width: 220px;
+      max-width: 236px;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     &__eyebrow,
     &__index {
       font-size: 8px;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.22em;
     }
 
     &__script-wrap {
-      inset: -4px 0 auto;
+      inset: -2px 0 auto;
     }
 
     &__script {
-      font-size: 54px;
+      font-size: 48px;
+      color: rgba(243, 238, 232, 0.03);
     }
 
     &__row {
-      padding: 30px 0 32px;
+      padding: 26px 0 28px;
     }
 
     &__separator {
-      width: calc(100% - 28px);
+      width: calc(100% - 20px);
     }
 
     &__row-grid {
-      gap: 20px;
-      width: min(286px, 100%);
+      gap: 18px;
+      width: min(320px, 100%);
     }
 
     &__content,
@@ -492,56 +493,52 @@
     }
 
     &__service-number {
-      margin-bottom: 10px;
-      font-size: 9px;
+      margin-bottom: 8px;
+      font-size: 8px;
+      letter-spacing: 0.22em;
     }
 
     &__title {
-      max-width: 280px;
-      font-size: 25px;
-      line-height: 0.98;
-      letter-spacing: -0.01em;
+      max-width: 312px;
+      font-size: 22px;
+      line-height: 1.02;
+      letter-spacing: -0.008em;
     }
 
     &__description {
-      max-width: 292px;
-      margin-top: 14px;
+      max-width: 312px;
+      margin-top: 12px;
       font-size: 13px;
-      line-height: 1.72;
-      color: rgba(243, 238, 232, 0.72);
+      line-height: 1.66;
+      color: rgba(243, 238, 232, 0.7);
     }
 
     &__includes {
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     &__label {
       font-size: 8px;
-      letter-spacing: 0.28em;
-      color: rgba(243, 238, 232, 0.68);
+      letter-spacing: 0.24em;
+      color: rgba(243, 238, 232, 0.66);
     }
 
     &__label-line {
-      width: 116px;
+      width: 108px;
       margin-top: 8px;
-      background: linear-gradient(
-                      90deg,
-                      rgba(203, 187, 167, 0.34) 0%,
-                      rgba(203, 187, 167, 0.08) 100%
-      );
     }
 
     &__list {
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     &__list-item {
-      gap: 10px;
+      gap: 9px;
       font-size: 11px;
-      line-height: 1.48;
-      letter-spacing: 0.055em;
-      color: rgba(243, 238, 232, 0.8);
+      line-height: 1.46;
+      letter-spacing: 0.045em;
+      color: rgba(243, 238, 232, 0.78);
     }
 
     &__list-bullet {
@@ -551,49 +548,48 @@
     }
 
     &__aside {
-      gap: 12px;
-      margin-top: 4px;
+      gap: 10px;
+      margin-top: 2px;
     }
 
     &__media,
     &__investment {
-      max-width: 182px;
+      max-width: 214px;
     }
 
     &__media-frame {
       box-shadow:
-              0 18px 38px rgba(0, 0, 0, 0.2),
+              0 18px 36px rgba(0, 0, 0, 0.2),
               inset 0 1px 0 rgba(255, 255, 255, 0.022);
 
       &::before {
-        inset: 9px;
+        inset: 8px;
       }
     }
 
     &__price {
-      margin-top: 12px;
-      font-size: 18px;
+      margin-top: 10px;
+      font-size: 20px;
       line-height: 1.08;
       letter-spacing: -0.008em;
     }
 
     &__price-note {
       margin-top: 4px;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1;
     }
 
     &__footer {
-      margin-top: 24px;
+      margin-top: 22px;
     }
 
     &__button {
-      min-width: 138px;
+      min-width: 144px;
       min-height: 40px;
       padding: 0 18px;
       font-size: 8px;
-      letter-spacing: 0.16em;
-      border-color: rgba(203, 187, 167, 0.2);
+      letter-spacing: 0.15em;
     }
   }
 }

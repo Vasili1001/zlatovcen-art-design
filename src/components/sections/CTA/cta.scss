@@ -188,45 +188,56 @@
 
 @media (max-width: 767px) {
   .cta {
-    padding: 86px 0 58px;
+    padding: 72px 0 52px;
+
+    &__inner {
+      max-width: 340px;
+    }
 
     &__script-wrap {
-      inset: -8px 0 auto;
+      inset: -2px 0 auto;
     }
 
     &__script {
-      font-size: 62px;
+      font-size: 54px;
+      color: rgba(243, 238, 232, 0.03);
     }
 
     &__eyebrow {
-      margin-bottom: 14px;
-      font-size: 9px;
-      letter-spacing: 0.28em;
+      margin-bottom: 12px;
+      font-size: 8px;
+      letter-spacing: 0.24em;
     }
 
     &__title {
-      max-width: 340px;
-      font-size: 34px;
-      line-height: 1.1;
+      max-width: 300px;
+      margin: 0 auto;
+      font-size: 31px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
     }
 
     &__text {
-      max-width: 320px;
-      margin-top: 16px;
+      max-width: 286px;
+      margin-top: 14px;
       font-size: 14px;
-      line-height: 1.72;
+      line-height: 1.68;
+      color: rgba(243, 238, 232, 0.64);
     }
 
     &__actions {
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     &__button {
-      min-width: 188px;
-      min-height: 48px;
-      padding-inline: 22px;
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      min-width: 196px;
+      min-height: 46px;
+      padding-inline: 20px;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      box-shadow:
+              0 8px 18px rgba(0, 0, 0, 0.14),
+              inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
   }
 }

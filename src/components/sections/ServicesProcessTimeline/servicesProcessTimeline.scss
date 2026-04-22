@@ -324,74 +324,80 @@
 @media (max-width: 767px) {
   .services-process-timeline {
     &__background-image {
-      filter: brightness(0.18) saturate(0.58) contrast(0.96);
+      filter: brightness(0.17) saturate(0.56) contrast(0.96);
       object-position: center;
     }
 
     &__inner {
-      max-width: 340px;
-      padding: 72px 0 82px;
+      max-width: 320px;
+      padding: 58px 0 68px;
     }
 
     &__header {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       align-items: flex-start;
       text-align: left;
     }
 
     &__topline {
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     &__topline-label,
     &__topline-index {
-      font-size: 9px;
-      letter-spacing: 0.22em;
+      font-size: 8px;
+      letter-spacing: 0.2em;
     }
 
     &__script-wrap {
       justify-content: flex-start;
-      inset: -6px 0 auto;
+      inset: -2px 0 auto;
     }
 
     &__script {
-      font-size: 70px;
+      font-size: 52px;
+      color: rgba(243, 238, 232, 0.03);
     }
 
     &__title {
-      font-size: 34px;
-      line-height: 1.04;
+      font-size: 31px;
+      line-height: 1.02;
+      letter-spacing: -0.028em;
     }
 
     &__subtitle {
-      max-width: 312px;
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.74;
+      max-width: 286px;
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.66;
+      color: rgba(243, 238, 232, 0.62);
     }
 
     &__timeline {
       max-width: 320px;
-      padding-left: 28px;
+      padding-left: 22px;
     }
 
     &__line {
       left: 0;
-      top: 8px;
-      bottom: 8px;
+      top: 6px;
+      bottom: 6px;
       transform: none;
     }
 
     &__terminal {
       left: 0;
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       transform: translateX(-50%) rotate(45deg);
+      box-shadow:
+              0 0 0 4px rgba(203, 187, 167, 0.03),
+              0 8px 18px rgba(0, 0, 0, 0.14);
     }
 
     &__steps {
-      gap: 28px;
+      gap: 22px;
     }
 
     &__step {
@@ -420,44 +426,46 @@
     }
 
     &__step-node {
-      top: 12px;
-      width: 8px;
-      height: 8px;
+      top: 10px;
+      width: 7px;
+      height: 7px;
       box-shadow:
-              0 0 0 5px rgba(203, 187, 167, 0.03),
-              0 0 18px rgba(203, 187, 167, 0.08);
+              0 0 0 4px rgba(203, 187, 167, 0.03),
+              0 0 14px rgba(203, 187, 167, 0.07);
     }
 
     &__step-inner {
       width: 100%;
-      padding-left: 26px;
+      padding-left: 20px;
       padding-right: 0;
     }
 
     &__step-topline {
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 9px;
+      margin-bottom: 8px;
     }
 
     &__number {
-      font-size: 24px;
+      font-size: 21px;
+      line-height: 1;
     }
 
     &__step-line {
-      width: 34px;
+      width: 28px;
     }
 
     &__step-title {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.04;
-      letter-spacing: -0.016em;
+      letter-spacing: -0.014em;
     }
 
     &__step-description {
-      margin-top: 12px;
-      font-size: 14px;
-      line-height: 1.74;
-      max-width: 252px;
+      margin-top: 10px;
+      max-width: 248px;
+      font-size: 13px;
+      line-height: 1.66;
+      color: rgba(243, 238, 232, 0.68);
     }
   }
 }

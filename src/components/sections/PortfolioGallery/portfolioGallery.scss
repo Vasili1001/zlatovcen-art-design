@@ -290,28 +290,29 @@
 @media (max-width: 767px) {
   .portfolio-gallery {
     &__inner {
-      padding: 78px 0 88px;
+      padding: 64px 0 74px;
     }
 
     &__heading {
-      margin-bottom: 42px;
+      margin-bottom: 34px;
       transform: translate3d(0, 18px, 0);
       transition-duration: 0.72s;
     }
 
     &__icon {
-      margin-bottom: 14px;
-      font-size: 20px;
+      margin-bottom: 12px;
+      font-size: 18px;
     }
 
     &__title {
-      max-width: 340px;
-      font-size: 32px;
-      line-height: 1.18;
+      max-width: 300px;
+      font-size: 29px;
+      line-height: 1.12;
+      letter-spacing: -0.024em;
     }
 
     &__grid {
-      gap: 40px;
+      gap: 32px;
     }
 
     &__card {
@@ -319,12 +320,33 @@
       transition-duration: 0.68s;
     }
 
+    &__card:not(&__card--featured) &__media {
+      aspect-ratio: 0.86 / 1;
+    }
+
+    &__card--featured &__media {
+      aspect-ratio: 1.42 / 1;
+    }
+
     &__content {
-      padding-top: 16px;
+      padding-top: 14px;
     }
 
     &__card-title {
-      font-size: 18px;
+      font-size: 17px;
+      line-height: 1.14;
+      letter-spacing: -0.012em;
+    }
+
+    &__link {
+      margin-top: 7px;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+
+      &::after {
+        margin-left: 6px;
+        font-size: 11px;
+      }
     }
   }
 }

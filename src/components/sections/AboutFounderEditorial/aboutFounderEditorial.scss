@@ -313,8 +313,8 @@
 @media (max-width: 767px) {
   .about-founder-editorial {
     &__inner {
-      gap: 30px;
-      padding: 76px 0 82px;
+      gap: 24px;
+      padding: 64px 0 70px;
     }
 
     &__left,
@@ -322,17 +322,29 @@
     &__right {
       transform: translate3d(0, 18px, 0);
       transition-duration: 0.72s;
+      justify-self: center;
     }
 
     &__left,
     &__right {
+      width: 100%;
       max-width: 320px;
+      text-align: center;
+    }
+
+    &__center {
+      width: 100%;
+      justify-self: center;
     }
 
     &__topline {
-      max-width: 320px;
+      max-width: 240px;
       gap: 10px;
-      margin-bottom: 18px;
+      margin: 0 auto 18px;
+    }
+
+    &__quote-block {
+      text-align: center;
     }
 
     &__eyebrow,
@@ -343,22 +355,23 @@
 
     &__quote-mark {
       margin-bottom: 10px;
-      font-size: 38px;
+      font-size: 34px;
     }
 
     &__title {
-      font-size: 31px;
-      line-height: 1.06;
+      font-size: 30px;
+      line-height: 1.08;
     }
 
     &__text {
-      margin-top: 14px;
+      margin: 14px auto 0;
+      max-width: 300px;
       font-size: 14px;
-      line-height: 1.74;
+      line-height: 1.72;
     }
 
     &__image-shell {
-      width: min(100%, 286px);
+      width: min(100%, 304px);
     }
 
     &__image-frame {
@@ -366,11 +379,11 @@
     }
 
     &__image-wrap {
-      border-radius: 0 92px 0 92px;
+      border-radius: 0 88px 0 88px;
 
       &::before {
         inset: 10px;
-        border-radius: 0 78px 0 78px;
+        border-radius: 0 74px 0 74px;
       }
     }
 
@@ -380,15 +393,18 @@
     }
 
     &__statement {
-      gap: 14px;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
     }
 
     &__statement-line {
       width: 52px;
+      margin: 0 auto;
     }
 
     &__text--right {
-      max-width: 320px;
+      max-width: 300px;
     }
   }
 }

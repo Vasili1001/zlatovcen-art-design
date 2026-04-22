@@ -218,30 +218,37 @@
 @media (max-width: 767px) {
   .portfolio-values {
     &__inner {
-      padding: 72px 0 80px;
+      padding: 58px 0 64px;
     }
 
     &__grid {
-      width: min(100%, 320px);
-      gap: 32px;
+      width: min(100%, 300px);
+      gap: 26px;
     }
 
     &__item {
-      gap: 14px;
+      gap: 12px;
     }
 
     &__item-title {
-      font-size: 28px;
+      font-size: 25px;
+      line-height: 0.96;
     }
 
     &__item-body {
-      max-width: 300px;
-      padding-left: 16px;
+      max-width: 272px;
+      padding-left: 14px;
+
+      &::before {
+        top: 1px;
+        bottom: 1px;
+      }
     }
 
     &__item-text {
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 13px;
+      line-height: 1.62;
+      color: rgba(243, 238, 232, 0.8);
     }
   }
 }

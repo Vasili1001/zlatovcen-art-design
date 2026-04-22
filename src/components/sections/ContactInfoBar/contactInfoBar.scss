@@ -3,6 +3,7 @@
   background: #191717;
   isolation: isolate;
   overflow: hidden;
+  padding: 76px 0 92px;
 
   &::before {
     content: '';
@@ -11,8 +12,9 @@
     z-index: 0;
     pointer-events: none;
     background:
-            radial-gradient(circle at 18% 12%, rgba(203, 187, 167, 0.018) 0%, rgba(203, 187, 167, 0) 30%),
-            radial-gradient(circle at 82% 10%, rgba(255, 255, 255, 0.006) 0%, rgba(255, 255, 255, 0) 24%);
+            radial-gradient(circle at 14% 12%, rgba(203, 187, 167, 0.08) 0%, rgba(203, 187, 167, 0) 34%),
+            radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 26%),
+            radial-gradient(circle at 50% 100%, rgba(132, 122, 107, 0.08) 0%, rgba(132, 122, 107, 0) 42%);
   }
 
   &::after {
@@ -24,102 +26,242 @@
     background:
             linear-gradient(
                             180deg,
-                            rgba(255, 248, 240, 0.008) 0%,
-                            rgba(255, 248, 240, 0.002) 18%,
-                            rgba(0, 0, 0, 0.08) 100%
+                            rgba(255, 248, 240, 0.025) 0%,
+                            rgba(255, 248, 240, 0.008) 16%,
+                            rgba(8, 8, 8, 0.22) 100%
             );
   }
 
-  &__inner {
+  &__shell {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 22px;
-    max-width: 1220px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 36px 0 46px;
+    padding: 40px 28px 30px;
+    border: 1px solid rgba(203, 187, 167, 0.1);
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.008) 100%),
+            linear-gradient(135deg, rgba(28, 26, 26, 0.9) 0%, rgba(19, 18, 18, 0.96) 100%);
+    box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.045),
+            0 30px 80px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(10px);
   }
 
-  &__item {
+  &__header {
     display: grid;
-    grid-template-columns: 1px minmax(0, 1fr);
-    gap: 16px;
-    align-items: start;
+    gap: 28px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(203, 187, 167, 0.1);
+  }
+
+  &__header-side {
+    display: grid;
+    gap: 26px;
+    align-content: start;
     min-width: 0;
   }
 
-  &__divider {
+  &__topline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__topline-label,
+  &__topline-index,
+  &__eyebrow {
+    color: rgba(203, 187, 167, 0.66);
+    font-family: var(--font-primary);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  &__topline-line {
     display: block;
-    width: 1px;
-    min-height: 76px;
+    width: 72px;
+    height: 1px;
     background: linear-gradient(
-                    180deg,
-                    rgba(243, 238, 232, 0.14) 0%,
-                    rgba(203, 187, 167, 0.05) 100%
+                    90deg,
+                    rgba(203, 187, 167, 0.4) 0%,
+                    rgba(203, 187, 167, 0.08) 100%
     );
   }
 
-  &__item-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    min-width: 0;
+  &__supporting {
+    max-width: 360px;
+    padding-left: 1px;
   }
 
-  &__eyebrow {
-    color: rgba(203, 187, 167, 0.6);
+  &__supporting-text {
+    margin: 0;
+    color: rgba(226, 217, 207, 0.62);
     font-family: var(--font-primary);
-    font-size: 9px;
+    font-size: clamp(14px, 0.94vw, 16px);
+    font-weight: 400;
+    line-height: 1.85;
+    text-wrap: balance;
+  }
+
+  &__heading-block {
+    display: grid;
+    gap: 16px;
+    max-width: 820px;
+    justify-self: start;
+  }
+
+  &__title {
+    margin: 0;
+    color: #f3ede6;
+    font-family: var(--font-heading);
+    font-size: clamp(42px, 5vw, 78px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  &__description {
+    margin: 0;
+    max-width: 580px;
+    color: rgba(233, 225, 216, 0.68);
+    font-family: var(--font-primary);
+    font-size: clamp(15px, 1.02vw, 18px);
+    font-weight: 400;
+    line-height: 1.8;
+    text-wrap: balance;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 38px;
+  }
+
+  &__card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(203, 187, 167, 0.09);
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0%, rgba(255, 255, 255, 0.01) 100%),
+            rgba(20, 19, 19, 0.92);
+    box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.03),
+            0 18px 50px rgba(0, 0, 0, 0.22);
+    transition:
+            transform 0.45s ease,
+            border-color 0.45s ease,
+            box-shadow 0.45s ease,
+            background 0.45s ease;
+  }
+
+  &__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(203, 187, 167, 0.18);
+    box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.04),
+            0 24px 60px rgba(0, 0, 0, 0.28);
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.012) 100%),
+            rgba(22, 20, 20, 0.96);
+  }
+
+  &__card-glow {
+    position: absolute;
+    inset: -20% auto auto -12%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(203, 187, 167, 0.09) 0%, rgba(203, 187, 167, 0) 72%);
+    pointer-events: none;
+  }
+
+  &__card-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 28px;
+    min-height: 100%;
+    padding: 30px 28px 32px;
+  }
+
+  &__card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__card-index {
+    color: rgba(241, 235, 228, 0.74);
+    font-family: var(--font-heading);
+    font-size: 24px;
     font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  &__card-divider {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+                    90deg,
+                    rgba(203, 187, 167, 0.22) 0%,
+                    rgba(203, 187, 167, 0.04) 100%
+    );
+  }
+
+  &__card-body {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
   }
 
   &__content {
     min-width: 0;
   }
 
-  &__link,
+  &__primary-link,
   &__text {
-    color: #f1ebe4;
+    display: inline-block;
+    color: #f3ede6;
     font-family: var(--font-heading);
-    font-size: clamp(20px, 1.55vw, 28px);
-    font-style: normal;
+    font-size: clamp(28px, 2.5vw, 42px);
     font-weight: 500;
-    line-height: 1.16;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
     text-decoration: none;
     text-wrap: balance;
-  }
-
-  &__link {
-    display: block;
     transition: color 0.3s ease;
   }
 
-  &__link:hover {
+  &__primary-link:hover {
     color: #ffffff;
   }
 
-  &__subline {
-    display: block;
-    margin-top: 6px;
-    color: rgba(241, 235, 228, 0.84);
+  &__secondary-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: rgba(241, 235, 228, 0.78);
     text-decoration: none;
-    font-family: var(--font-heading);
-    font-size: clamp(16px, 1.05vw, 21px);
-    font-weight: 500;
-    line-height: 1.18;
+    font-family: var(--font-primary);
+    font-size: clamp(15px, 1.02vw, 18px);
+    font-weight: 400;
+    line-height: 1.7;
     transition: color 0.3s ease;
   }
 
-  &__subline:hover {
+  &__secondary-link:hover {
     color: #ffffff;
   }
 
   &__text--address {
-    max-width: 310px;
+    max-width: 460px;
+    font-style: normal;
   }
 
   &__sr-only {
@@ -137,148 +279,277 @@
 
 @media (max-width: 767px) {
   .contact-info-bar {
-    &__inner {
-      gap: 18px;
-      max-width: 340px;
-      padding: 28px 0 38px;
+    padding: 38px 0 52px;
+
+    &__shell {
+      padding: 20px 14px 16px;
     }
 
-    &__item {
+    &__header {
+      gap: 16px;
+      padding-bottom: 22px;
+    }
+
+    &__header-side {
       gap: 14px;
     }
 
-    &__divider {
-      min-height: 60px;
-      background: linear-gradient(
-                      180deg,
-                      rgba(243, 238, 232, 0.12) 0%,
-                      rgba(203, 187, 167, 0.045) 100%
-      );
-    }
-
-    &__item-body {
+    &__topline {
       gap: 10px;
     }
 
+    &__topline-label,
+    &__topline-index,
     &__eyebrow {
       font-size: 8px;
       letter-spacing: 0.2em;
     }
 
-    &__link,
-    &__text {
-      font-size: 18px;
-      line-height: 1.18;
+    &__topline-line {
+      width: 40px;
     }
 
-    &__subline {
-      margin-top: 4px;
-      font-size: 15px;
+    &__supporting {
+      max-width: 248px;
+    }
+
+    &__supporting-text {
+      font-size: 12px;
+      line-height: 1.68;
+      color: rgba(226, 217, 207, 0.58);
+    }
+
+    &__heading-block {
+      gap: 12px;
+    }
+
+    &__title {
+      max-width: 260px;
+      font-size: clamp(30px, 10vw, 44px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    &__description {
+      max-width: 282px;
+      font-size: 13px;
+      line-height: 1.68;
+      color: rgba(233, 225, 216, 0.64);
+    }
+
+    &__grid {
+      gap: 12px;
+      padding-top: 22px;
+    }
+
+    &__card-inner {
+      gap: 18px;
+      padding: 20px 16px 20px;
+    }
+
+    &__card-index {
+      font-size: 18px;
+    }
+
+    &__card-top {
+      gap: 12px;
+    }
+
+    &__card-body {
+      gap: 10px;
+    }
+
+    &__primary-link,
+    &__text {
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.022em;
+    }
+
+    &__secondary-link {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.58;
     }
 
     &__text--address {
-      max-width: 250px;
+      max-width: 100%;
     }
   }
 }
 
 @media (min-width: 768px) {
   .contact-info-bar {
-    &__inner {
+    padding: 62px 0 78px;
+
+    &__shell {
+      padding: 30px 22px 22px;
+    }
+
+    &__header {
       gap: 24px;
-      max-width: 980px;
-      padding: 32px 0 44px;
+      padding-bottom: 32px;
     }
 
-    &__divider {
-      min-height: 68px;
+    &__header-side {
+      gap: 20px;
     }
 
-    &__link,
+    &__supporting {
+      max-width: 420px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding-top: 30px;
+    }
+
+    &__card:first-child {
+      grid-column: 1 / -1;
+    }
+
+    &__card-inner {
+      padding: 26px 22px 26px;
+    }
+
+    &__primary-link,
     &__text {
-      font-size: 21px;
+      font-size: clamp(26px, 2.4vw, 34px);
     }
 
-    &__subline {
-      font-size: 17px;
-    }
-
-    &__text--address {
-      max-width: 280px;
+    &__secondary-link {
+      font-size: 15px;
     }
   }
 }
 
 @media (min-width: 1024px) {
   .contact-info-bar {
-    &__inner {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 36px;
-      max-width: 1180px;
-      padding: 36px 0 50px;
+    padding: 82px 0 102px;
+
+    &__shell {
+      padding: 42px 30px 30px;
     }
 
-    &__item {
-      gap: 14px;
+    &__header {
+      grid-template-columns: minmax(260px, 0.88fr) minmax(420px, 1.12fr);
+      align-items: end;
+      gap: 54px;
+      padding-bottom: 36px;
     }
 
-    &__divider {
-      min-height: 80px;
+    &__header-side {
+      gap: 24px;
+      padding-right: 18px;
     }
 
-    &__item-body {
-      gap: 12px;
+    &__supporting {
+      max-width: 320px;
     }
 
-    &__eyebrow {
-      font-size: 9px;
-      letter-spacing: 0.22em;
+    &__heading-block {
+      max-width: 700px;
     }
 
-    &__link,
+    &__title {
+      font-size: clamp(52px, 5vw, 82px);
+    }
+
+    &__description {
+      max-width: 520px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+      padding-top: 34px;
+    }
+
+    &__card {
+      min-height: 100%;
+    }
+
+    &__card:nth-child(1) {
+      grid-column: span 5;
+    }
+
+    &__card:nth-child(2) {
+      grid-column: span 4;
+    }
+
+    &__card:nth-child(3) {
+      grid-column: span 3;
+    }
+
+    &__card-inner {
+      height: 100%;
+      padding: 30px 24px 30px;
+    }
+
+    &__primary-link,
     &__text {
-      font-size: clamp(20px, 1.42vw, 27px);
-      line-height: 1.16;
+      font-size: clamp(27px, 2vw, 38px);
+      line-height: 1.08;
     }
 
-    &__subline {
-      font-size: clamp(16px, 0.92vw, 20px);
-    }
-
-    &__text--address {
-      max-width: 290px;
+    &__secondary-link {
+      font-size: 15px;
     }
   }
 }
 
 @media (min-width: 1280px) {
   .contact-info-bar {
-    &__inner {
-      gap: 42px;
-      max-width: 1220px;
-      padding: 40px 0 54px;
+    padding: 96px 0 116px;
+
+    &__shell {
+      padding: 46px 38px 36px;
     }
 
-    &__link,
+    &__header {
+      grid-template-columns: minmax(280px, 0.9fr) minmax(460px, 1.1fr);
+      gap: 70px;
+      padding-bottom: 40px;
+    }
+
+    &__supporting {
+      max-width: 340px;
+    }
+
+    &__grid {
+      gap: 22px;
+      padding-top: 38px;
+    }
+
+    &__card-inner {
+      padding: 34px 28px 34px;
+    }
+
+    &__card-index {
+      font-size: 26px;
+    }
+
+    &__primary-link,
     &__text {
-      font-size: 25px;
+      font-size: clamp(30px, 1.95vw, 42px);
     }
 
-    &__subline {
-      font-size: 20px;
-    }
-
-    &__text--address {
-      max-width: 300px;
+    &__secondary-link {
+      font-size: 16px;
     }
   }
 }
 
 @media (min-width: 1440px) {
   .contact-info-bar {
-    &__inner {
-      gap: 48px;
-      padding-bottom: 58px;
+    &__shell {
+      padding-left: 42px;
+      padding-right: 42px;
+    }
+
+    &__grid {
+      gap: 24px;
     }
   }
 }
