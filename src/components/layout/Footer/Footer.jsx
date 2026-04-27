@@ -1,11 +1,21 @@
 import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SiInstagram, SiFacebook } from 'react-icons/si';
+import { SiInstagram, SiWhatsapp, SiViber } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 
 import Container from '../../ui/Container/Container.jsx';
 import Logo from '../../ui/Logo/Logo.jsx';
 import './footer.scss';
+
+const EMAIL_DISPLAY = 'hello@zlatovcen.com';
+const EMAIL_HREF = 'mailto:hello@zlatovcen.com';
+
+const PHONE_DISPLAY = '+373 00 000 000';
+const PHONE_HREF = 'tel:+37300000000';
+
+const INSTAGRAM_URL = 'https://instagram.com';
+const WHATSAPP_URL = 'https://wa.me/37300000000';
+const VIBER_URL = 'viber://chat?number=%2B37300000000';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -60,19 +70,21 @@ const Footer = () => {
                         <div className='footer__contact'>
                             <span className='footer__eyebrow'>{t('footer.sections.contact')}</span>
 
-                            <a className='footer__email' href='mailto:info@victor.abc'>
-                                info@victor.abc
+                            <a className='footer__email' href={EMAIL_HREF}>
+                                {EMAIL_DISPLAY}
                             </a>
 
-                            <address className='footer__address'>
-                                {t('footer.contact.addressLine1')}
-                                <br />
-                                {t('footer.contact.addressLine2')}
-                            </address>
+                            <a className='footer__phone' href={PHONE_HREF}>
+                                {PHONE_DISPLAY}
+                            </a>
+
+                            <p className='footer__contact-note'>
+                                {t('footer.contact.note')}
+                            </p>
 
                             <div className='footer__socials' aria-label={t('footer.accessibility.socialLinks')}>
                                 <a
-                                    href='https://instagram.com'
+                                    href={INSTAGRAM_URL}
                                     target='_blank'
                                     rel='noreferrer'
                                     aria-label={t('footer.social.instagram')}
@@ -82,13 +94,21 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href='https://facebook.com'
+                                    href={WHATSAPP_URL}
                                     target='_blank'
                                     rel='noreferrer'
-                                    aria-label={t('footer.social.facebook')}
+                                    aria-label={t('footer.social.whatsapp')}
                                     className='footer__social-link'
                                 >
-                                    <SiFacebook className='icon' />
+                                    <SiWhatsapp className='icon' />
+                                </a>
+
+                                <a
+                                    href={VIBER_URL}
+                                    aria-label={t('footer.social.viber')}
+                                    className='footer__social-link'
+                                >
+                                    <SiViber className='icon' />
                                 </a>
                             </div>
 

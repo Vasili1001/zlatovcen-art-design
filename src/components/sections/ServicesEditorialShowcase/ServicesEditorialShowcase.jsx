@@ -8,61 +8,31 @@ import serviceImage2 from '../../../assets/images/portfolio/projects/project-2.j
 import serviceImage3 from '../../../assets/images/portfolio/projects/project-3.jpg';
 import './servicesEditorialShowcase.scss';
 
+const serviceImages = [serviceImage1, serviceImage2, serviceImage3];
+const serviceLayouts = ['image-right', 'image-left', 'image-right'];
+
 const ServicesEditorialShowcase = () => {
     const { t } = useTranslation();
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
-    const serviceItems = useMemo(
-        () => [
-            {
-                id: '01',
-                title: t('services.editorialShowcase.items.0.title'),
-                description: t('services.editorialShowcase.items.0.description'),
-                includes: [
-                    t('services.editorialShowcase.items.0.includes.0'),
-                    t('services.editorialShowcase.items.0.includes.1'),
-                    t('services.editorialShowcase.items.0.includes.2'),
-                ],
-                investment: t('services.editorialShowcase.items.0.investment'),
-                investmentNote: t('services.editorialShowcase.items.0.investmentNote'),
-                image: serviceImage1,
-                imageAlt: t('services.editorialShowcase.items.0.imageAlt'),
-                layout: 'image-right',
-            },
-            {
-                id: '02',
-                title: t('services.editorialShowcase.items.1.title'),
-                description: t('services.editorialShowcase.items.1.description'),
-                includes: [
-                    t('services.editorialShowcase.items.1.includes.0'),
-                    t('services.editorialShowcase.items.1.includes.1'),
-                    t('services.editorialShowcase.items.1.includes.2'),
-                ],
-                investment: t('services.editorialShowcase.items.1.investment'),
-                investmentNote: t('services.editorialShowcase.items.1.investmentNote'),
-                image: serviceImage2,
-                imageAlt: t('services.editorialShowcase.items.1.imageAlt'),
-                layout: 'image-left',
-            },
-            {
-                id: '03',
-                title: t('services.editorialShowcase.items.2.title'),
-                description: t('services.editorialShowcase.items.2.description'),
-                includes: [
-                    t('services.editorialShowcase.items.2.includes.0'),
-                    t('services.editorialShowcase.items.2.includes.1'),
-                    t('services.editorialShowcase.items.2.includes.2'),
-                ],
-                investment: t('services.editorialShowcase.items.2.investment'),
-                investmentNote: t('services.editorialShowcase.items.2.investmentNote'),
-                image: serviceImage3,
-                imageAlt: t('services.editorialShowcase.items.2.imageAlt'),
-                layout: 'image-right',
-            },
-        ],
-        [t]
-    );
+    const serviceItems = useMemo(() => {
+        const items = t('services.editorialShowcase.items', { returnObjects: true });
+
+        if (!Array.isArray(items)) return [];
+
+        return items.map((item, index) => ({
+            id: String(index + 1).padStart(2, '0'),
+            title: item.title,
+            description: item.description,
+            includes: Array.isArray(item.includes) ? item.includes : [],
+            investment: item.investment,
+            investmentNote: item.investmentNote,
+            image: serviceImages[index] || serviceImages[0],
+            imageAlt: item.imageAlt || item.title,
+            layout: serviceLayouts[index] || 'image-right',
+        }));
+    }, [t]);
 
     useEffect(() => {
         const node = sectionRef.current;
@@ -145,11 +115,11 @@ const ServicesEditorialShowcase = () => {
                                             ? 'services-editorial-showcase__row--image-left'
                                             : 'services-editorial-showcase__row--image-right'
                                     }`}
-                                    style={{ '--service-row-delay': `${index * 120}ms` }}
+                                    style={{ '--service-row-delay': `${index * 140}ms` }}
                                 >
-                                    {index !== 0 ? (
+                                    {index !== 0 && (
                                         <span className='services-editorial-showcase__separator' aria-hidden='true' />
-                                    ) : null}
+                                    )}
 
                                     <div className='services-editorial-showcase__row-grid'>
                                         <div className='services-editorial-showcase__content'>
@@ -164,31 +134,33 @@ const ServicesEditorialShowcase = () => {
                                                     {item.description}
                                                 </p>
 
-                                                <div className='services-editorial-showcase__includes'>
-                                                    <span className='services-editorial-showcase__label'>
-                                                        {t('services.editorialShowcase.includesLabel')}
-                                                    </span>
+                                                {item.includes.length > 0 && (
+                                                    <div className='services-editorial-showcase__includes'>
+                                                        <span className='services-editorial-showcase__label'>
+                                                            {t('services.editorialShowcase.includesLabel')}
+                                                        </span>
 
-                                                    <span
-                                                        className='services-editorial-showcase__label-line'
-                                                        aria-hidden='true'
-                                                    />
+                                                        <span
+                                                            className='services-editorial-showcase__label-line'
+                                                            aria-hidden='true'
+                                                        />
 
-                                                    <ul className='services-editorial-showcase__list'>
-                                                        {item.includes.map((include) => (
-                                                            <li
-                                                                key={include}
-                                                                className='services-editorial-showcase__list-item'
-                                                            >
-                                                                <span
-                                                                    className='services-editorial-showcase__list-bullet'
-                                                                    aria-hidden='true'
-                                                                />
-                                                                <span>{include}</span>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
+                                                        <ul className='services-editorial-showcase__list'>
+                                                            {item.includes.map((include) => (
+                                                                <li
+                                                                    key={include}
+                                                                    className='services-editorial-showcase__list-item'
+                                                                >
+                                                                    <span
+                                                                        className='services-editorial-showcase__list-bullet'
+                                                                        aria-hidden='true'
+                                                                    />
+                                                                    <span>{include}</span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
 
@@ -211,9 +183,11 @@ const ServicesEditorialShowcase = () => {
 
                                                 <div className='services-editorial-showcase__price'>{item.investment}</div>
 
-                                                <div className='services-editorial-showcase__price-note'>
-                                                    {item.investmentNote}
-                                                </div>
+                                                {item.investmentNote && (
+                                                    <div className='services-editorial-showcase__price-note'>
+                                                        {item.investmentNote}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

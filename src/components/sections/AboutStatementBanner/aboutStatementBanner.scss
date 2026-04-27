@@ -200,11 +200,14 @@
       position: absolute;
       left: 50%;
       bottom: -12px;
-      width: 100%;
+      width: 164px;
       height: 1px;
-      background: rgba(243, 238, 232, 0.42);
+      background: rgba(243, 238, 232, 0.32);
       transform: translateX(-50%);
-      transition: background 0.3s ease, width 0.3s ease;
+      transition:
+              background 0.35s ease,
+              opacity 0.35s ease,
+              transform 0.35s ease;
     }
 
     &:hover {
@@ -213,8 +216,8 @@
     }
 
     &:hover::after {
-      width: 108%;
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.48);
+      transform: translateX(-50%) scaleX(1.04);
     }
   }
 }

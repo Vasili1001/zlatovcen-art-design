@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import backgroundImage from '../../../assets/images/studio-showcase/backgroundImage.jpg';
-import mainImage from '../../../assets/images/studio-showcase/showcase-main.jpg';
-import leftImage from '../../../assets/images/studio-showcase/showcase-left.jpg';
-import rightImage from '../../../assets/images/studio-showcase/showcase-right.jpg';
+import mainImage from '../../../assets/images/studio-showcase/center.webp';
+import leftImage from '../../../assets/images/studio-showcase/left.webp';
+import rightImage from '../../../assets/images/studio-showcase/right.webp';
 import './studioShowcase.scss';
 
 const StudioShowcase = () => {

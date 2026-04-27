@@ -78,11 +78,13 @@
     },
     "contact": {
       "addressLine1": "123 Bogdan Voievod,",
-      "addressLine2": "Suite 400 Atlanta, GA 30309"
+      "addressLine2": "Suite 400 Atlanta, GA 30309",
+      "note": "Disponibili pentru proiecte rezidențiale și solicitări comerciale boutique."
     },
     "social": {
       "instagram": "Instagram",
-      "facebook": "Facebook"
+      "whatsapp": "WhatsApp",
+      "viber": "Viber"
     },
     "accessibility": {
       "footerNavigation": "Navigare în subsol",

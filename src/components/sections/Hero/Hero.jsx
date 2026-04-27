@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import hero1 from '../../../assets/images/hero/hero-1.jpg';
+import hero1 from '../../../assets/images/hero/ddd.JPEG';
 import hero2 from '../../../assets/images/hero/hero-2.jpg';
 import hero3 from '../../../assets/images/hero/hero-3.jpg';
 import hero4 from '../../../assets/images/hero/hero-4.jpg';
@@ -121,20 +121,22 @@ const Hero = () => {
                         <span className='hero__eyebrow'>{t('home.hero.eyebrow')}</span>
 
                         <h1 className='hero__title'>
-                            {t('home.hero.titleLine1')}
-                            <br />
-                            {t('home.hero.titleLine2')}
+                            ZLATOVCEN
+                            <br/>
                         </h1>
+
+                        <span className='hero__eyebrow'>ART DESIGN</span>
 
                         <div className='hero__actions'>
                             <NavLink to='/services' className='hero__button'>
                                 {t('home.hero.cta')}
                             </NavLink>
                         </div>
+
                     </div>
 
                     <div className='hero__bottom'>
-                        <div
+                    <div
                             className='hero__pagination'
                             aria-label={t('home.hero.accessibility.slidesNavigation')}
                         >
@@ -145,7 +147,7 @@ const Hero = () => {
                             </span>
 
                             <div className='hero__dots'>
-                                {slides.map((slide, index) => (
+                            {slides.map((slide, index) => (
                                     <button
                                         key={slide.id}
                                         type='button'

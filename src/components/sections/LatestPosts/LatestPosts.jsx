@@ -1,47 +1,48 @@
-import React, { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useRef, useState } from 'react';
 import Container from '../../ui/Container/Container.jsx';
 import BlogCard from '../../ui/BlogCard/BlogCard.jsx';
 import './latestPosts.scss';
 
-import post1 from '../../../assets/images/blog/posts/post1.jpg';
-import post2 from '../../../assets/images/blog/posts/post2.jpg';
+const LatestPosts = ({ posts = [] }) => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
-const LatestPosts = () => {
-    const { t } = useTranslation();
+    useEffect(() => {
+        const node = sectionRef.current;
 
-    const posts = useMemo(
-        () => [
-            {
-                id: 'art-in-luxury',
-                title: t('blog.latestPosts.posts.0.title'),
-                image: post1,
-                category: t('blog.latestPosts.posts.0.category'),
+        if (!node) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (mediaQuery.matches) {
+            setIsVisible(true);
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(node);
+                }
             },
             {
-                id: 'color-palettes',
-                title: t('blog.latestPosts.posts.1.title'),
-                image: post2,
-                category: t('blog.latestPosts.posts.1.category'),
-            },
-            {
-                id: 'small-touches',
-                title: t('blog.latestPosts.posts.2.title'),
-                image: post1,
-                category: t('blog.latestPosts.posts.2.category'),
-            },
-            {
-                id: 'art-in-luxury-2',
-                title: t('blog.latestPosts.posts.3.title'),
-                image: post2,
-                category: t('blog.latestPosts.posts.3.category'),
-            },
-        ],
-        [t]
-    );
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px',
+            }
+        );
+
+        observer.observe(node);
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section className='latest-posts' aria-labelledby='latest-posts-title'>
+        <section
+            ref={sectionRef}
+            className={`latest-posts ${isVisible ? 'latest-posts--revealed' : ''}`}
+            aria-labelledby='latest-posts-title'
+        >
             <div className='latest-posts__background-accent' aria-hidden='true' />
             <div className='latest-posts__background-glow latest-posts__background-glow--left' aria-hidden='true' />
             <div className='latest-posts__background-glow latest-posts__background-glow--right' aria-hidden='true' />
@@ -51,41 +52,44 @@ const LatestPosts = () => {
                     <div className='latest-posts__header'>
                         <div className='latest-posts__topline'>
                             <span className='latest-posts__topline-label'>
-                                {t('blog.latestPosts.eyebrow')}
+                                Design Journal
                             </span>
                             <span className='latest-posts__topline-line' aria-hidden='true' />
-                            <span className='latest-posts__topline-index'>
-                                {t('blog.latestPosts.index')}
-                            </span>
+                            <span className='latest-posts__topline-index'>02</span>
                         </div>
 
                         <div className='latest-posts__script-wrap' aria-hidden='true'>
-                            <span className='latest-posts__script'>{t('blog.latestPosts.script')}</span>
+                            <span className='latest-posts__script'>Journal</span>
                         </div>
 
                         <h2 className='latest-posts__title' id='latest-posts-title'>
-                            {t('blog.latestPosts.title')}
+                            Latest Posts
                         </h2>
 
                         <p className='latest-posts__subtitle'>
-                            {t('blog.latestPosts.subtitle')}
+                            Curated perspectives on interiors, atmosphere, materials, and the subtle decisions that define timeless design.
                         </p>
                     </div>
 
                     <div className='latest-posts__grid-shell'>
                         <div className='latest-posts__grid'>
-                            {posts.map((post) => (
-                                <BlogCard
+                            {posts.map((post, index) => (
+                                <div
                                     key={post.id}
-                                    to={`/blog/${post.id}`}
-                                    image={post.image}
-                                    imageAlt={post.title}
-                                    category={post.category}
-                                    title={post.title}
-                                    ctaLabel={t('blog.latestPosts.cta')}
-                                    variant='default'
-                                    className='latest-posts__blog-card'
-                                />
+                                    className='latest-posts__card-reveal'
+                                    style={{ '--latest-post-delay': `${index * 110}ms` }}
+                                >
+                                    <BlogCard
+                                        to={`/blog/${post.slug}`}
+                                        image={post.previewImage}
+                                        imageAlt={post.previewImageAlt || post.title}
+                                        category={post.category}
+                                        title={post.title}
+                                        ctaLabel='Read Article'
+                                        variant='default'
+                                        className='latest-posts__blog-card'
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>

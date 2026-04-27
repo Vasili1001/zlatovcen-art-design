@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
@@ -8,9 +8,45 @@ import './featuredBlogPost.scss';
 
 const FeaturedBlogPost = () => {
     const { t } = useTranslation();
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const node = sectionRef.current;
+
+        if (!node) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (mediaQuery.matches) {
+            setIsVisible(true);
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(node);
+                }
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px',
+            }
+        );
+
+        observer.observe(node);
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section className='featured-blog-post' aria-labelledby='featured-blog-post-title'>
+        <section
+            ref={sectionRef}
+            className={`featured-blog-post ${isVisible ? 'featured-blog-post--revealed' : ''}`}
+            aria-labelledby='featured-blog-post-title'
+        >
             <div className='featured-blog-post__background' aria-hidden='true'>
                 <img src={backgroundImage} alt='' className='featured-blog-post__background-image' />
             </div>

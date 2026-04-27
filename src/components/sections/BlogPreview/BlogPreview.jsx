@@ -1,42 +1,17 @@
 import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import BlogCard from '../../ui/BlogCard/BlogCard.jsx';
 import backgroundImage from '../../../assets/images/blog-preview/blog-preview-background.jpg';
-import post1 from '../../../assets/images/blog-preview/post-1.jpg';
-import post2 from '../../../assets/images/blog-preview/post-2.jpg';
-import post3 from '../../../assets/images/blog-preview/post-3.jpg';
+import { blogPosts } from '../../../data/blogPosts.js';
+import { getFeaturedPost, getLatestPosts } from '../../../utils/blog.js';
 import './blogPreview.scss';
 
 const BlogPreview = () => {
-    const { t } = useTranslation();
-
-    const posts = useMemo(
-        () => [
-            {
-                id: 1,
-                image: post1,
-                title: t('home.blogPreview.posts.0.title'),
-                category: t('home.blogPreview.posts.0.category'),
-                link: '/blog',
-            },
-            {
-                id: 2,
-                image: post2,
-                title: t('home.blogPreview.posts.1.title'),
-                category: t('home.blogPreview.posts.1.category'),
-                link: '/blog',
-            },
-            {
-                id: 3,
-                image: post3,
-                title: t('home.blogPreview.posts.2.title'),
-                category: t('home.blogPreview.posts.2.category'),
-                link: '/blog',
-            },
-        ],
-        [t]
+    const featuredPost = useMemo(() => getFeaturedPost(blogPosts), []);
+    const previewPosts = useMemo(
+        () => getLatestPosts(blogPosts, featuredPost.id).slice(0, 3),
+        [featuredPost.id]
     );
 
     return (
@@ -54,30 +29,30 @@ const BlogPreview = () => {
                 <div className='blog-preview__inner'>
                     <div className='blog-preview__header'>
                         <div className='blog-preview__topline'>
-                            <span className='blog-preview__eyebrow'>{t('home.blogPreview.eyebrow')}</span>
+                            <span className='blog-preview__eyebrow'>Journal</span>
                             <span className='blog-preview__topline-line' aria-hidden='true' />
-                            <span className='blog-preview__index'>{t('home.blogPreview.index')}</span>
+                            <span className='blog-preview__index'>05</span>
                         </div>
 
                         <h2 className='blog-preview__title' id='blog-preview-title'>
-                            {t('home.blogPreview.title')}
+                            Latest Posts
                         </h2>
 
                         <p className='blog-preview__subtitle'>
-                            {t('home.blogPreview.subtitle')}
+                            Perspectives on interiors, materials, atmosphere, and the subtle decisions that shape a timeless living space.
                         </p>
                     </div>
 
                     <div className='blog-preview__grid'>
-                        {posts.map((post) => (
+                        {previewPosts.map((post) => (
                             <BlogCard
                                 key={post.id}
-                                to={post.link}
-                                image={post.image}
-                                imageAlt={post.title}
+                                to={`/blog/${post.slug}`}
+                                image={post.previewImage}
+                                imageAlt={post.previewImageAlt || post.title}
                                 category={post.category}
                                 title={post.title}
-                                ctaLabel={t('home.blogPreview.readPost')}
+                                ctaLabel='Read Article'
                                 variant='default'
                             />
                         ))}
@@ -86,7 +61,7 @@ const BlogPreview = () => {
                     <div className='blog-preview__footer'>
                         <span className='blog-preview__footer-line' aria-hidden='true' />
                         <NavLink to='/blog' className='blog-preview__footer-link'>
-                            {t('home.blogPreview.footerLink')}
+                            View All Articles
                         </NavLink>
                         <span className='blog-preview__footer-line' aria-hidden='true' />
                     </div>

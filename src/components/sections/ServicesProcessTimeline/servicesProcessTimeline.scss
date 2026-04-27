@@ -77,6 +77,25 @@
     padding: 92px 0 108px;
   }
 
+  &__header,
+  &__timeline,
+  &__step {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition:
+            opacity 0.82s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.82s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  &__timeline {
+    transition-delay: 120ms;
+  }
+
+  &__step {
+    transition-delay: calc(var(--timeline-step-delay, 0ms) + 220ms);
+  }
+
   &__header {
     position: relative;
     display: flex;
@@ -132,6 +151,7 @@
     font-size: clamp(76px, 10vw, 142px);
     line-height: 0.9;
     user-select: none;
+    animation: services-process-timeline-script-float 14s ease-in-out infinite;
   }
 
   &__title {
@@ -143,7 +163,7 @@
     font-size: clamp(38px, 4.8vw, 68px);
     font-weight: 500;
     line-height: 1.02;
-    letter-spacing: -0.03em;
+    letter-spacing: 0em;
     text-wrap: balance;
     text-shadow:
             0 1px 0 rgba(255, 255, 255, 0.04),
@@ -177,7 +197,8 @@
     bottom: 12px;
     left: 50%;
     width: 1px;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
     background:
             linear-gradient(
                             180deg,
@@ -187,6 +208,8 @@
                             rgba(203, 187, 167, 0.04) 100%
             );
     box-shadow: 0 0 18px rgba(203, 187, 167, 0.04);
+    transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 180ms;
   }
 
   &__terminal {
@@ -195,10 +218,16 @@
     width: 10px;
     height: 10px;
     background: rgba(203, 187, 167, 0.78);
-    transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg) scale(0.82);
+    opacity: 0;
     box-shadow:
             0 0 0 5px rgba(203, 187, 167, 0.035),
             0 10px 22px rgba(0, 0, 0, 0.16);
+    transition:
+            opacity 0.72s ease,
+            transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 720ms;
+    animation: services-process-timeline-terminal-pulse 4.8s ease-in-out infinite;
 
     &--top {
       top: 0;
@@ -206,6 +235,7 @@
 
     &--bottom {
       bottom: 0;
+      transition-delay: 980ms;
     }
   }
 
@@ -230,7 +260,7 @@
 
       .services-process-timeline__step-node {
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0) scale(0.84);
       }
 
       .services-process-timeline__step-topline {
@@ -247,7 +277,7 @@
 
       .services-process-timeline__step-node {
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0) scale(0.84);
       }
 
       .services-process-timeline__step-topline {
@@ -267,12 +297,30 @@
             0 0 0 6px rgba(203, 187, 167, 0.03),
             0 0 24px rgba(203, 187, 167, 0.08);
     z-index: 2;
+    opacity: 0;
+    transition:
+            opacity 0.65s ease,
+            transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 0.4s ease;
+    animation: services-process-timeline-node-pulse 4.2s ease-in-out infinite;
+    animation-delay: var(--timeline-step-delay, 0ms);
   }
 
   &__step-inner {
     position: relative;
     width: min(100%, 430px);
     padding-inline: 34px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &__step:hover .services-process-timeline__step-inner {
+    transform: translateY(-2px);
+  }
+
+  &__step:hover .services-process-timeline__step-node {
+    box-shadow:
+            0 0 0 7px rgba(203, 187, 167, 0.04),
+            0 0 30px rgba(203, 187, 167, 0.12);
   }
 
   &__step-topline {
@@ -304,7 +352,7 @@
     font-size: clamp(32px, 3vw, 52px);
     font-weight: 500;
     line-height: 1.02;
-    letter-spacing: -0.024em;
+    letter-spacing: 0em;
     text-wrap: balance;
   }
 
@@ -318,6 +366,77 @@
     letter-spacing: 0.01em;
     text-wrap: balance;
     max-width: 360px;
+  }
+
+  &--revealed {
+    .services-process-timeline__header,
+    .services-process-timeline__timeline,
+    .services-process-timeline__step {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .services-process-timeline__line {
+      transform: translateX(-50%) scaleY(1);
+    }
+
+    .services-process-timeline__terminal {
+      opacity: 1;
+      transform: translateX(-50%) rotate(45deg) scale(1);
+    }
+
+    .services-process-timeline__step-node {
+      opacity: 1;
+    }
+
+    .services-process-timeline__step--left .services-process-timeline__step-node,
+    .services-process-timeline__step--right .services-process-timeline__step-node {
+      transform: translate(-50%, 0) scale(1);
+    }
+  }
+}
+
+@keyframes services-process-timeline-script-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 4px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes services-process-timeline-node-pulse {
+  0%,
+  100% {
+    box-shadow:
+            0 0 0 6px rgba(203, 187, 167, 0.03),
+            0 0 24px rgba(203, 187, 167, 0.08);
+  }
+
+  50% {
+    box-shadow:
+            0 0 0 8px rgba(203, 187, 167, 0.038),
+            0 0 28px rgba(203, 187, 167, 0.11);
+  }
+}
+
+@keyframes services-process-timeline-terminal-pulse {
+  0%,
+  100% {
+    box-shadow:
+            0 0 0 5px rgba(203, 187, 167, 0.035),
+            0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  50% {
+    box-shadow:
+            0 0 0 7px rgba(203, 187, 167, 0.04),
+            0 12px 28px rgba(0, 0, 0, 0.18);
   }
 }
 
@@ -358,6 +477,7 @@
     &__script {
       font-size: 52px;
       color: rgba(243, 238, 232, 0.03);
+      animation-duration: 18s;
     }
 
     &__title {
@@ -383,14 +503,15 @@
       left: 0;
       top: 6px;
       bottom: 6px;
-      transform: none;
+      transform: scaleY(0);
+      transform-origin: top center;
     }
 
     &__terminal {
       left: 0;
       width: 7px;
       height: 7px;
-      transform: translateX(-50%) rotate(45deg);
+      transform: translateX(-50%) rotate(45deg) scale(0.82);
       box-shadow:
               0 0 0 4px rgba(203, 187, 167, 0.03),
               0 8px 18px rgba(0, 0, 0, 0.14);
@@ -416,7 +537,7 @@
 
         .services-process-timeline__step-node {
           left: 0;
-          transform: translate(-50%, 0);
+          transform: translate(-50%, 0) scale(0.84);
         }
 
         .services-process-timeline__step-topline {
@@ -466,6 +587,10 @@
       font-size: 13px;
       line-height: 1.66;
       color: rgba(243, 238, 232, 0.68);
+    }
+
+    &__step:hover .services-process-timeline__step-inner {
+      transform: none;
     }
   }
 }
@@ -626,6 +751,20 @@
 
 @media (prefers-reduced-motion: reduce) {
   .services-process-timeline {
+    &__header,
+    &__timeline,
+    &__step,
+    &__line,
+    &__terminal,
+    &__step-node,
+    &__step-inner,
+    &__script {
+      transition: none;
+      transform: none;
+      opacity: 1;
+      animation: none;
+    }
+
     &__terminal,
     &__step-node {
       box-shadow: 0 0 0 5px rgba(203, 187, 167, 0.03);

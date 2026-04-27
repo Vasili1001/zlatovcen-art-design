@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import backgroundImage from '../../../assets/images/blog/post/blog-post-background.jpg';
@@ -6,6 +6,8 @@ import './servicesProcessTimeline.scss';
 
 const ServicesProcessTimeline = () => {
     const { t } = useTranslation();
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     const processSteps = useMemo(
         () => [
@@ -43,8 +45,42 @@ const ServicesProcessTimeline = () => {
         [t]
     );
 
+    useEffect(() => {
+        const node = sectionRef.current;
+
+        if (!node) return undefined;
+
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (mediaQuery.matches) {
+            setIsVisible(true);
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(node);
+                }
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px',
+            }
+        );
+
+        observer.observe(node);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className='services-process-timeline' aria-labelledby='services-process-timeline-title'>
+        <section
+            ref={sectionRef}
+            className={`services-process-timeline ${isVisible ? 'services-process-timeline--revealed' : ''}`}
+            aria-labelledby='services-process-timeline-title'
+        >
             <div className='services-process-timeline__background' aria-hidden='true'>
                 <img src={backgroundImage} alt='' className='services-process-timeline__background-image' />
             </div>
@@ -94,10 +130,11 @@ const ServicesProcessTimeline = () => {
                         />
 
                         <div className='services-process-timeline__steps'>
-                            {processSteps.map((step) => (
+                            {processSteps.map((step, index) => (
                                 <article
                                     key={step.id}
                                     className={`services-process-timeline__step services-process-timeline__step--${step.side}`}
+                                    style={{ '--timeline-step-delay': `${index * 140}ms` }}
                                 >
                                     <span className='services-process-timeline__step-node' aria-hidden='true' />
 

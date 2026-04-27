@@ -70,7 +70,8 @@
 
   &__topline-label,
   &__topline-index,
-  &__eyebrow {
+  &__eyebrow,
+  &__social-label {
     color: rgba(203, 187, 167, 0.66);
     font-family: var(--font-primary);
     font-size: 10px;
@@ -120,13 +121,13 @@
     font-size: clamp(42px, 5vw, 78px);
     font-weight: 500;
     line-height: 0.98;
-    letter-spacing: -0.03em;
+    letter-spacing: 0em;
     text-wrap: balance;
   }
 
   &__description {
     margin: 0;
-    max-width: 580px;
+    max-width: 620px;
     color: rgba(233, 225, 216, 0.68);
     font-family: var(--font-primary);
     font-size: clamp(15px, 1.02vw, 18px);
@@ -225,15 +226,14 @@
     min-width: 0;
   }
 
-  &__primary-link,
-  &__text {
+  &__primary-link {
     display: inline-block;
     color: #f3ede6;
     font-family: var(--font-heading);
-    font-size: clamp(28px, 2.5vw, 42px);
+    font-size: clamp(28px, 2.35vw, 40px);
     font-weight: 500;
     line-height: 1.06;
-    letter-spacing: -0.025em;
+    letter-spacing: 0em;
     text-decoration: none;
     text-wrap: balance;
     transition: color 0.3s ease;
@@ -243,25 +243,113 @@
     color: #ffffff;
   }
 
-  &__secondary-link {
-    display: inline-block;
-    margin-top: 12px;
-    color: rgba(241, 235, 228, 0.78);
-    text-decoration: none;
+  &__primary-link--email {
+    word-break: break-word;
+  }
+
+  &__secondary-text {
+    margin: 14px 0 0;
+    max-width: 320px;
+    color: rgba(241, 235, 228, 0.7);
     font-family: var(--font-primary);
-    font-size: clamp(15px, 1.02vw, 18px);
+    font-size: clamp(14px, 0.98vw, 17px);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.72;
+    text-wrap: balance;
+  }
+
+  &__socials {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__social-link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    text-decoration: none;
+    border-top: 1px solid rgba(203, 187, 167, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  &__social-link:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  &__social-link:hover {
+    transform: translateX(2px);
+  }
+
+  &__social-icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(203, 187, 167, 0.12);
+    background:
+            linear-gradient(
+                            180deg,
+                            rgba(255, 255, 255, 0.02) 0%,
+                            rgba(255, 255, 255, 0.008) 100%
+            );
+    box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    color: rgba(243, 238, 232, 0.84);
+    transition:
+            color 0.3s ease,
+            border-color 0.3s ease,
+            background 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
+  }
+
+  &__social-link:hover &__social-icon-wrap {
+    color: #ffffff;
+    border-color: rgba(203, 187, 167, 0.2);
+    background:
+            linear-gradient(
+                            180deg,
+                            rgba(203, 187, 167, 0.045) 0%,
+                            rgba(255, 255, 255, 0.012) 100%
+            );
+    box-shadow:
+            0 14px 26px rgba(0, 0, 0, 0.13),
+            inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transform: translateY(-1px);
+  }
+
+  &__social-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  &__social-copy {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__social-value {
+    color: #f3ede6;
+    font-family: var(--font-primary);
+    font-size: clamp(14px, 1.05vw, 17px);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
     transition: color 0.3s ease;
   }
 
-  &__secondary-link:hover {
+  &__social-link:hover &__social-value {
     color: #ffffff;
-  }
-
-  &__text--address {
-    max-width: 460px;
-    font-style: normal;
   }
 
   &__sr-only {
@@ -300,7 +388,8 @@
 
     &__topline-label,
     &__topline-index,
-    &__eyebrow {
+    &__eyebrow,
+    &__social-label {
       font-size: 8px;
       letter-spacing: 0.2em;
     }
@@ -327,7 +416,7 @@
       max-width: 260px;
       font-size: clamp(30px, 10vw, 44px);
       line-height: 0.98;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
     }
 
     &__description {
@@ -359,21 +448,47 @@
       gap: 10px;
     }
 
-    &__primary-link,
-    &__text {
+    &__primary-link {
       font-size: 20px;
-      line-height: 1.1;
-      letter-spacing: -0.022em;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
     }
 
-    &__secondary-link {
-      margin-top: 8px;
+    &__secondary-text {
+      margin-top: 10px;
+      max-width: 100%;
       font-size: 13px;
       line-height: 1.58;
     }
 
-    &__text--address {
-      max-width: 100%;
+    &__socials {
+      gap: 10px;
+    }
+
+    &__social-link {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    &__social-icon-wrap {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__social-icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    &__social-copy {
+      gap: 6px;
+    }
+
+    &__social-value {
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
     }
   }
 }
@@ -405,7 +520,15 @@
       padding-top: 30px;
     }
 
-    &__card:first-child {
+    &__card:nth-child(1) {
+      grid-column: span 1;
+    }
+
+    &__card:nth-child(2) {
+      grid-column: span 1;
+    }
+
+    &__card:nth-child(3) {
       grid-column: 1 / -1;
     }
 
@@ -413,13 +536,31 @@
       padding: 26px 22px 26px;
     }
 
-    &__primary-link,
-    &__text {
-      font-size: clamp(26px, 2.4vw, 34px);
+    &__primary-link {
+      font-size: clamp(24px, 2.2vw, 32px);
     }
 
-    &__secondary-link {
+    &__secondary-text {
       font-size: 15px;
+    }
+
+    &__social-link {
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    &__social-icon-wrap {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__social-icon {
+      width: 17px;
+      height: 17px;
+    }
+
+    &__social-value {
+      font-size: clamp(14px, 1vw, 16px);
     }
   }
 }
@@ -471,7 +612,7 @@
     }
 
     &__card:nth-child(1) {
-      grid-column: span 5;
+      grid-column: span 4;
     }
 
     &__card:nth-child(2) {
@@ -479,7 +620,7 @@
     }
 
     &__card:nth-child(3) {
-      grid-column: span 3;
+      grid-column: span 4;
     }
 
     &__card-inner {
@@ -487,14 +628,23 @@
       padding: 30px 24px 30px;
     }
 
-    &__primary-link,
-    &__text {
-      font-size: clamp(27px, 2vw, 38px);
+    &__primary-link {
+      font-size: clamp(25px, 1.75vw, 34px);
       line-height: 1.08;
     }
 
-    &__secondary-link {
+    &__secondary-text {
+      max-width: 280px;
       font-size: 15px;
+    }
+
+    &__social-link {
+      grid-template-columns: 42px minmax(0, 1fr);
+    }
+
+    &__social-value {
+      font-size: clamp(14px, 0.95vw, 16px);
+      line-height: 1.55;
     }
   }
 }
@@ -530,13 +680,31 @@
       font-size: 26px;
     }
 
-    &__primary-link,
-    &__text {
-      font-size: clamp(30px, 1.95vw, 42px);
+    &__primary-link {
+      font-size: clamp(27px, 1.68vw, 36px);
     }
 
-    &__secondary-link {
+    &__secondary-text {
       font-size: 16px;
+    }
+
+    &__social-link {
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 15px;
+    }
+
+    &__social-icon-wrap {
+      width: 42px;
+      height: 42px;
+    }
+
+    &__social-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__social-value {
+      font-size: clamp(14px, 0.9vw, 16px);
     }
   }
 }
