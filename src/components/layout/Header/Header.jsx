@@ -6,10 +6,16 @@ import LanguageSwitcher from '../../ui/LanguageSwitcher/LanguageSwitcher.jsx';
 import Logo from '../../ui/Logo/Logo.jsx';
 import './header.scss';
 
+const SCROLL_THRESHOLD = 40;
+const HIDE_THRESHOLD = 140;
+
 const Header = () => {
     const { t } = useTranslation();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
 
     const leftLinks = useMemo(
         () => [
@@ -31,13 +37,50 @@ const Header = () => {
     const mobileMainLinks = useMemo(() => [...leftLinks, ...rightLinks], [leftLinks, rightLinks]);
 
     useEffect(() => {
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        const updateHeaderState = () => {
+            const currentScrollY = window.scrollY;
+            const isScrollingDown = currentScrollY > lastScrollY;
+
+            setIsScrolled(currentScrollY > SCROLL_THRESHOLD);
+
+            if (currentScrollY <= HIDE_THRESHOLD) {
+                setIsHidden(false);
+            } else {
+                setIsHidden(isScrollingDown);
+            }
+
+            lastScrollY = Math.max(currentScrollY, 0);
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeaderState);
+                ticking = true;
+            }
+        };
+
+        updateHeaderState();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
         setIsMenuOpen(false);
+        setIsHidden(false);
     }, [location.pathname]);
 
     useEffect(() => {
         if (isMenuOpen) {
             document.body.style.overflow = 'hidden';
             document.body.classList.add('menu-open');
+            setIsHidden(false);
         } else {
             document.body.style.overflow = '';
             document.body.classList.remove('menu-open');
@@ -63,9 +106,18 @@ const Header = () => {
     const getMobileContactLinkClassName = ({ isActive }) =>
         isActive ? 'header__mobile-cta header__mobile-cta--active' : 'header__mobile-cta';
 
+    const headerClassName = [
+        'header',
+        isMenuOpen ? 'header--menu-open' : '',
+        isScrolled ? 'header--scrolled' : '',
+        isHidden && !isMenuOpen ? 'header--hidden' : '',
+    ]
+        .filter(Boolean)
+        .join(' ');
+
     return (
         <>
-            <header className={`header ${isMenuOpen ? 'header--menu-open' : ''}`}>
+            <header className={headerClassName}>
                 <Container>
                     <div className='header__inner'>
                         <button
@@ -155,9 +207,7 @@ const Header = () => {
                             </nav>
 
                             <div className='header__mobile-footer'>
-                                <div className='header__mobile-note'>
-                                    {t('header.mobile.note')}
-                                </div>
+                                <div className='header__mobile-note'>{t('header.mobile.note')}</div>
 
                                 <div className='header__mobile-actions'>
                                     <NavLink
@@ -186,7 +236,6 @@ const Header = () => {
                 tabIndex={isMenuOpen ? 0 : -1}
                 onClick={closeMenu}
             />
-
         </>
     );
 };

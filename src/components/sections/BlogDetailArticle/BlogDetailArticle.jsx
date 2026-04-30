@@ -10,10 +10,13 @@ const BlogDetailArticle = ({
                                inlineImage,
                                inlineImageAlt = '',
                                paragraphs = [],
+                               sections = [],
                                quote = 'The details are not the details. They make the design.',
                            }) => {
-    const introParagraphs = paragraphs.slice(0, 2);
-    const remainingParagraphs = paragraphs.slice(2);
+    const leadParagraph = paragraphs[0] || '';
+    const introParagraph = paragraphs[1] || '';
+    const fallbackParagraphs = paragraphs.slice(2);
+    const hasSections = Array.isArray(sections) && sections.length > 0;
 
     return (
         <section className='blog-detail-article' aria-labelledby='blog-detail-article-title'>
@@ -45,16 +48,17 @@ const BlogDetailArticle = ({
 
                         <div className='blog-detail-article__body'>
                             <div className='blog-detail-article__body-column'>
-                                {introParagraphs.map((paragraph, index) => (
-                                    <p
-                                        key={`intro-${index}`}
-                                        className={`blog-detail-article__paragraph ${
-                                            index === 0 ? 'blog-detail-article__paragraph--lead' : ''
-                                        }`}
-                                    >
-                                        {paragraph}
+                                {leadParagraph ? (
+                                    <p className='blog-detail-article__paragraph'>
+                                        {leadParagraph}
                                     </p>
-                                ))}
+                                ) : null}
+
+                                {introParagraph ? (
+                                    <p className='blog-detail-article__paragraph'>
+                                        {introParagraph}
+                                    </p>
+                                ) : null}
 
                                 {inlineImage ? (
                                     <figure className='blog-detail-article__figure'>
@@ -74,11 +78,32 @@ const BlogDetailArticle = ({
                                     </blockquote>
                                 ) : null}
 
-                                {remainingParagraphs.map((paragraph, index) => (
-                                    <p key={`body-${index}`} className='blog-detail-article__paragraph'>
-                                        {paragraph}
-                                    </p>
-                                ))}
+                                {hasSections ? (
+                                    <div className='blog-detail-article__sections'>
+                                        {sections.map((section) => (
+                                            <section key={section.heading} className='blog-detail-article__section'>
+                                                <h3 className='blog-detail-article__section-title'>
+                                                    {section.heading}
+                                                </h3>
+
+                                                {section.content.map((paragraph, index) => (
+                                                    <p
+                                                        key={`${section.heading}-${index}`}
+                                                        className='blog-detail-article__paragraph'
+                                                    >
+                                                        {paragraph}
+                                                    </p>
+                                                ))}
+                                            </section>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    fallbackParagraphs.map((paragraph, index) => (
+                                        <p key={`body-${index}`} className='blog-detail-article__paragraph'>
+                                            {paragraph}
+                                        </p>
+                                    ))
+                                )}
                             </div>
                         </div>
                     </article>

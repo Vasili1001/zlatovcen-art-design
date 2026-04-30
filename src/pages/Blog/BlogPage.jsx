@@ -5,15 +5,12 @@ import FeaturedBlogPost from '../../components/sections/FeaturedBlogPost/Feature
 import blogHeroImage from '../../assets/images/blog/blog-hero.jpg';
 import LatestPosts from '../../components/sections/LatestPosts/LatestPosts.jsx';
 import { blogPosts } from '../../data/blogPosts.js';
-import { getFeaturedPost, getLatestPosts } from '../../utils/blog.js';
+import { getFeaturedPost } from '../../utils/blog.js';
 import './blogPage.scss';
 
 const BlogPage = () => {
     const featuredPost = useMemo(() => getFeaturedPost(blogPosts), []);
-    const latestPosts = useMemo(
-        () => getLatestPosts(blogPosts, featuredPost.id),
-        [featuredPost.id]
-    );
+    const latestPosts = useMemo(() => blogPosts, []);
 
     return (
         <div className='blog-page'>

@@ -15,8 +15,7 @@
 
   &:hover {
     border-color: rgba(203, 187, 167, 0.12);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
-    transform: translateY(-1px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
   }
 
   &:hover::before {
@@ -66,8 +65,8 @@
   }
 
   &:hover &__image {
-    transform: scale(1.01);
-    filter: saturate(1) contrast(1) brightness(1);
+    transform: scale(1.025);
+    filter: saturate(1) contrast(1.01) brightness(1.01);
   }
 
   &__content {
