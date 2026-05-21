@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import backgroundImage from '../../../assets/images/blog/featured/featured-background.jpg';
-import featuredImage from '../../../assets/images/blog/featured/featured-main.jpg';
+import featuredImage from '../../../assets/images/blog/featured/featured.webp';
 import './featuredBlogPost.scss';
 
 const FeaturedBlogPost = () => {

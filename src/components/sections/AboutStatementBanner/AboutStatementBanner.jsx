@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import statementImage from '../../../assets/images/blog/featured/featured-main.jpg';
+import statementImage from '../../../assets/images/blog/featured/Accuracy.webp';
 import './aboutStatementBanner.scss';
 
 const AboutStatementBanner = () => {

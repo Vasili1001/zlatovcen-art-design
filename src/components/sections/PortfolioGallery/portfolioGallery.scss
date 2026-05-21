@@ -27,12 +27,11 @@
     align-items: center;
     text-align: center;
     margin-bottom: 52px;
-    opacity: 0;
-    transform: translate3d(0, 22px, 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
     transition:
             opacity 0.82s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.82s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
   }
 
   &__icon {
@@ -62,13 +61,12 @@
   &__card {
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    transform: translate3d(0, 22px, 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
     transition:
             opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1),
             transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--portfolio-card-delay, 0ms);
-    will-change: opacity, transform;
   }
 
   &__media {
@@ -99,22 +97,18 @@
       filter: saturate(0.88) contrast(0.97) brightness(0.96);
     }
 
-    &:hover img {
-      transform: scale(1.035);
-      filter: saturate(0.92) contrast(0.98) brightness(0.98);
-    }
   }
 
-  &__card:not(&__card--featured) &__media {
+  &__media {
     aspect-ratio: 0.82 / 1;
-  }
-
-  &__card--featured &__media {
-    aspect-ratio: 1.9 / 1;
   }
 
   &__content {
     padding-top: 18px;
+    transform: translate3d(0, 0, 0);
+    transition:
+            transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 0.42s ease;
   }
 
   &__card-title {
@@ -137,11 +131,22 @@
     }
   }
 
+  &__card-category {
+    margin: 8px 0 0;
+    color: rgba(243, 238, 232, 0.56);
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
   &__link {
     position: relative;
     display: inline-flex;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 10px;
     color: rgba(203, 187, 167, 0.8);
     text-decoration: none;
     font-size: 10px;
@@ -168,11 +173,49 @@
     }
   }
 
-  &--revealed {
-    .portfolio-gallery__heading,
-    .portfolio-gallery__card {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
+  &__card:hover {
+    .portfolio-gallery__media img {
+      transform: scale(1.028);
+      filter: saturate(0.94) contrast(0.99) brightness(0.99);
+    }
+
+    .portfolio-gallery__content {
+      transform: translate3d(0, -4px, 0);
+    }
+
+    .portfolio-gallery__card-title a {
+      color: #f7f1ea;
+    }
+
+    .portfolio-gallery__card-category {
+      color: rgba(243, 238, 232, 0.68);
+    }
+
+    .portfolio-gallery__link {
+      color: #f3eee8;
+    }
+
+    .portfolio-gallery__link::after {
+      transform: translateX(3px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-gallery {
+    &__heading,
+    &__card {
+      opacity: 0;
+      transform: translate3d(0, 22px, 0);
+      will-change: opacity, transform;
+    }
+
+    &--revealed {
+      .portfolio-gallery__heading,
+      .portfolio-gallery__card {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
     }
   }
 }
@@ -214,6 +257,11 @@
       font-size: 21px;
     }
 
+    &__card-category {
+      margin-top: 9px;
+      font-size: 11px;
+    }
+
     &__link {
       margin-top: 10px;
       font-size: 10px;
@@ -253,12 +301,16 @@
       font-size: 22px;
     }
 
+    &__card-category {
+      font-size: 11px;
+    }
+
     &__card:not(&__card--featured) &__media {
       aspect-ratio: 0.84 / 1;
     }
 
-    &__card--featured &__media {
-      aspect-ratio: 2.1 / 1;
+    &__media {
+      aspect-ratio: 0.86 / 1;
     }
   }
 }
@@ -295,7 +347,6 @@
 
     &__heading {
       margin-bottom: 34px;
-      transform: translate3d(0, 18px, 0);
       transition-duration: 0.72s;
     }
 
@@ -316,16 +367,11 @@
     }
 
     &__card {
-      transform: translate3d(0, 18px, 0);
       transition-duration: 0.68s;
     }
 
     &__card:not(&__card--featured) &__media {
       aspect-ratio: 0.86 / 1;
-    }
-
-    &__card--featured &__media {
-      aspect-ratio: 1.42 / 1;
     }
 
     &__content {
@@ -338,14 +384,26 @@
       letter-spacing: -0.012em;
     }
 
-    &__link {
+    &__card-category {
       margin-top: 7px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+    }
+
+    &__link {
+      margin-top: 8px;
       font-size: 9px;
       letter-spacing: 0.2em;
 
       &::after {
         margin-left: 6px;
         font-size: 11px;
+      }
+    }
+
+    &__card:hover {
+      .portfolio-gallery__content {
+        transform: none;
       }
     }
   }
@@ -358,6 +416,7 @@
       opacity: 1;
       transform: none;
       transition: none;
+      will-change: auto;
     }
   }
 }

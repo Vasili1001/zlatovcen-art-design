@@ -150,7 +150,9 @@ const ContactInfoBar = () => {
                                 <p className='contact-info-bar__supporting-text'>
                                     {t('contact.infoBar.supporting', {
                                         defaultValue:
-                                            'We welcome residential and selected boutique commercial inquiries, guiding each project with clarity, restraint, and thoughtful detail.',
+                                            'Мы работаем с частными\n' +
+                                            'и коммерческими проектами,\n' +
+                                            'создавая пространства с продуманной архитектурой и вниманием к деталям.',
                                     })}
                                 </p>
                             </div>
@@ -164,7 +166,7 @@ const ContactInfoBar = () => {
                             <p className='contact-info-bar__description'>
                                 {t('contact.infoBar.description', {
                                     defaultValue:
-                                        'Choose the most convenient way to reach out — by phone, email, or directly through our social channels.',
+                                        'Свяжитесь с нами любым удобным способом — для консультации, обсуждения проекта или начала сотрудничества.',
                                 })}
                             </p>
                         </div>

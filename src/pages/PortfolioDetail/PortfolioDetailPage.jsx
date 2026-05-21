@@ -7,7 +7,6 @@ import ProjectOverview from '../../components/sections/ProjectOverview/ProjectOv
 import ProjectEditorialGallery from '../../components/sections/ProjectEditorialGallery/ProjectEditorialGallery.jsx';
 import ProjectPager from '../../components/sections/ProjectPager/ProjectPager.jsx';
 import { portfolioProjects } from '../../data/portfolioProjects.js';
-// import ProjectStatementBanner from '../../components/sections/ProjectStatementBanner/ProjectStatementBanner.jsx';
 import './portfolioDetailPage.scss';
 
 const PortfolioDetailPage = () => {
@@ -17,7 +16,7 @@ const PortfolioDetailPage = () => {
     const currentIndex = portfolioProjects.findIndex((project) => project.id === id);
     const project = portfolioProjects[currentIndex];
 
-    if (!project || !project.heroImage) {
+    if (!project) {
         return <Navigate to='/portfolio' replace />;
     }
 
@@ -27,13 +26,14 @@ const PortfolioDetailPage = () => {
     const heroEyebrow =
         project.heroEyebrow ||
         project.serviceType ||
+        project.category ||
         t('portfolio.detailHero.defaultEyebrow');
 
     return (
         <div className='portfolio-detail-page'>
             <PageHero
-                image={project.heroImage}
-                imageAlt={project.heroAlt || project.title}
+                image={project.heroImage || project.coverImage}
+                imageAlt={project.heroAlt || project.coverAlt || project.title}
                 eyebrow={heroEyebrow}
                 title={project.title}
                 contentWidth='wide'
@@ -44,19 +44,12 @@ const PortfolioDetailPage = () => {
             <ProjectOverview
                 title={project.title}
                 shortDescription={project.shortDescription}
-                serviceType={project.serviceType}
-                features={project.features}
-                thumbImage={project.thumbImage}
+                serviceType={project.serviceType || project.category}
+                features={project.features || []}
+                thumbImage={project.thumbImage || project.coverImage}
             />
 
-            <ProjectEditorialGallery rows={project.galleryRows} />
-
-            {/*{project.statementBannerImage ? (*/}
-            {/*    <ProjectStatementBanner*/}
-            {/*        image={project.statementBannerImage}*/}
-            {/*        imageAlt={`${project.title} statement banner`}*/}
-            {/*    />*/}
-            {/*) : null}*/}
+            <ProjectEditorialGallery images={project.galleryImages || []} />
 
             <ProjectPager
                 previousProject={previousProject}

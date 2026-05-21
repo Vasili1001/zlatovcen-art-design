@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import backgroundImage from '../../../assets/images/blog/post/blog-post-background.jpg';
-import serviceImage1 from '../../../assets/images/portfolio/projects/project-1.jpg';
+import serviceImage1 from '../../../assets/images/portfolio/projects/IMG_7368.webp';
 import serviceImage2 from '../../../assets/images/portfolio/projects/project-2.jpg';
-import serviceImage3 from '../../../assets/images/portfolio/projects/project-3.jpg';
+import serviceImage3 from '../../../assets/images/portfolio/projects/IMG_1109.webp';
 import './servicesEditorialShowcase.scss';
 
 const serviceImages = [serviceImage1, serviceImage2, serviceImage3];

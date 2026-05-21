@@ -44,8 +44,7 @@ const TestimonialShowcase = () => {
 
                         <div className='testimonial-showcase__author-block'>
                             <span className='testimonial-showcase__author-line' aria-hidden='true' />
-                            <span className='testimonial-showcase__author'>{t('home.testimonialShowcase.author')}</span>
-                            <span className='testimonial-showcase__author-role'>{t('home.testimonialShowcase.role')}</span>
+                            <span className='testimonial-showcase__author'>{t('home.testimonialShowcase.role')}</span>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import faqImageTop from '../../../assets/images/blog-preview/post-1.jpg';
-import faqImageBottom from '../../../assets/images/blog-preview/post-2.jpg';
+import faqImageTop from '../../../assets/images/blog-preview/first_img_faq.webp';
+import faqImageBottom from '../../../assets/images/blog-preview/second_img_faq.webp';
 import './contactFaq.scss';
 
 const ContactFaq = () => {

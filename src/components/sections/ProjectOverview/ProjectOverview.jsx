@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Container from '../../ui/Container/Container.jsx';
 import './projectOverview.scss';
 
-const ProjectOverview = ({ title, shortDescription, serviceType, features, thumbImage }) => {
+const ProjectOverview = ({ title, thumbImage }) => {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -45,9 +45,11 @@ const ProjectOverview = ({ title, shortDescription, serviceType, features, thumb
             <Container>
                 <div className='project-overview__inner'>
                     <div className='project-overview__head'>
-                        <div className='project-overview__thumb' aria-hidden='true'>
-                            <img src={thumbImage} alt='' />
-                        </div>
+                        {thumbImage ? (
+                            <div className='project-overview__thumb' aria-hidden='true'>
+                                <img src={thumbImage} alt='' loading='eager' decoding='async' />
+                            </div>
+                        ) : null}
 
                         <div className='project-overview__heading-copy'>
                             <span className='project-overview__eyebrow'>Project Overview</span>
@@ -55,24 +57,6 @@ const ProjectOverview = ({ title, shortDescription, serviceType, features, thumb
                             <h2 className='project-overview__title' id='project-overview-title'>
                                 {title}
                             </h2>
-                        </div>
-                    </div>
-
-                    <div className='project-overview__content'>
-                        <div className='project-overview__description'>
-                            <p>{shortDescription}</p>
-                        </div>
-
-                        <div className='project-overview__meta'>
-                            <div className='project-overview__meta-block'>
-                                <span className='project-overview__label'>Service Type</span>
-                                <span className='project-overview__value'>{serviceType}</span>
-                            </div>
-
-                            <div className='project-overview__meta-block'>
-                                <span className='project-overview__label'>Features</span>
-                                <span className='project-overview__value'>{features.join(', ')}</span>
-                            </div>
                         </div>
                     </div>
 

@@ -18,7 +18,7 @@ const PortfolioGallery = () => {
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         if (mediaQuery.matches) {
-            setIsVisible(true);
+            requestAnimationFrame(() => setIsVisible(true));
             return undefined;
         }
 
@@ -26,12 +26,12 @@ const PortfolioGallery = () => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.unobserve(node);
+                    observer.unobserve(entry.target);
                 }
             },
             {
-                threshold: 0.18,
-                rootMargin: '0px 0px -8% 0px',
+                threshold: 0.05,
+                rootMargin: '160px 0px -5% 0px',
             }
         );
 
@@ -64,23 +64,35 @@ const PortfolioGallery = () => {
                         {portfolioProjects.map((project, index) => (
                             <article
                                 key={project.id}
-                                className={`portfolio-gallery__card ${
-                                    project.featured ? 'portfolio-gallery__card--featured' : ''
-                                }`}
-                                style={{ '--portfolio-card-delay': `${index * 90}ms` }}
+                                className='portfolio-gallery__card'
+                                style={{ '--portfolio-card-delay': `${Math.min(index * 70, 420)}ms` }}
                             >
                                 <NavLink
                                     to={`/portfolio/${project.id}`}
                                     className='portfolio-gallery__media'
                                     aria-label={t('portfolio.gallery.openProject', { title: project.title })}
                                 >
-                                    <img src={project.coverImage} alt={project.coverAlt} />
+                                    <img
+                                        src={project.coverImage}
+                                        alt={project.coverAlt || project.title}
+                                        loading={index < 4 ? 'eager' : 'lazy'}
+                                        decoding='async'
+                                        fetchPriority={index < 2 ? 'high' : 'auto'}
+                                    />
                                 </NavLink>
 
                                 <div className='portfolio-gallery__content'>
                                     <h3 className='portfolio-gallery__card-title'>
-                                        <NavLink to={`/portfolio/${project.id}`}>{project.title}</NavLink>
+                                        <NavLink to={`/portfolio/${project.id}`}>
+                                            {project.title}
+                                        </NavLink>
                                     </h3>
+
+                                    {project.category ? (
+                                        <p className='portfolio-gallery__card-category'>
+                                            {project.category}
+                                        </p>
+                                    ) : null}
 
                                     <NavLink to={`/portfolio/${project.id}`} className='portfolio-gallery__link'>
                                         {t('portfolio.gallery.details')}

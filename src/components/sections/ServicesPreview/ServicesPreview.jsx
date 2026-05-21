@@ -2,32 +2,23 @@ import React, { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import servicesPreviewImage from '../../../assets/images/services-preview/services-preview-main.jpg';
+import servicesPreviewImage from '../../../assets/images/services-preview/services_main_page.webp';
 import './servicesPreview.scss';
 
 const ServicesPreview = () => {
     const { t } = useTranslation();
 
-    const serviceItems = useMemo(
-        () => [
-            {
-                id: '01',
-                title: t('home.servicesPreview.items.0.title'),
-                description: t('home.servicesPreview.items.0.description'),
-            },
-            {
-                id: '02',
-                title: t('home.servicesPreview.items.1.title'),
-                description: t('home.servicesPreview.items.1.description'),
-            },
-            {
-                id: '03',
-                title: t('home.servicesPreview.items.2.title'),
-                description: t('home.servicesPreview.items.2.description'),
-            },
-        ],
-        [t]
-    );
+    const serviceItems = useMemo(() => {
+        const items = t('home.servicesPreview.items', { returnObjects: true });
+
+        if (!Array.isArray(items)) return [];
+
+        return items.map((item, index) => ({
+            id: String(index + 1).padStart(2, '0'),
+            title: item.title,
+            description: item.description,
+        }));
+    }, [t]);
 
     return (
         <section className='services-preview' aria-labelledby='services-preview-title'>
@@ -60,10 +51,6 @@ const ServicesPreview = () => {
                         <h2 className='services-preview__title' id='services-preview-title'>
                             {t('home.servicesPreview.title')}
                         </h2>
-
-                        <p className='services-preview__description'>
-                            {t('home.servicesPreview.description')}
-                        </p>
 
                         <div
                             className='services-preview__list'

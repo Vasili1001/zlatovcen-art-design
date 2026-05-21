@@ -2,26 +2,30 @@ import React from 'react';
 import Container from '../../ui/Container/Container.jsx';
 import './projectEditorialGallery.scss';
 
-const ProjectEditorialGallery = ({ rows }) => {
+const ProjectEditorialGallery = ({ images = [] }) => {
+    if (!Array.isArray(images) || images.length === 0) {
+        return null;
+    }
+
     return (
         <section className='project-editorial-gallery' aria-label='Project gallery'>
             <Container>
                 <div className='project-editorial-gallery__inner'>
-                    {rows.map((row, index) => (
-                        <div
-                            key={`${row.layout}-${index}`}
-                            className={`project-editorial-gallery__row project-editorial-gallery__row--${row.layout}`}
-                        >
-                            {row.images.map((image, imageIndex) => (
-                                <figure
-                                    key={`${image.src}-${imageIndex}`}
-                                    className='project-editorial-gallery__item'
-                                >
-                                    <img src={image.src} alt={image.alt} />
-                                </figure>
-                            ))}
-                        </div>
-                    ))}
+                    <div className='project-editorial-gallery__grid'>
+                        {images.map((image, index) => (
+                            <figure
+                                key={`${image.src}-${index}`}
+                                className='project-editorial-gallery__item'
+                            >
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    loading='lazy'
+                                    decoding='async'
+                                />
+                            </figure>
+                        ))}
+                    </div>
                 </div>
             </Container>
         </section>

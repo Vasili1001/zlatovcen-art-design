@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:portfolio": "node scripts/build-portfolio.js"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
@@ -18,7 +19,8 @@
     "react-i18next": "^17.0.2",
     "react-icons": "^5.6.0",
     "react-router-dom": "^7.14.0",
-    "sass": "^1.99.0"
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
