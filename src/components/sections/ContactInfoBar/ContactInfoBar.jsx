@@ -4,15 +4,19 @@ import { SiInstagram, SiWhatsapp, SiViber } from 'react-icons/si';
 import Container from '../../ui/Container/Container.jsx';
 import './contactInfoBar.scss';
 
-const PHONE_DISPLAY = '+373 00 000 000';
-const PHONE_HREF = 'tel:+37300000000';
+const PHONE_DISPLAY = '+373 79 669 525';
+const PHONE_NUMBER = '37379669525';
+const PHONE_HREF = `tel:+${PHONE_NUMBER}`;
 
-const EMAIL_DISPLAY = 'hello@zlatovcen.com';
-const EMAIL_HREF = 'mailto:hello@zlatovcen.com';
+const EMAIL_DISPLAY = 'zlatovcen.art.design@gmail.com';
+const EMAIL_HREF = `mailto:${EMAIL_DISPLAY}`;
 
-const INSTAGRAM_URL = 'https://instagram.com';
-const WHATSAPP_URL = 'https://wa.me/37300000000';
-const VIBER_URL = 'viber://chat?number=%2B37300000000';
+const INSTAGRAM_USERNAME = 'zlatovcen_art_design';
+const INSTAGRAM_DISPLAY = `@${INSTAGRAM_USERNAME}`;
+const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}`;
+
+const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
+const VIBER_URL = `https://www.viber.com`;
 
 const ContactInfoBar = () => {
     const { t } = useTranslation();
@@ -22,7 +26,7 @@ const ContactInfoBar = () => {
             {
                 id: 'instagram',
                 label: t('footer.social.instagram', { defaultValue: 'Instagram' }),
-                value: '@zlatovcen.art',
+                value: INSTAGRAM_DISPLAY,
                 href: INSTAGRAM_URL,
                 icon: SiInstagram,
             },
@@ -77,7 +81,10 @@ const ContactInfoBar = () => {
                 }),
                 content: (
                     <>
-                        <a href={EMAIL_HREF} className='contact-info-bar__primary-link contact-info-bar__primary-link--email'>
+                        <a
+                            href={EMAIL_HREF}
+                            className='contact-info-bar__primary-link contact-info-bar__primary-link--email'
+                        >
                             {EMAIL_DISPLAY}
                         </a>
                         <p className='contact-info-bar__secondary-text'>

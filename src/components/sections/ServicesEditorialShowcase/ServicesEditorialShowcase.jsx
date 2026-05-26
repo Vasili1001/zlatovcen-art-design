@@ -2,10 +2,10 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import backgroundImage from '../../../assets/images/blog/post/blog-post-background.jpg';
-import serviceImage1 from '../../../assets/images/portfolio/projects/IMG_7368.webp';
-import serviceImage2 from '../../../assets/images/portfolio/projects/project-2.jpg';
-import serviceImage3 from '../../../assets/images/portfolio/projects/IMG_1109.webp';
+import backgroundImage from '../../../assets/images/blog/post/blog-post-background.webp';
+import serviceImage1 from '../../../assets/images/portfolio/projects/services-img-1.webp';
+import serviceImage2 from '../../../assets/images/portfolio/projects/services-img-2.webp';
+import serviceImage3 from '../../../assets/images/portfolio/projects/services-img-3.webp';
 import './servicesEditorialShowcase.scss';
 
 const serviceImages = [serviceImage1, serviceImage2, serviceImage3];

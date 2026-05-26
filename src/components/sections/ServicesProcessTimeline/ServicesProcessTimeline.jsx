@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import backgroundImage from '../../../assets/images/blog/post/blog-post-background.jpg';
+import backgroundImage from '../../../assets/images/blog/post/blog-post-background.webp';
 import './servicesProcessTimeline.scss';
 
 const ServicesProcessTimeline = () => {

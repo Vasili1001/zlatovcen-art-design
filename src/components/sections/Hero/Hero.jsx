@@ -2,12 +2,21 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import hero1 from '../../../assets/images/hero/ddd.JPEG';
-import hero2 from '../../../assets/images/hero/hero-2.jpg';
-import hero3 from '../../../assets/images/hero/hero-3.jpg';
-import hero4 from '../../../assets/images/hero/hero-4.jpg';
-import hero5 from '../../../assets/images/hero/hero-5.jpg';
-import hero6 from '../../../assets/images/hero/hero-6.jpg';
+
+import heroPc1 from '../../../assets/images/hero/PC/slide-1.webp';
+import heroPc2 from '../../../assets/images/hero/PC/slide-2.webp';
+import heroPc3 from '../../../assets/images/hero/PC/slide-3.webp';
+import heroPc4 from '../../../assets/images/hero/PC/slide-4.webp';
+import heroPc5 from '../../../assets/images/hero/PC/slide-5.webp';
+import heroPc6 from '../../../assets/images/hero/PC/slide-6.webp';
+
+import heroPhone1 from '../../../assets/images/hero/phone/slide-1.webp';
+import heroPhone2 from '../../../assets/images/hero/phone/slide-2.webp';
+import heroPhone3 from '../../../assets/images/hero/phone/slide-3.webp';
+import heroPhone4 from '../../../assets/images/hero/phone/slide-4.webp';
+import heroPhone5 from '../../../assets/images/hero/phone/slide-5.webp';
+import heroPhone6 from '../../../assets/images/hero/phone/slide-6.webp';
+
 import './hero.scss';
 
 const AUTOPLAY_DELAY = 7000;
@@ -21,32 +30,38 @@ const Hero = () => {
         () => [
             {
                 id: 1,
-                image: hero1,
+                desktopImage: heroPc1,
+                mobileImage: heroPhone1,
                 alt: t('home.hero.slides.1.alt'),
             },
             {
                 id: 2,
-                image: hero2,
+                desktopImage: heroPc2,
+                mobileImage: heroPhone2,
                 alt: t('home.hero.slides.2.alt'),
             },
             {
                 id: 3,
-                image: hero3,
+                desktopImage: heroPc3,
+                mobileImage: heroPhone3,
                 alt: t('home.hero.slides.3.alt'),
             },
             {
                 id: 4,
-                image: hero4,
+                desktopImage: heroPc4,
+                mobileImage: heroPhone4,
                 alt: t('home.hero.slides.4.alt'),
             },
             {
                 id: 5,
-                image: hero5,
+                desktopImage: heroPc5,
+                mobileImage: heroPhone5,
                 alt: t('home.hero.slides.5.alt'),
             },
             {
                 id: 6,
-                image: hero6,
+                desktopImage: heroPc6,
+                mobileImage: heroPhone6,
                 alt: t('home.hero.slides.6.alt'),
             },
         ],
@@ -105,7 +120,10 @@ const Hero = () => {
                         key={slide.id}
                         className={`hero__slide ${index === activeIndex ? 'hero__slide--active' : ''}`}
                     >
-                        <img src={slide.image} alt={slide.alt} className='hero__image' />
+                        <picture>
+                            <source srcSet={slide.mobileImage} media='(max-width: 767px)' />
+                            <img src={slide.desktopImage} alt={slide.alt} className='hero__image' />
+                        </picture>
                     </div>
                 ))}
             </div>
@@ -122,7 +140,7 @@ const Hero = () => {
 
                         <h1 className='hero__title'>
                             ZLATOVCEN
-                            <br/>
+                            <br />
                         </h1>
 
                         <span className='hero__eyebrow'>ART DESIGN</span>
@@ -132,11 +150,10 @@ const Hero = () => {
                                 {t('home.hero.cta')}
                             </NavLink>
                         </div>
-
                     </div>
 
                     <div className='hero__bottom'>
-                    <div
+                        <div
                             className='hero__pagination'
                             aria-label={t('home.hero.accessibility.slidesNavigation')}
                         >
@@ -147,7 +164,7 @@ const Hero = () => {
                             </span>
 
                             <div className='hero__dots'>
-                            {slides.map((slide, index) => (
+                                {slides.map((slide, index) => (
                                     <button
                                         key={slide.id}
                                         type='button'

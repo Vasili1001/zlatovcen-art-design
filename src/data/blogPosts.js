@@ -1,11 +1,15 @@
-import blogHeroImage from '../assets/images/blog/blog-hero.jpg';
-import featuredBackgroundImage from '../assets/images/blog/featured/featured-background.jpg';
-import featuredMainImage from '../assets/images/blog/featured/featured-main.jpg';
-import post1Image from '../assets/images/blog/posts/post1.jpg';
-import post2Image from '../assets/images/blog/posts/post2.jpg';
-import blogPostHeroImage from '../assets/images/blog/post/blog-post-hero.jpg';
-import blogPostBackgroundImage from '../assets/images/blog/post/blog-post-background.jpg';
-import blogPostInlineImage from '../assets/images/blog/post/blog-post-inline.jpg';
+import featuredBackgroundImage from '../assets/images/blog/featured/featured-background.webp';
+import featuredMainImage from '../assets/images/hero/PC/slide-2.webp';
+import post1Image from '../assets/images/hero/phone/slide-2.webp';
+import post2Image from '../assets/images/hero/phone/slide-5.webp';
+import post3Image from '../assets/images/hero/phone/slide-3.webp';
+import post4Image from '../assets/images/hero/phone/slide-4.webp';
+import blogPostHeroImage1 from '../assets/images/hero/PC/slide-3.webp';
+import blogPostHeroImage2 from '../assets/images/hero/PC/slide-4.webp';
+import blogPostHeroImage3 from '../assets/images/hero/phone/slide-3.webp';
+import blogPostHeroImage4 from '../assets/images/hero/PC/slide-1.webp';
+import blogPostBackgroundImage from '../assets/images/blog/post/blog-post-background.webp';
+import blogPostInlineImage from '../assets/images/hero/PC/slide-2.webp';
 
 export const blogPosts = [
     {
@@ -13,7 +17,7 @@ export const blogPosts = [
         slug: 'interior-design-price-chisinau-moldova',
         category: 'Стоимость проекта',
         date: '12 июня, 2026',
-        title: 'Сколько стоит дизайн интерьера в Кишинёве и Молдове',
+        title: 'Сколько стоит дизайн интерьера в Молдове',
         metaTitle: 'Сколько стоит дизайн интерьера в Кишинёве и Молдове | ZLATOVCEN ART DESIGN',
         metaDescription:
             'Разбираем, сколько стоит дизайн интерьера в Кишинёве и Молдове, что входит в дизайн-проект, от чего зависит цена за м² и как выбрать подходящий формат работы.',
@@ -21,10 +25,10 @@ export const blogPosts = [
             'Стоимость дизайн-проекта зависит не только от площади, но и от глубины проработки: планировки, визуализации, чертежей, подбора материалов и сопровождения реализации.',
         previewImage: post1Image,
         previewImageAlt: 'Премиальный интерьер гостиной для статьи о стоимости дизайн-проекта в Кишинёве и Молдове',
-        featuredImage: featuredMainImage,
+        featuredImage: post1Image,
         featuredImageAlt: 'Элегантный интерьер с премиальной мебелью и продуманной планировкой',
         featuredBackgroundImage,
-        heroImage: blogPostHeroImage,
+        heroImage: blogPostHeroImage1,
         heroImageAlt: 'Роскошный интерьер для статьи о цене дизайна интерьера в Молдове',
         backgroundImage: blogPostBackgroundImage,
         backgroundImageAlt: 'Тёмная интерьерная атмосфера для статьи о стоимости дизайн-проекта',
@@ -101,7 +105,7 @@ export const blogPosts = [
         featuredImage: post2Image,
         featuredImageAlt: 'Интерьер с продуманной планировкой, светом и материалами',
         featuredBackgroundImage,
-        heroImage: blogHeroImage,
+        heroImage: blogPostHeroImage2,
         heroImageAlt: 'Интерьер для статьи о том, что входит в дизайн-проект',
         backgroundImage: featuredBackgroundImage,
         backgroundImageAlt: 'Премиальный интерьерный фон для статьи о дизайн-проекте',
@@ -181,12 +185,12 @@ export const blogPosts = [
             'Разбираем главные ошибки ремонта без дизайнера: неудобная планировка, неправильный свет, розетки, мебель, материалы и отсутствие рабочих чертежей.',
         excerpt:
             'Самые дорогие ошибки в ремонте часто появляются не из-за плохих материалов, а из-за отсутствия продуманной планировки, чертежей и общей логики интерьера.',
-        previewImage: post1Image,
+        previewImage: post3Image,
         previewImageAlt: 'Интерьерная деталь для статьи об ошибках ремонта без дизайнера',
-        featuredImage: post1Image,
+        featuredImage: post3Image,
         featuredImageAlt: 'Премиальная гостиная с продуманной композицией и светом',
         featuredBackgroundImage: blogPostBackgroundImage,
-        heroImage: blogPostHeroImage,
+        heroImage: blogPostHeroImage3,
         heroImageAlt: 'Интерьер для статьи об ошибках ремонта без дизайн-проекта',
         backgroundImage: blogPostBackgroundImage,
         backgroundImageAlt: 'Тёмный интерьерный фон для статьи об ошибках ремонта',
@@ -266,12 +270,12 @@ export const blogPosts = [
             'Рассказываем, как выбрать дизайнера интерьера в Молдове: портфолио, стиль, этапы работы, цена, договор, чертежи, визуализация и сопровождение проекта.',
         excerpt:
             'Хороший дизайнер интерьера — это не только человек со вкусом, а специалист, который умеет соединить эстетику, планировку, технические решения и реализацию.',
-        previewImage: post2Image,
+        previewImage: post4Image,
         previewImageAlt: 'Премиальный интерьер для статьи о выборе дизайнера интерьера в Молдове',
-        featuredImage: post2Image,
+        featuredImage: post4Image,
         featuredImageAlt: 'Спокойный интерьер в премиальной стилистике с продуманной композицией',
         featuredBackgroundImage,
-        heroImage: blogHeroImage,
+        heroImage: blogPostHeroImage4,
         heroImageAlt: 'Интерьер для статьи о выборе дизайнера интерьера в Молдове',
         backgroundImage: featuredBackgroundImage,
         backgroundImageAlt: 'Нейтральный интерьерный фон для статьи о выборе дизайнера',

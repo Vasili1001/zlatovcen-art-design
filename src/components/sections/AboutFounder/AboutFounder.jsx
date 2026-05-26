@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import founderImage from '../../../assets/images/founder/founder-viktor.jpg';
+import founderImage from '../../../assets/images/founder/vitktor-portret.webp';
 import './aboutFounder.scss';
 
 const AboutFounder = () => {

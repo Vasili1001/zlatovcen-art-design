@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import Container from '../../components/ui/Container/Container.jsx';
-import notFoundHeroImage from '../../assets/images/not-found/not-found-hero.jpg';
-import notFoundThumbImage from '../../assets/images/blog-preview/post-1.jpg';
+import notFoundHeroImage from '../../assets/images/hero/PC/slide-2.webp';
+import notFoundThumbImage from '../../assets/images/hero/phone/slide-4.webp';
 import './notFoundPage.scss';
 
 const NotFoundPage = () => {

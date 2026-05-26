@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import AboutFounderEditorial from '../../components/sections/AboutFounderEditorial/AboutFounderEditorial.jsx';
-import aboutHeroImage from '../../assets/images/portfolio/detail/modern-living-room/hero.jpg';
+import aboutHeroImage from '../../assets/images/hero/PC/slide-4.webp';
 import AboutStatementBanner from '../../components/sections/AboutStatementBanner/AboutStatementBanner.jsx';
 import CTA from '../../components/sections/CTA/CTA.jsx';
 import './aboutPage.scss';

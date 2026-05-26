@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 import BlogCard from '../../ui/BlogCard/BlogCard.jsx';
 import './latestPosts.scss';
 
 const LatestPosts = ({ posts = [] }) => {
+    const { t } = useTranslation();
+
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -52,22 +55,26 @@ const LatestPosts = ({ posts = [] }) => {
                     <div className='latest-posts__header'>
                         <div className='latest-posts__topline'>
                             <span className='latest-posts__topline-label'>
-                                Design Journal
+                                {t('blog.latestPosts.eyebrow')}
                             </span>
                             <span className='latest-posts__topline-line' aria-hidden='true' />
-                            <span className='latest-posts__topline-index'>02</span>
+                            <span className='latest-posts__topline-index'>
+                                {t('blog.latestPosts.index')}
+                            </span>
                         </div>
 
                         <div className='latest-posts__script-wrap' aria-hidden='true'>
-                            <span className='latest-posts__script'>Journal</span>
+                            <span className='latest-posts__script'>
+                                {t('blog.latestPosts.script')}
+                            </span>
                         </div>
 
                         <h2 className='latest-posts__title' id='latest-posts-title'>
-                            Latest Posts
+                            {t('blog.latestPosts.title')}
                         </h2>
 
                         <p className='latest-posts__subtitle'>
-                            Curated perspectives on interiors, atmosphere, materials, and the subtle decisions that define timeless design.
+                            {t('blog.latestPosts.subtitle')}
                         </p>
                     </div>
 
@@ -85,7 +92,7 @@ const LatestPosts = ({ posts = [] }) => {
                                         imageAlt={post.previewImageAlt || post.title}
                                         category={post.category}
                                         title={post.title}
-                                        ctaLabel='Read Article'
+                                        ctaLabel={t('blog.latestPosts.cta')}
                                         variant='default'
                                         className='latest-posts__blog-card'
                                     />

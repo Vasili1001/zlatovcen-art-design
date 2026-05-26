@@ -7,15 +7,18 @@ import Container from '../../ui/Container/Container.jsx';
 import Logo from '../../ui/Logo/Logo.jsx';
 import './footer.scss';
 
-const EMAIL_DISPLAY = 'hello@zlatovcen.com';
-const EMAIL_HREF = 'mailto:hello@zlatovcen.com';
+const PHONE_DISPLAY = '+373 79 669 525';
+const PHONE_NUMBER = '37379669525';
+const PHONE_HREF = `tel:+${PHONE_NUMBER}`;
 
-const PHONE_DISPLAY = '+373 00 000 000';
-const PHONE_HREF = 'tel:+37300000000';
+const EMAIL_DISPLAY = 'zlatovcen.art.design@gmail.com';
+const EMAIL_HREF = `mailto:${EMAIL_DISPLAY}`;
 
-const INSTAGRAM_URL = 'https://instagram.com';
-const WHATSAPP_URL = 'https://wa.me/37300000000';
-const VIBER_URL = 'viber://chat?number=%2B37300000000';
+const INSTAGRAM_USERNAME = 'zlatovcen_art_design';
+const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}`;
+
+const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
+const VIBER_URL = 'https://www.viber.com';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -90,7 +93,7 @@ const Footer = () => {
                                     aria-label={t('footer.social.instagram')}
                                     className='footer__social-link'
                                 >
-                                    <SiInstagram className='icon' />
+                                    <SiInstagram className='icon'/>
                                 </a>
 
                                 <a
@@ -100,15 +103,17 @@ const Footer = () => {
                                     aria-label={t('footer.social.whatsapp')}
                                     className='footer__social-link'
                                 >
-                                    <SiWhatsapp className='icon' />
+                                    <SiWhatsapp className='icon'/>
                                 </a>
 
                                 <a
                                     href={VIBER_URL}
+                                    target='_blank'
+                                    rel='noreferrer'
                                     aria-label={t('footer.social.viber')}
                                     className='footer__social-link'
                                 >
-                                    <SiViber className='icon' />
+                                    <SiViber className='icon'/>
                                 </a>
                             </div>
 

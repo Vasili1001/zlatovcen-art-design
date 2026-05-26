@@ -636,3 +636,13 @@ body.menu-open {
     }
   }
 }
+
+.hero {
+  &__slide {
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import founderImage from '../../../assets/images/founder/founder-viktor.jpg';
-import accentImageLeft from '../../../assets/images/blog-preview/post-1.jpg';
-import accentImageRight from '../../../assets/images/blog-preview/post-2.jpg';
+import founderImage from '../../../assets/images/founder/vitktor-portret.webp';
+import accentImageLeft from '../../../assets/images/portfolio/projects/services-img-1.webp';
+import accentImageRight from '../../../assets/images/studio-showcase/center.webp';
 import './aboutFounderEditorial.scss';
 
 const AboutFounderEditorial = () => {

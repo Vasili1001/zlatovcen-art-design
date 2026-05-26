@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
-import backgroundImage from '../../../assets/images/blog/featured/featured-background.jpg';
-import featuredImage from '../../../assets/images/blog/featured/featured.webp';
+import fallbackBackgroundImage from '../../../assets/images/blog/featured/featured-background.webp';
+import fallbackFeaturedImage from '../../../assets/images/blog/featured/featured.webp';
 import './featuredBlogPost.scss';
 
-const FeaturedBlogPost = () => {
+const FeaturedBlogPost = ({ post }) => {
     const { t } = useTranslation();
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +41,13 @@ const FeaturedBlogPost = () => {
         return () => observer.disconnect();
     }, []);
 
+    if (!post) return null;
+
+    const backgroundImage = post.featuredBackgroundImage || fallbackBackgroundImage;
+    const image = post.featuredImage || post.previewImage || fallbackFeaturedImage;
+    const imageAlt = post.featuredImageAlt || post.previewImageAlt || post.title;
+    const articleUrl = `/blog/${post.slug}`;
+
     return (
         <section
             ref={sectionRef}
@@ -59,13 +66,19 @@ const FeaturedBlogPost = () => {
             <Container size='wide'>
                 <div className='featured-blog-post__inner'>
                     <div className='featured-blog-post__topline'>
-                        <span className='featured-blog-post__eyebrow'>{t('blog.featuredPost.eyebrow')}</span>
+                        <span className='featured-blog-post__eyebrow'>
+                            {t('blog.featuredPost.eyebrow')}
+                        </span>
                         <span className='featured-blog-post__topline-line' aria-hidden='true' />
-                        <span className='featured-blog-post__index'>{t('blog.featuredPost.index')}</span>
+                        <span className='featured-blog-post__index'>
+                            {t('blog.featuredPost.index')}
+                        </span>
                     </div>
 
                     <div className='featured-blog-post__heading-wrap'>
-                        <span className='featured-blog-post__script'>{t('blog.featuredPost.script')}</span>
+                        <span className='featured-blog-post__script'>
+                            {t('blog.featuredPost.script')}
+                        </span>
                     </div>
 
                     <div className='featured-blog-post__layout'>
@@ -73,25 +86,25 @@ const FeaturedBlogPost = () => {
                             <div className='featured-blog-post__card-inner'>
                                 <div className='featured-blog-post__meta'>
                                     <span className='featured-blog-post__meta-item'>
-                                        {t('blog.featuredPost.meta.category')}
+                                        {post.category}
                                     </span>
                                     <span className='featured-blog-post__meta-divider' aria-hidden='true' />
                                     <span className='featured-blog-post__meta-item'>
-                                        {t('blog.featuredPost.meta.date')}
+                                        {post.date}
                                     </span>
                                 </div>
 
                                 <h2 className='featured-blog-post__title' id='featured-blog-post-title'>
-                                    {t('blog.featuredPost.title')}
+                                    {post.title}
                                 </h2>
 
                                 <p className='featured-blog-post__text'>
-                                    {t('blog.featuredPost.text')}
+                                    {post.excerpt}
                                 </p>
 
                                 <div className='featured-blog-post__footer'>
                                     <span className='featured-blog-post__footer-line' aria-hidden='true' />
-                                    <NavLink to='/blog/1' className='featured-blog-post__link'>
+                                    <NavLink to={articleUrl} className='featured-blog-post__link'>
                                         {t('blog.featuredPost.cta')}
                                     </NavLink>
                                 </div>
@@ -103,8 +116,8 @@ const FeaturedBlogPost = () => {
                                 <div className='featured-blog-post__media-plane' aria-hidden='true' />
                                 <div className='featured-blog-post__image-wrap'>
                                     <img
-                                        src={featuredImage}
-                                        alt={t('blog.featuredPost.imageAlt')}
+                                        src={image}
+                                        alt={imageAlt}
                                         className='featured-blog-post__image'
                                     />
                                 </div>
