@@ -75,29 +75,12 @@
 }
 
 .home .cta {
-  background: transparent;
+  background: #191717;
 }
 
 .home .cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-          linear-gradient(
-                          180deg,
-                          rgba(25, 23, 23, 0) 0%,
-                          rgba(25, 23, 23, 0.18) 24%,
-                          rgba(17, 15, 15, 0.42) 100%
-          );
+  content: none;
 }
-
-.home .cta > * {
-  position: relative;
-  z-index: 1;
-}
-
 .home .footer {
   margin-top: -56px;
 }

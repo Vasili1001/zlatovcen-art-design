@@ -1,17 +1,18 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Container from '../../ui/Container/Container.jsx';
 import './blogDetailArticle.scss';
 
 const BlogDetailArticle = ({
-                               date = 'April 23, 2025',
-                               title = 'The Role of Art in Luxury Interior Design',
+                               date = '',
+                               title = '',
                                backgroundImage,
                                backgroundImageAlt = '',
                                inlineImage,
                                inlineImageAlt = '',
                                paragraphs = [],
                                sections = [],
-                               quote = 'The details are not the details. They make the design.',
+                               quote = '',
                            }) => {
     const leadParagraph = paragraphs[0] || '';
     const introParagraph = paragraphs[1] || '';
@@ -106,6 +107,7 @@ const BlogDetailArticle = ({
                                 )}
                             </div>
                         </div>
+
                     </article>
                 </div>
             </Container>

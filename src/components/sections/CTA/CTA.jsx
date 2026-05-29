@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
+import backgroundImage from '../../../assets/images/blog/post/blog-post-background.webp';
 import './cta.scss';
 
 const CTA = ({ title, buttonText, buttonTo = '/contact' }) => {
@@ -12,9 +13,13 @@ const CTA = ({ title, buttonText, buttonTo = '/contact' }) => {
 
     return (
         <section className='cta' aria-labelledby='cta-title'>
-            <div className='cta__background' aria-hidden='true' />
+            <div className='cta__background' aria-hidden='true'>
+                <img src={backgroundImage} alt='' className='cta__background-image' />
+            </div>
+
             <div className='cta__overlay cta__overlay--base' aria-hidden='true' />
             <div className='cta__overlay cta__overlay--glow' aria-hidden='true' />
+            <div className='cta__overlay cta__overlay--vignette' aria-hidden='true' />
             <div className='cta__overlay cta__overlay--focus' aria-hidden='true' />
 
             <Container size='narrow'>

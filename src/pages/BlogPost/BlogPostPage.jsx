@@ -1,19 +1,31 @@
 import React, { useMemo } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import BlogDetailArticle from '../../components/sections/BlogDetailArticle/BlogDetailArticle.jsx';
 import { blogPosts } from '../../data/blogPosts.js';
 import { getAdjacentPosts, getPostBySlug } from '../../utils/blog.js';
+import { localizeBlogPosts } from '../../utils/localizeBlogPosts.js';
 import './blogPostPage.scss';
 
 const BlogPostPage = () => {
     const { id } = useParams();
+    const { t } = useTranslation();
 
-    const post = useMemo(() => getPostBySlug(blogPosts, id), [id]);
+    const localizedPosts = useMemo(
+        () => localizeBlogPosts(blogPosts, t),
+        [t]
+    );
+
+    const post = useMemo(
+        () => getPostBySlug(localizedPosts, id),
+        [localizedPosts, id]
+    );
+
     const { previousPost, nextPost } = useMemo(
-        () => getAdjacentPosts(blogPosts, id),
-        [id]
+        () => getAdjacentPosts(localizedPosts, id),
+        [localizedPosts, id]
     );
 
     if (!post) {
@@ -42,12 +54,14 @@ const BlogPostPage = () => {
                 inlineImage={post.inlineImage}
                 inlineImageAlt={post.inlineImageAlt}
                 paragraphs={post.paragraphs}
+                sections={post.sections}
                 quote={post.quote}
                 previousTo={previousPost ? `/blog/${previousPost.slug}` : '/blog'}
-                previousLabel={previousPost ? previousPost.title : 'All Articles'}
+                previousLabel={previousPost ? previousPost.title : t('blog.articleNavigation.allArticles')}
                 nextTo={nextPost ? `/blog/${nextPost.slug}` : '/blog'}
-                nextLabel={nextPost ? nextPost.title : 'Back to Journal'}
+                nextLabel={nextPost ? nextPost.title : t('blog.articleNavigation.backToJournal')}
                 gridTo='/blog'
+                gridLabel={t('blog.articleNavigation.journal')}
             />
         </div>
     );

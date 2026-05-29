@@ -6,17 +6,27 @@ import BlogCard from '../../ui/BlogCard/BlogCard.jsx';
 import backgroundImage from '../../../assets/images/blog-preview/blog-preview-background.webp';
 import { blogPosts } from '../../../data/blogPosts.js';
 import { getFeaturedPost, getLatestPosts } from '../../../utils/blog.js';
+import { localizeBlogPosts } from '../../../utils/localizeBlogPosts.js';
 import './blogPreview.scss';
 
 const BlogPreview = () => {
     const { t } = useTranslation();
 
-    const featuredPost = useMemo(() => getFeaturedPost(blogPosts), []);
-
-    const previewPosts = useMemo(
-        () => getLatestPosts(blogPosts, featuredPost.id).slice(0, 3),
-        [featuredPost.id]
+    const localizedPosts = useMemo(
+        () => localizeBlogPosts(blogPosts, t),
+        [t]
     );
+
+    const featuredPost = useMemo(
+        () => getFeaturedPost(localizedPosts),
+        [localizedPosts]
+    );
+
+    const previewPosts = useMemo(() => {
+        if (!featuredPost) return [];
+
+        return getLatestPosts(localizedPosts, featuredPost.id).slice(0, 3);
+    }, [localizedPosts, featuredPost]);
 
     return (
         <section className='blog-preview' aria-labelledby='blog-preview-title'>
