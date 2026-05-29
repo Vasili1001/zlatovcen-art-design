@@ -5,24 +5,24 @@
     "featureBar": {
       "items": [
         {
-          "desktop": "Design Rafinat",
-          "mobile": "Rafinat"
+          "desktop": "Premium",
+          "mobile": "Premium"
         },
         {
-          "desktop": "Materialitate",
-          "mobile": "Material"
+          "desktop": "Individualitate",
+          "mobile": "Individualitate"
         },
         {
-          "desktop": "Estetică Atemporală",
-          "mobile": "Atemporal"
+          "desktop": "Eleganță",
+          "mobile": "Eleganță"
         },
         {
           "desktop": "Armonie",
           "mobile": "Armonie"
         },
         {
-          "desktop": "Spațiu Personal",
-          "mobile": "Personal"
+          "desktop": "Caracter",
+          "mobile": "Caracter"
         }
       ],
       "accessibility": {
@@ -31,10 +31,10 @@
     },
     "cta": {
       "script": "Begin",
-      "eyebrow": "Începe Proiectul Tău",
-      "title": "Lasă-ne să transformăm spațiul tău de locuit într-o adevărată capodoperă.",
-      "text": "Interioare atent concepute, definite prin sobrietate atemporală și o atenție premium pentru fiecare detaliu.",
-      "buttonText": "Începe Călătoria Ta"
+      "eyebrow": "Începeți proiectul",
+      "title": "Un interior bine gândit începe cu un proiect",
+      "text": "Creăm spații în care fiecare detaliu este atent gândit.\nConfort, logică și estetică — într-o singură soluție.",
+      "buttonText": "Începeți parcursul"
     }
   },
   "header": {
@@ -42,21 +42,21 @@
       "home": "Acasă",
       "portfolio": "Portofoliu",
       "services": "Servicii",
-      "about": "Despre",
+      "about": "Despre noi",
       "blog": "Blog",
       "contact": "Contact"
     },
     "mobile": {
       "brand": "Zlatovcen Art Design",
-      "note": "Interioare personalizate, definite prin minimalism rafinat, profunzime materială și eleganță atemporală.",
+      "note": "Interioare personalizate, create în spiritul minimalismului rafinat, al profunzimii materialelor și al eleganței atemporale.",
       "contactStudio": "Contactează studioul"
     },
     "accessibility": {
       "openNavigationMenu": "Deschide meniul de navigare",
       "closeNavigationMenu": "Închide meniul de navigare",
-      "primaryNavigationLeft": "Navigație principală stânga",
-      "primaryNavigationRight": "Navigație principală dreapta",
-      "mobileNavigation": "Navigație mobilă",
+      "primaryNavigationLeft": "Navigare principală stânga",
+      "primaryNavigationRight": "Navigare principală dreapta",
+      "mobileNavigation": "Navigare mobilă",
       "closeMenuBackdrop": "Închide fundalul meniului"
     }
   },
@@ -65,7 +65,7 @@
       "home": "Acasă",
       "portfolio": "Portofoliu",
       "services": "Servicii",
-      "about": "Despre",
+      "about": "Despre noi",
       "blog": "Blog",
       "contact": "Contact"
     },
@@ -74,12 +74,12 @@
       "contact": "Contact"
     },
     "brand": {
-      "note": "Design interior personalizat, definit prin sobrietate atemporală, profunzime materială și compoziție rafinată."
+      "note": "Design interior de autor, cu accent pe expresivitate arhitecturală, linii curate și atmosfera spațiului."
     },
     "contact": {
       "addressLine1": "123 Bogdan Voievod,",
       "addressLine2": "Suite 400 Atlanta, GA 30309",
-      "note": "Disponibili pentru proiecte rezidențiale și solicitări comerciale boutique."
+      "note": "Creăm spații private și comerciale cu o abordare individuală."
     },
     "social": {
       "instagram": "Instagram",
@@ -87,62 +87,62 @@
       "viber": "Viber"
     },
     "accessibility": {
-      "footerNavigation": "Navigare în subsol",
-      "socialLinks": "Linkuri sociale"
+      "footerNavigation": "Navigarea din subsolul site-ului",
+      "socialLinks": "Linkuri către rețelele sociale"
     },
     "copy": "ZLATOVCEN ART DESIGN"
   },
   "home": {
     "hero": {
-      "eyebrow": "Studio de Design Interior",
-      "titleLine1": "Design Interior de Lux",
-      "titleLine2": "Creat Special pentru Tine.",
-      "cta": "Serviciile Noastre",
+      "eyebrow": "Studio de design interior",
+      "titleLine1": "Design interior de lux",
+      "titleLine2": "Creat special pentru dumneavoastră.",
+      "cta": "Serviciile noastre",
       "slides": {
         "1": {
-          "alt": "Dormitor de lux cu tonuri neutre elegante"
+          "alt": "Dormitor luxos în tonuri neutre și elegante"
         },
         "2": {
-          "alt": "Living premium cu o compoziție rafinată a mobilierului"
+          "alt": "Living premium cu o compoziție de mobilier rafinată"
         },
         "3": {
-          "alt": "Interior rezidențial elegant cu lumină naturală delicată"
+          "alt": "Interior rezidențial elegant, cu lumină naturală delicată"
         },
         "4": {
-          "alt": "Spațiu de design interior de lux cu decor sculptural"
+          "alt": "Spațiu interior luxos cu decor sculptural"
         },
         "5": {
-          "alt": "Dormitor modern sofisticat cu stilizare premium"
+          "alt": "Dormitor modern rafinat, în stil premium"
         },
         "6": {
-          "alt": "Compoziție de design interior high-end cu atmosferă caldă"
+          "alt": "Compoziție interioară high-end cu atmosferă caldă"
         }
       },
       "accessibility": {
-        "sectionLabel": "Secțiunea principală de prezentare a designului interior de lux",
-        "slidesNavigation": "Navigarea între slide-urile secțiunii hero",
+        "sectionLabel": "Secțiunea principală de design interior de lux",
+        "slidesNavigation": "Navigare prin slide-urile secțiunii hero",
         "goToSlide": "Mergi la slide-ul hero {{number}}"
       }
     },
     "studioShowcase": {
-      "eyebrow": "Semnătura Studioului",
+      "eyebrow": "Semnătura studioului",
       "index": "01",
       "script": "Studio",
-      "title": "Creăm interioare rafinate, definite prin lux discret, echilibru sculptural și o prezență vizuală atemporală.",
-      "subtitle": "Interioare personalizate modelate prin atmosferă, sobrietate și un simț profund al compoziției.",
-      "cta": "Vezi Galeria",
+      "title": "Nu doar o imagine frumoasă, ci un spațiu în care este cu adevărat confortabil să trăiești.",
+      "subtitle": "Creăm interioare pe baza unei planificări bine gândite, a logicii arhitecturale și a soluțiilor inginerești.\nFiecare spațiu este construit astfel încât să fie confortabil, funcțional și armonios în viața de zi cu zi.",
+      "cta": "Vezi galeria",
       "gallery": {
         "left": {
-          "alt": "Detaliu interior elegant cu mobilier stilizat rafinat",
-          "label": "Armonie Materială"
+          "alt": "Detaliu interior elegant, cu o stilistică rafinată a mobilierului",
+          "label": "Armonia materialelor"
         },
         "main": {
-          "alt": "Living de lux cu lumină caldă și o compoziție premium de design",
-          "label": "Compoziție Semnătură"
+          "alt": "Living luxos cu lumină caldă și compoziție de design premium",
+          "label": "Compoziție de autor"
         },
         "right": {
-          "alt": "Interior premium în tonuri închise cu mobilier sofisticat și decor rafinat",
-          "label": "Profunzime Atmosferică"
+          "alt": "Interior premium în tonuri închise, cu mobilier și decor rafinat",
+          "label": "Profunzimea atmosferei"
         }
       }
     },
@@ -150,73 +150,67 @@
       "eyebrow": "Fondator",
       "index": "02",
       "script": "Welcome",
-      "kicker": "Mesajul Fondatorului",
-      "name": "Viktor Zlatovchen",
-      "lead": "Cred că designul interior nu înseamnă doar frumusețe, ci crearea unei atmosfere rafinate care îmbunătățește discret modul în care oamenii trăiesc zi de zi.",
-      "text": "Ca fondator al Zlatovchen Art Design, am crezut întotdeauna că designul interior înseamnă mai mult decât crearea unor spații frumoase — este despre construirea unor medii care inspiră, oferă confort și aduc claritate emoțională prin proporție, materialitate și compoziție atemporală.",
-      "ctaPrimary": "Descoperă Povestea Noastră",
-      "ctaSecondary": "Ia Legătura",
-      "imageAlt": "Viktor Zlatovchen, fondatorul Zlatovchen Art Design"
+      "kicker": "Mesajul fondatorului",
+      "name": "Viktor Zlatovcen",
+      "lead": "Privesc designul nu ca pe un set de soluții vizuale, ci ca pe o lucrare precisă cu spațiul, în care fiecare detaliu are sens și funcție. La baza proiectelor mele stau planificarea corectă, ergonomia atent gândită și dorința de a crea un interior care să fie nu doar estetic, ci și confortabil pentru viața de zi cu zi.",
+      "text": "Ca fondator al Zlatovcen Art Design, acord o atenție deosebită echilibrului dintre logica arhitecturală și expresivitatea vizuală. Pentru mine este important ca spațiul să fie coerent, modern și să își păstreze actualitatea în timp.",
+      "ctaPrimary": "Descoperă povestea noastră",
+      "ctaSecondary": "Contactează-ne",
+      "imageAlt": "Viktor Zlatovcen, fondatorul Zlatovcen Art Design"
     },
     "testimonialShowcase": {
-      "eyebrow": "Testimonial",
+      "eyebrow": "Recenzie",
       "index": "03",
       "script": "Refined",
-      "quote": "Fiecare detaliu s-a simțit intenționat, rafinat și rezolvat cu eleganță de la început până la final.",
-      "note": "Colaborarea cu Zlatovchen Art Design a fost fluidă și impecabilă pe tot parcursul procesului.",
+      "quote": "Fiecare detaliu s-a simțit atent gândit, rafinat și impecabil finalizat de la început până la sfârșit.",
+      "note": "Colaborarea cu Zlatovcen Art Design a fost ușoară și confortabilă pe tot parcursul procesului.",
       "author": "Luke Collins",
-      "role": "Client Privat",
+      "role": "Client privat",
       "accessibility": {
-        "title": "Testimonial client"
+        "title": "Recenzia clientului"
       }
     },
     "servicesPreview": {
-      "eyebrow": "Servicii",
+      "eyebrow": "Proces",
       "index": "04",
-      "script": "Services",
-      "title": "Servicii de design interior curate cu precizie și lux discret.",
-      "description": "Creăm interioare care îmbină rafinamentul vizual, claritatea funcțională și un simț atemporal al atmosferei. Fiecare spațiu este conturat cu intenție, proporție și sobrietate.",
-      "cta": "Explorează Toate Serviciile",
+      "script": "Process",
+      "title": "Procesul de creare a unui proiect de autor",
+      "description": "De la prima consultație până la implementarea finală — fiecare etapă a proiectului este construită cu atenție față de spațiu și detalii.",
+      "cta": "Vezi toate serviciile",
       "imageAlt": "Detaliu interior elegant cu lumină naturală caldă",
       "accessibility": {
-        "listLabel": "Servicii de design interior"
+        "listLabel": "Etapele creării unui proiect de design interior de autor"
       },
       "items": [
         {
-          "title": "Design Rezidențial",
-          "description": "Interioare personalizate, modelate în jurul stilului de viață, atmosferei și confortului atemporal."
+          "title": "Analiza spațiului",
+          "description": "Începem cu studierea detaliată a obiectului, a stilului de viață al clientului și a particularităților planimetriei, pentru a crea o bază corectă a viitorului interior."
         },
         {
-          "title": "Interioare Comerciale",
-          "description": "Spații business rafinate, definite prin claritate, prezență și funcționalitate elevată."
+          "title": "Planificare și concept",
+          "description": "Dezvoltăm zonarea funcțională, amplasarea mobilierului și conceptul general al spațiului, îmbinând confortul, ergonomia și estetica."
         },
         {
-          "title": "Design pentru Living",
-          "description": "Compoziții echilibrate, centrate pe căldură, proporție și calm vizual."
+          "title": "Vizualizarea interiorului",
+          "description": "Creăm vizualizări 3D realiste, care permit să vedeți din timp atmosfera, materialele și caracterul viitorului interior."
+        },
+        {
+          "title": "Documentație tehnică",
+          "description": "Pregătim setul complet de desene tehnice pentru realizarea proiectului — de la iluminat până la amplasarea mobilierului și soluțiile inginerești."
+        },
+        {
+          "title": "Implementarea proiectului",
+          "description": "Însoțim procesul de renovare, ajutăm la alegerea materialelor și monitorizăm implementarea proiectului."
         }
       ]
     },
     "blogPreview": {
       "eyebrow": "Jurnal",
       "index": "05",
-      "title": "Ultimele Articole",
-      "subtitle": "Perspective despre interioare, materiale, atmosferă și deciziile subtile care conturează un spațiu de locuit atemporal.",
-      "readPost": "Citește Articolul",
-      "footerLink": "Vizitează Jurnalul",
-      "posts": [
-        {
-          "title": "Rolul artei în designul interior de lux.",
-          "category": "Perspectivă de Design"
-        },
-        {
-          "title": "Palete cromatice pentru interioare: ghidul esențial",
-          "category": "Materiale și Ton"
-        },
-        {
-          "title": "Detalii mici care creează un impact major în design.",
-          "category": "Note de Styling"
-        }
-      ]
+      "title": "Ultimele articole",
+      "subtitle": "Perspective asupra interioarelor, materialelor, atmosferei și soluțiilor subtile care formează un spațiu de locuit atemporal.",
+      "readPost": "Citește articolul",
+      "footerLink": "Mergi la jurnal"
     }
   },
   "services": {
@@ -224,48 +218,54 @@
       "eyebrow": "Servicii",
       "index": "01",
       "script": "Curated",
-      "includesLabel": "Ce este inclus",
-      "investmentLabel": "Investiție",
-      "cta": "Solicită acum",
+      "includesLabel": "Ce include",
+      "investmentLabel": "Cost",
+      "cta": "Trimite o solicitare",
       "accessibility": {
         "title": "Servicii de design interior"
       },
       "items": [
         {
-          "title": "Design Rezidențial de Lux",
-          "description": "Creăm spații de locuit rafinate, adaptate stilului tău de viață și gustului personal. Fiecare detaliu — de la compartimentare până la materiale — este atent curatoriat pentru a obține un ambient atemporal, elegant și confortabil.",
+          "title": "Proiect complet de design",
+          "description": "Dezvoltăm nu doar un interior frumos, ci un spațiu bine gândit, în care fiecare detaliu — de la planificare până la iluminat — lucrează pentru confort, estetică și comoditatea vieții de zi cu zi. Acordăm o atenție specială planificării corecte, ergonomiei și logicii de circulație, astfel încât interiorul să fie nu doar atractiv vizual, ci și cât mai confortabil în utilizarea zilnică. Proiectul include un ciclu complet de lucrări — de la idee și concept până la implementare.",
           "includes": [
-            "Consultanță personalizată de design",
-            "Dezvoltarea paletei de materiale și culori",
-            "Planificarea spațiului și optimizarea compartimentării"
+            "Planificare și zonare atent gândite ale spațiului",
+            "Vizualizare 3D a viitorului interior",
+            "Pachet complet de desene tehnice",
+            "Selectarea materialelor, mobilierului, iluminatului, obiectelor sanitare etc.",
+            "Însoțirea completă a proiectului până la implementare"
           ],
-          "investment": "de la 10 € / m²",
-          "investmentNote": "Aproximativ",
-          "imageAlt": "Design interior rezidențial de lux"
+          "investment": "12 € / m²",
+          "investmentNote": "",
+          "imageAlt": "Proiect complet de design"
         },
         {
-          "title": "Interior Comercial Modern",
-          "description": "Proiectăm spații comerciale funcționale și vizual expresive, care reflectă identitatea brandului tău. Abordarea noastră urmărește crearea unor medii care îmbunătățesc experiența clientului și susțin dezvoltarea afacerii.",
+          "title": "Proiect de design fără vizualizare",
+          "description": "Dezvoltare completă a soluției planimetrice și tehnice pentru interior, fără etapa de vizualizare 3D. Este potrivită pentru cei care vor să înceapă rapid renovarea, având o înțelegere clară a planificării, a amplasării mobilierului și a tuturor soluțiilor tehnice. Elaborăm spațiul ținând cont de norme, ergonomie și logica de circulație, oferind totodată un set complet de desene tehnice și recomandări pentru implementare, astfel încât să puteți începe renovarea cu încredere, fără greșeli și modificări inutile.",
           "includes": [
-            "Concept de design orientat pe brand",
-            "Zonare funcțională și planificarea spațiului",
-            "Selecția mobilierului și a iluminatului"
+            "Planificare și zonare atent gândite ale spațiului",
+            "Amplasarea mobilierului ținând cont de ergonomie",
+            "Pachet complet de desene tehnice",
+            "Ajutor în selectarea materialelor, mobilierului, iluminatului, obiectelor sanitare etc.",
+            "Consultație și recomandări pentru implementare"
           ],
-          "investment": "de la 10 € / m²",
-          "investmentNote": "Aprox. în funcție de suprafață",
-          "imageAlt": "Design interior comercial modern"
+          "investment": "4 € / m²",
+          "investmentNote": "",
+          "imageAlt": "Proiect de design fără vizualizare"
         },
         {
-          "title": "Design pentru Living și Bucătărie",
-          "description": "Transformăm cele mai importante zone ale locuinței tale în spații coerente și primitoare. Designul echilibrează estetica și funcționalitatea, asigurând confort pentru viața de zi cu zi și interacțiunea socială.",
+          "title": "Design arhitectural",
+          "description": "Dezvoltarea imaginii arhitecturale a clădirii, ținând cont de proporții, materiale și stilul general. Creăm o fațadă modernă și armonioasă, care evidențiază arhitectura casei și o face vizual coerentă și expresivă. Sunt elaborate toate elementele esențiale: materialele de finisaj, soluțiile cromatice, iluminatul și detaliile fațadei, pentru ca rezultatul final să fie bine gândit și realizabil în practică.",
           "includes": [
-            "Optimizarea planului și a spațiului",
-            "Planificarea mobilierului și a bucătăriei",
-            "Styling decorativ și detalii de finisaj"
+            "Dezvoltarea conceptului fațadei și a stilisticii",
+            "Vizualizare 3D a fațadei",
+            "Selectarea materialelor și a soluțiilor cromatice",
+            "Elaborarea detaliilor și elementelor arhitecturale",
+            "Consultație pentru implementare"
           ],
-          "investment": "de la 10 € / m²",
-          "investmentNote": "Aprox. în funcție de suprafață",
-          "imageAlt": "Design pentru living și bucătărie"
+          "investment": "Se calculează individual",
+          "investmentNote": "",
+          "imageAlt": "Design arhitectural"
         }
       ]
     },
@@ -273,123 +273,125 @@
       "eyebrow": "Proces",
       "index": "03",
       "script": "Process",
-      "title": "Un Proces de Design Rafinat",
-      "subtitle": "Un parcurs echilibrat și transparent, construit prin claritate, ghidare atentă și o grijă constantă pentru fiecare detaliu.",
+      "title": "Procesul de creare a unui proiect de autor",
+      "subtitle": "De la prima consultație până la implementarea finală — fiecare etapă a proiectului este construită cu atenție față de spațiu și detalii.",
       "steps": [
         {
-          "title": "Discuția Inițială",
-          "description": "Începem cu o consultare detaliată pentru a înțelege viziunea, stilul tău de viață și așteptările tale. Acest pas ne ajută să aliniem obiectivele și să definim direcția proiectului."
+          "title": "Analiza spațiului",
+          "description": "Începem cu studierea detaliată a obiectului, a stilului de viață al clientului și a particularităților planimetriei, pentru a crea o bază corectă a viitorului interior."
         },
         {
-          "title": "Propunerea de Contract",
-          "description": "Pregătim o propunere personalizată care evidențiază aria de lucru, calendarul și bugetul. Structura clară și transparența oferă încredere înainte de a merge mai departe."
+          "title": "Planificare și concept",
+          "description": "Dezvoltăm zonarea funcțională, amplasarea mobilierului și conceptul general al spațiului, îmbinând confortul, ergonomia și estetica."
         },
         {
-          "title": "Conceptul Inițial",
-          "description": "Echipa noastră dezvoltă un concept de design rafinat, incluzând planul, materialele și direcția vizuală. Fiecare element este atent analizat pentru a corespunde viziunii tale."
+          "title": "Vizualizarea interiorului",
+          "description": "Creăm vizualizări 3D realiste, care permit să vedeți din timp atmosfera, materialele și caracterul viitorului interior."
         },
         {
-          "title": "Implementarea Proiectului",
-          "description": "Gestionăm întregul proces de execuție, coordonând contractorii și asigurându-ne că fiecare detaliu respectă cele mai înalte standarde de calitate și precizie."
+          "title": "Documentație tehnică",
+          "description": "Pregătim setul complet de desene tehnice pentru realizarea proiectului — de la iluminat până la amplasarea mobilierului și soluțiile inginerești."
         },
         {
-          "title": "Detaliile Finale",
-          "description": "Etapa finală este despre rafinare. Finalizăm stylingul, echilibrăm compoziția și ne asigurăm că spațiul rezultat este finisat, armonios și cu adevărat remarcabil."
+          "title": "Implementarea proiectului",
+          "description": "Însoțim procesul de renovare, ajutăm la alegerea materialelor și monitorizăm implementarea proiectului."
         }
       ]
     },
     "pageHero": {
       "imageAlt": "Servicii de design interior de lux",
       "eyebrow": "Servicii",
-      "title": "Servicii de Design"
+      "title": "Tipuri de servicii"
     },
     "fullWidthImageBand": {
-      "imageAlt": "Interior de lux cu linii arhitecturale rafinate și o atmosferă caldă"
+      "imageAlt": "Interior luxos cu linii arhitecturale rafinate și atmosferă caldă"
     }
   },
   "about": {
     "pageHero": {
       "imageAlt": "Fondatorul Zlatovcen Art Design",
       "eyebrow": "Studio",
-      "title": "Povestea Noastră"
+      "title": "Povestea noastră"
     },
     "founderEditorial": {
       "eyebrow": "Fondator",
       "index": "01",
-      "title": "Am crezut întotdeauna",
-      "textLeft": "că designul interior înseamnă mai mult decât crearea unor spații frumoase — este despre construirea unor medii care inspiră confort, calm și o conexiune emoțională de durată.",
-      "textRight": "Abordarea mea în design este construită în jurul frumuseții atemporale, sobrietății echilibrate și funcționalității moderne — fiecare interior trebuie să reflecte identitatea unică a persoanei care locuiește în el.",
+      "title": "Întotdeauna am crezut",
+      "textLeft": "că interiorul nu este doar un spațiu,\nci o atmosferă în care omul se simte el însuși.\nÎn proiectele mele încerc să îmbin\nestetica arhitecturală, funcționalitatea\nși sentimentul de confort interior.",
+      "textRight": "Fiecare proiect este pentru mine o căutare a echilibrului\nîntre expresivitatea modernă,\nluxul discret și individualitatea clientului.\nCreez interioare care rămân actuale ani la rând.",
       "images": {
         "leftAlt": "Detaliu interior elegant în tonuri neutre",
-        "founderAlt": "Fondatorul Viktor Zlatovchen",
-        "rightAlt": "Detaliu de atmosferă într-un interior de lux"
+        "founderAlt": "Fondatorul Viktor Zlatovcen",
+        "rightAlt": "Detaliu al atmosferei unui interior luxos"
       }
     },
     "statementBanner": {
       "imageAlt": "Interior modern de lux",
-      "eyebrow": "Meticulos",
-      "title": "Cu o atenție meticuloasă la detalii și un angajament ferm față de calitate, proiectăm spații la fel de excepționale precum cei care le locuiesc.",
-      "cta": "Vezi Portofoliul"
+      "eyebrow": "Spațiu cu caracter",
+      "title": "Interiorul trebuie să reflecte\nstilul de viață al omului,\npăstrând echilibrul dintre\nestetică, confort și individualitate.",
+      "cta": "Vezi portofoliul"
     }
   },
   "contact": {
     "pageHero": {
-      "imageAlt": "Interior premium pentru hero-ul paginii de contact",
-      "eyebrow": "Contact",
-      "title": "Ia Legătura"
+      "imageAlt": "Interior luxos pentru secțiunea hero a paginii de contact",
+      "eyebrow": "Contacte",
+      "title": "Contactați-ne"
     },
     "formSection": {
-      "eyebrow": "Contact",
+      "eyebrow": "Contacte",
       "index": "01",
       "script": "Contact",
-      "title": "Suntem pregătiți să te ajutăm să îți ridici spațiul la un nou nivel",
-      "description": "Trimite-ne câteva detalii despre proiectul tău și vom reveni cu un răspuns atent și personalizat.",
-      "submit": "Începe Călătoria Ta",
+      "title": "Suntem gata să vă ajutăm să duceți spațiul la un nou nivel",
+      "description": "Împărtășiți câteva detalii despre proiectul dumneavoastră, iar noi vă vom răspunde cu o propunere atentă și personalizată.",
+      "submit": "Începeți parcursul",
       "note": "De obicei răspundem în 1–2 zile lucrătoare.",
-      "imageAlt": "Interior elegant de studio cu zonă de seating rafinată",
+      "imageAlt": "Interior elegant de studio cu zonă de relaxare rafinată",
       "fields": {
         "name": {
-          "label": "Numele Tău",
-          "placeholder": "Numele Tău"
+          "label": "Numele dumneavoastră",
+          "placeholder": "Numele dumneavoastră"
         },
         "email": {
-          "label": "Adresa de Email",
-          "placeholder": "Adresa de Email"
+          "label": "Adresa de e-mail",
+          "placeholder": "Adresa de e-mail"
         },
         "service": {
-          "label": "Serviciul de Interes",
-          "placeholder": "Serviciul de Interes"
+          "label": "Serviciul de interes",
+          "placeholder": "Serviciul de interes"
         },
         "message": {
-          "label": "Scrie Mesajul Tău Aici",
-          "placeholder": "Scrie Mesajul Tău Aici"
+          "label": "Scrieți mesajul aici",
+          "placeholder": "Scrieți mesajul aici"
         }
       },
       "serviceOptions": [
-        "Design Rezidențial",
-        "Interioare Comerciale",
-        "Mobilier și Styling",
-        "Consultanță de Design",
-        "Proiect Complet de Interior"
+        "Design rezidențial",
+        "Interioare comerciale",
+        "Mobilier și styling",
+        "Consultație de design",
+        "Proiect interior complet"
       ]
     },
     "infoBar": {
       "accessibility": {
-        "title": "Informații de contact ale studioului"
+        "title": "Informațiile de contact ale studioului"
       },
+      "supporting": "Lucrăm cu proiecte private\nși comerciale,\ncreând spații cu arhitectură bine gândită și atenție la detalii.",
+      "description": "Contactați-ne prin orice modalitate convenabilă — pentru o consultație, discutarea proiectului sau începutul colaborării.",
       "items": {
-        "emailPhone": {
-          "eyebrow": "Emailul și Telefonul Nostru"
+        "phone": {
+          "eyebrow": "Telefonul studioului",
+          "note": "Suntem disponibili pentru consultații, discuții despre proiecte și solicitări inițiale."
         },
-        "address": {
-          "eyebrow": "Adresa Studioului",
-          "line1": "123 Peachtree Lane,",
-          "line2": "Suite 400 Atlanta, GA 30309"
+        "email": {
+          "eyebrow": "E-mail",
+          "note": "Trimiteți-ne ideile, referințele sau detaliile viitorului proiect."
         },
-        "hours": {
-          "eyebrow": "Programul Studioului",
-          "line1": "Luni – Vineri",
-          "line2": "10:00 – 18:00"
+        "socials": {
+          "eyebrow": "Rețele sociale",
+          "whatsappValue": "Solicitări rapide",
+          "viberValue": "Mesaje directe"
         }
       }
     },
@@ -397,42 +399,42 @@
       "eyebrow": "FAQ",
       "index": "02",
       "script": "Answers",
-      "title": "Răspunsuri la întrebările tale",
-      "subtitle": "Câteva răspunsuri esențiale despre procesul nostru, colaborare și abordarea de design.",
+      "title": "Răspunsuri la întrebările dumneavoastră",
+      "subtitle": "Câteva răspunsuri importante despre procesul nostru, formatul colaborării și abordarea de design.",
       "groups": [
         {
-          "imageAlt": "Interior elegant în tonuri neutre cu zonă de seating rafinată",
-          "badge": "Detaliu de Studio",
+          "imageAlt": "Interior elegant în tonuri neutre, cu zonă de relaxare rafinată",
+          "badge": "Detaliu de studio",
           "items": [
             {
               "question": "Ce servicii oferiți?",
-              "answer": "Oferim design interior rezidențial și comercial, inclusiv planificarea spațiului, selecția mobilierului și soluții personalizate de design. Serviciile noastre includ și management de proiect, precum și design pentru renovări."
+              "answer": "Oferim design interior rezidențial și comercial, inclusiv planificarea spațiului, selectarea mobilierului și soluții de design personalizate. Serviciile noastre includ, de asemenea, management de proiect și design pentru renovări."
             },
             {
-              "question": "Cum încep un proiect cu studioul vostru?",
-              "answer": "Începem cu o consultație personală pentru a înțelege viziunea, stilul tău de viață și nevoile spațiului. De acolo conturăm o direcție de design personalizată, calendarul și amploarea proiectului."
+              "question": "Cum pot începe un proiect cu studioul dumneavoastră?",
+              "answer": "Începem cu o consultație personală, pentru a înțelege viziunea, stilul de viață și nevoile spațiului dumneavoastră. După aceea formăm o direcție de design personalizată, termenele și cadrul proiectului."
             },
             {
-              "question": "Lucrați la transformări complete de locuințe?",
-              "answer": "Da, proiectăm atât locuințe complete, cât și camere selectate. Fiecare proiect este abordat cu același nivel de atenție la detalii, coerență și sensibilitate față de materiale."
+              "question": "Lucrați cu transformări complete ale locuințelor?",
+              "answer": "Da, proiectăm atât spații rezidențiale complete, cât și camere separate. Fiecare proiect este abordat cu același nivel de atenție la detalii, coerență și sensibilitate față de materiale."
             }
           ]
         },
         {
-          "imageAlt": "Living de lux cu o compoziție sculpturală a mobilierului",
-          "badge": "Atmosferă Interioară",
+          "imageAlt": "Living luxos cu o compoziție sculpturală de mobilier",
+          "badge": "Atmosfera interiorului",
           "items": [
             {
-              "question": "Puteți lucra de la distanță la un proiect?",
-              "answer": "Da, putem colabora de la distanță în funcție de amploarea și locația proiectului. Structurăm procesul cu atenție pentru a menține claritatea, precizia vizuală și o experiență fluidă pentru client."
+              "question": "Puteți lucra la un proiect la distanță?",
+              "answer": "Da, putem colabora la distanță, în funcție de amploarea și amplasarea proiectului. Construim procesul cu atenție, pentru a păstra claritatea, precizia vizuală și o experiență fluentă pentru client."
             },
             {
-              "question": "Oferiți asistență pentru selecția mobilierului și a materialelor?",
-              "answer": "Absolut. Curatoriem mobilierul, finisajele, iluminatul și decorul pentru ca fiecare element să susțină atmosfera generală și identitatea interiorului."
+              "question": "Ajutați la selectarea mobilierului și materialelor?",
+              "answer": "Desigur. Selectăm mobilierul, finisajele, iluminatul și decorul astfel încât fiecare element să susțină atmosfera generală și identitatea interiorului."
             },
             {
-              "question": "Cât durează de obicei un proiect de design interior?",
-              "answer": "Durata depinde de dimensiunea și complexitatea proiectului. După consultația inițială, oferim o structură clară a procesului, cu etape estimate și termene de livrare."
+              "question": "Cât durează, de obicei, un proiect de design interior?",
+              "answer": "Durata depinde de amploarea și complexitatea proiectului. După prima consultație oferim o structură clară a procesului, cu etapele principale și termenele estimative de realizare."
             }
           ]
         }
@@ -441,49 +443,31 @@
   },
   "blog": {
     "pageHero": {
-      "imageAlt": "Hero pentru pagina de blog cu interior de lux",
+      "imageAlt": "Secțiunea hero a paginii de blog, cu interior luxos",
       "eyebrow": "Jurnal",
-      "title": "Jurnal de Design"
+      "title": "Jurnal de design"
     },
     "featuredPost": {
       "eyebrow": "Jurnal",
       "index": "01",
       "script": "Featured",
-      "badge": "Selecție Editorială",
-      "imageAlt": "Previzualizare articol blog despre interior de lux",
+      "badge": "Alegerea editorială",
+      "imageAlt": "Previzualizarea articolului recomandat despre interioare de lux",
       "meta": {
-        "category": "Perspectivă de Design",
+        "category": "Design insight",
         "date": "23 aprilie 2025"
       },
       "title": "Rolul artei în designul interior de lux",
-      "text": "O privire mai atentă asupra modului în care arta, profunzimea materialelor și sobrietatea spațială modelează interioare care se simt atemporale, echilibrate și profund personale.",
-      "cta": "Citește Articolul"
+      "text": "O privire mai atentă asupra felului în care arta, profunzimea materialelor și reținerea spațială formează interioare care se simt atemporale, coerente și profund personale.",
+      "cta": "Citește articolul"
     },
     "latestPosts": {
-      "eyebrow": "Jurnal de Design",
+      "eyebrow": "Jurnal de design",
       "index": "02",
       "script": "Journal",
-      "title": "Ultimele Articole",
-      "subtitle": "Perspective curatoriate despre interioare, atmosferă, materiale și deciziile subtile care definesc un design atemporal.",
-      "cta": "Citește Articolul",
-      "posts": [
-        {
-          "title": "Rolul artei în designul interior de lux.",
-          "category": "Perspectivă de Design"
-        },
-        {
-          "title": "Palete cromatice pentru interioare: ghidul esențial",
-          "category": "Materiale și Ton"
-        },
-        {
-          "title": "Detalii mici care creează un impact major în design.",
-          "category": "Note de Styling"
-        },
-        {
-          "title": "Rolul artei în designul interior de lux.",
-          "category": "Perspectivă de Design"
-        }
-      ]
+      "title": "Ultimele articole",
+      "subtitle": "Reflecții despre interioare, materiale și atmosferă, care formează un spațiu dincolo de timp.",
+      "cta": "Citește articolul"
     }
   },
   "portfolio": {
@@ -491,14 +475,14 @@
       "defaultEyebrow": "Proiect"
     },
     "pageHero": {
-      "imageAlt": "Dormitor modern de lux",
+      "imageAlt": "Dormitor modern luxos",
       "eyebrow": "Portofoliu",
-      "title": "Proiecte Selectate"
+      "title": "Proiectele noastre"
     },
     "gallery": {
-      "titleLine1": "Explorează Galeria Noastră",
-      "titleLine2": "de Interioare Rafinate",
-      "details": "Detalii",
+      "titleLine1": "Explorați galeria noastră",
+      "titleLine2": "de interioare de autor",
+      "details": "Mai multe detalii",
       "openProject": "Deschide proiectul {{title}}"
     },
     "values": {
@@ -507,36 +491,36 @@
       },
       "items": [
         {
-          "title": "Exclusiv",
-          "description": "Creăm interioare exclusive, adaptate gusturilor unice și nevoilor specifice ale clienților noștri exigenți."
+          "title": "Exclusivitate",
+          "description": "Creăm interioare exclusive, adaptate gusturilor și nevoilor unice ale clienților noștri."
         },
         {
-          "title": "Opulent",
-          "description": "Suntem specializați în crearea unor medii opulente, unde luxul este resimțit în fiecare colț al spațiului."
+          "title": "Lux",
+          "description": "Ne specializăm în crearea spațiilor luxoase, unde senzația de premium este prezentă în fiecare element."
         },
         {
-          "title": "Inovator",
-          "description": "Fiecare proiect îmbină designul inovator cu materiale de ultimă generație pentru a depăși limitele creativității."
+          "title": "Inovație",
+          "description": "Fiecare proiect îmbină designul inovator cu materiale avansate, pentru a extinde limitele abordării creative."
         }
       ]
     }
   },
   "notFound": {
     "pageHero": {
-      "imageAlt": "Fundal interior luxury pentru pagina 404",
+      "imageAlt": "Fundal interior luxos pentru pagina 404",
       "eyebrow": "404",
       "title": "Pagina Nu A Fost Găsită",
-      "subtitle": "Pagina pe care o căutați poate fi mutată, eliminată sau nu mai există în structura curentă a site-ului."
+      "subtitle": "Pagina pe care o căutați este posibil să fi fost mutată, ștearsă sau să nu mai existe în structura actuală a site-ului."
     },
     "content": {
-      "toplineLabel": "Pagină Lipsă",
+      "toplineLabel": "Pagină Inexistentă",
       "toplineIndex": "404",
-      "eyebrow": "Scuze",
+      "eyebrow": "Sorry",
       "titleLine1": "Pagina Pe Care O Căutați",
       "titleLine2": "Nu Există.",
-      "subtitle": "Linkul poate fi învechit, pagina poate fi mutată sau adresa poate fi introdusă incorect. Vă puteți întoarce la pagina principală sau puteți continua să explorați studioul.",
+      "subtitle": "Linkul poate fi învechit, pagina poate să fi fost mutată sau adresa a fost introdusă greșit. Puteți reveni la pagina principală sau continua să descoperiți studioul.",
       "actions": {
-        "backHome": "Înapoi Acasă",
+        "backHome": "Acasă",
         "viewPortfolio": "Vezi Portofoliul"
       }
     }
