@@ -4,6 +4,7 @@ import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import AboutFounderEditorial from '../../components/sections/AboutFounderEditorial/AboutFounderEditorial.jsx';
 import aboutHeroImage from '../../assets/images/page-hero/PC/about-pc.webp';
+import aboutHeroMobileImage from '../../assets/images/page-hero/phone/about-phone.webp';
 import AboutStatementBanner from '../../components/sections/AboutStatementBanner/AboutStatementBanner.jsx';
 import CTA from '../../components/sections/CTA/CTA.jsx';
 import './aboutPage.scss';
@@ -15,6 +16,7 @@ const AboutPage = () => {
         <div className='about-page'>
             <PageHero
                 image={aboutHeroImage}
+                mobileImage={aboutHeroMobileImage}
                 imageAlt={t('about.pageHero.imageAlt')}
                 eyebrow={t('about.pageHero.eyebrow')}
                 title={t('about.pageHero.title')}

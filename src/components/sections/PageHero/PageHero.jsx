@@ -4,6 +4,7 @@ import './pageHero.scss';
 
 const PageHero = ({
                       image,
+                      mobileImage,
                       imageAlt = '',
                       eyebrow,
                       title,
@@ -15,7 +16,13 @@ const PageHero = ({
     return (
         <section className='page-hero page-hero--animated' aria-labelledby='page-hero-title'>
             <div className='page-hero__media' aria-hidden='true'>
-                <img src={image} alt={imageAlt} className='page-hero__image' />
+                <picture>
+                    {mobileImage ? (
+                        <source srcSet={mobileImage} media='(max-width: 767px)' />
+                    ) : null}
+
+                    <img src={image} alt={imageAlt} className='page-hero__image' />
+                </picture>
             </div>
 
             <div className='page-hero__overlay page-hero__overlay--base' />

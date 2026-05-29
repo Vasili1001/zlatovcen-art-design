@@ -4,8 +4,7 @@ import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import ContactInfoBar from '../../components/sections/ContactInfoBar/ContactInfoBar.jsx';
 import contactHeroImage from '../../assets/images/page-hero/PC/contact-pc.webp';
-// import ContactFormSection from '../../components/sections/ContactFormSection/ContactFormSection.jsx';
-// import contactFormImage from '../../assets/images/services-preview/services-preview-main.webp';
+import contactHeroMobileImage from '../../assets/images/page-hero/phone/contact-phone.webp';
 import ContactFaq from '../../components/sections/ContactFaq/ContactFaq.jsx';
 import './contactPage.scss';
 
@@ -16,6 +15,7 @@ const ContactPage = () => {
         <div className='contact-page'>
             <PageHero
                 image={contactHeroImage}
+                mobileImage={contactHeroMobileImage}
                 imageAlt={t('contact.pageHero.imageAlt')}
                 title={t('contact.pageHero.title')}
                 eyebrow={t('contact.pageHero.eyebrow')}
@@ -25,8 +25,6 @@ const ContactPage = () => {
             />
 
             <FeatureBar />
-
-            {/*<ContactFormSection image={contactFormImage} />*/}
 
             <ContactInfoBar />
 

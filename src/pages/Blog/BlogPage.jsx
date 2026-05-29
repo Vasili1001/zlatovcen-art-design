@@ -4,6 +4,7 @@ import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import FeaturedBlogPost from '../../components/sections/FeaturedBlogPost/FeaturedBlogPost.jsx';
 import blogHeroImage from '../../assets/images/page-hero/PC/blog-pc.webp';
+import blogHeroMobileImage from '../../assets/images/page-hero/phone/blog-phone.webp';
 import LatestPosts from '../../components/sections/LatestPosts/LatestPosts.jsx';
 import { blogPosts } from '../../data/blogPosts.js';
 import { getFeaturedPost } from '../../utils/blog.js';
@@ -27,6 +28,7 @@ const BlogPage = () => {
         <div className='blog-page'>
             <PageHero
                 image={blogHeroImage}
+                mobileImage={blogHeroMobileImage}
                 imageAlt={t('blog.pageHero.imageAlt')}
                 title={t('blog.pageHero.title')}
                 eyebrow={t('blog.pageHero.eyebrow')}
