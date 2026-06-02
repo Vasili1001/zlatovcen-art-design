@@ -122,7 +122,14 @@ const Hero = () => {
                     >
                         <picture>
                             <source srcSet={slide.mobileImage} media='(max-width: 767px)' />
-                            <img src={slide.desktopImage} alt={slide.alt} className='hero__image' />
+                            <img
+                                src={slide.desktopImage}
+                                alt={slide.alt}
+                                className='hero__image'
+                                loading={index === 0 ? 'eager' : 'lazy'}
+                                fetchPriority={index === 0 ? 'high' : 'low'}
+                                decoding='async'
+                            />
                         </picture>
                     </div>
                 ))}
