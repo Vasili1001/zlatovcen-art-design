@@ -11,6 +11,8 @@ import blogPostHeroImage4 from '../assets/images/hero/PC/slide-1.webp';
 import blogPostBackgroundImage from '../assets/images/blog/post/blog-post-background.webp';
 import blogPostInlineImage from '../assets/images/hero/PC/slide-2.webp';
 
+// Data for blog posts
+
 export const blogPosts = [
     {
         id: 'interior-design-price-chisinau-moldova',
