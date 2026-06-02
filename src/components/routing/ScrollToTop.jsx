@@ -1,22 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
-    const { pathname, hash } = useLocation();
+    const { pathname, hash, key } = useLocation();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
+        }
+    }, []);
+
+    useLayoutEffect(() => {
         if (hash) {
             return;
         }
 
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollToPageTop = () => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        };
 
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: prefersReducedMotion ? 'auto' : 'auto',
+        scrollToPageTop();
+
+        const firstFrame = window.requestAnimationFrame(() => {
+            scrollToPageTop();
+
+            window.requestAnimationFrame(() => {
+                scrollToPageTop();
+            });
         });
-    }, [pathname, hash]);
+
+        return () => {
+            window.cancelAnimationFrame(firstFrame);
+        };
+    }, [pathname, hash, key]);
 
     return null;
 };
