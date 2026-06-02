@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.zlatovcenartdesign.md/sitemap.xml
+Host: https://www.zlatovcenartdesign.md
