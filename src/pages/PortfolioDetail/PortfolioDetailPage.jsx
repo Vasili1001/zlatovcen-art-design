@@ -5,7 +5,7 @@ import PageHero from '../../components/sections/PageHero/PageHero.jsx';
 import FeatureBar from '../../components/sections/FeatureBar/FeatureBar.jsx';
 import ProjectOverview from '../../components/sections/ProjectOverview/ProjectOverview.jsx';
 import ProjectEditorialGallery from '../../components/sections/ProjectEditorialGallery/ProjectEditorialGallery.jsx';
-import ProjectPager from '../../components/sections/ProjectPager/ProjectPager.jsx';
+// import ProjectPager from '../../components/sections/ProjectPager/ProjectPager.jsx';
 import { portfolioProjects } from '../../data/portfolioProjects.js';
 import './portfolioDetailPage.scss';
 
@@ -20,8 +20,8 @@ const PortfolioDetailPage = () => {
         return <Navigate to='/portfolio' replace />;
     }
 
-    const previousProject = currentIndex > 0 ? portfolioProjects[currentIndex - 1] : null;
-    const nextProject = currentIndex < portfolioProjects.length - 1 ? portfolioProjects[currentIndex + 1] : null;
+    // const previousProject = currentIndex > 0 ? portfolioProjects[currentIndex - 1] : null;
+    // const nextProject = currentIndex < portfolioProjects.length - 1 ? portfolioProjects[currentIndex + 1] : null;
 
     const heroEyebrow =
         project.heroEyebrow ||
@@ -51,10 +51,10 @@ const PortfolioDetailPage = () => {
 
             <ProjectEditorialGallery images={project.galleryImages || []} />
 
-            <ProjectPager
-                previousProject={previousProject}
-                nextProject={nextProject}
-            />
+            {/*<ProjectPager*/}
+            {/*    previousProject={previousProject}*/}
+            {/*    nextProject={nextProject}*/}
+            {/*/>*/}
         </div>
     );
 };
