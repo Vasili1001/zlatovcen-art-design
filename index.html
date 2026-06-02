@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/logo_zlatovcen_art.png" />
@@ -7,11 +5,12 @@
   <link rel="canonical" href="https://www.zlatovcenartdesign.md/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link
           rel="preload"
           as="image"
           type="image/webp"
-          href="/src/assets/images/hero/PC/slide-1.webp"
+          href="/images/hero/hero-desktop-first.webp"
           media="(min-width: 768px)"
           fetchpriority="high"
   />
@@ -20,10 +19,63 @@
           rel="preload"
           as="image"
           type="image/webp"
-          href="/src/assets/images/hero/phone/slide-1.webp"
+          href="/images/hero/hero-mobile-first.webp"
           media="(max-width: 767px)"
           fetchpriority="high"
   />
+
+  <style>
+    html,
+    body,
+    #root {
+      min-height: 100%;
+      margin: 0;
+      background: #191717;
+    }
+
+    #root {
+      position: relative;
+      min-height: 100svh;
+    }
+
+    #root::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+              linear-gradient(
+                      180deg,
+                      rgba(20, 18, 18, 0.72) 0%,
+                      rgba(20, 18, 18, 0.42) 18%,
+                      rgba(25, 23, 23, 0.28) 44%,
+                      rgba(25, 23, 23, 0.68) 100%
+              ),
+              url('/images/hero/hero-desktop-first.webp') center / cover no-repeat;
+    }
+
+    #root > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 767px) {
+      #root::before {
+        background:
+                linear-gradient(
+                        180deg,
+                        rgba(20, 18, 18, 0.72) 0%,
+                        rgba(20, 18, 18, 0.42) 18%,
+                        rgba(25, 23, 23, 0.28) 44%,
+                        rgba(25, 23, 23, 0.68) 100%
+                ),
+                url('/images/hero/hero-mobile-first.webp') center / cover no-repeat;
+      }
+    }
+  </style>
+
+  <meta name="theme-color" content="#191717" />
   <meta name="theme-color" content="#191717" />
   <meta name="color-scheme" content="dark" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />

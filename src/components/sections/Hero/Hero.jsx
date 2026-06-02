@@ -3,14 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Container from '../../ui/Container/Container.jsx';
 
-import heroPc1 from '../../../assets/images/hero/PC/slide-1.webp';
 import heroPc2 from '../../../assets/images/hero/PC/slide-2.webp';
 import heroPc3 from '../../../assets/images/hero/PC/slide-3.webp';
 import heroPc4 from '../../../assets/images/hero/PC/slide-4.webp';
 import heroPc5 from '../../../assets/images/hero/PC/slide-5.webp';
 import heroPc6 from '../../../assets/images/hero/PC/slide-6.webp';
 
-import heroPhone1 from '../../../assets/images/hero/phone/slide-1.webp';
 import heroPhone2 from '../../../assets/images/hero/phone/slide-2.webp';
 import heroPhone3 from '../../../assets/images/hero/phone/slide-3.webp';
 import heroPhone4 from '../../../assets/images/hero/phone/slide-4.webp';
@@ -18,6 +16,9 @@ import heroPhone5 from '../../../assets/images/hero/phone/slide-5.webp';
 import heroPhone6 from '../../../assets/images/hero/phone/slide-6.webp';
 
 import './hero.scss';
+
+const heroPc1 = '/images/hero/hero-desktop-first.webp';
+const heroPhone1 = '/images/hero/hero-mobile-first.webp';
 
 const AUTOPLAY_DELAY = 7000;
 
